@@ -8,17 +8,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_visle")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_visle")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("1_cslu8")
 }],
 "loop": true,
@@ -50,7 +39,7 @@ metadata/_edit_group_ = true
 position = Vector2(0, 0.5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_4kbi3")
-animation = &"attack"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10.4325, -8.09)
