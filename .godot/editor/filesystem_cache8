@@ -1,8 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702697951
+::res://::1702828760
 icon.svg::CompressedTexture2D::9051453112438297686::1702697337::1702697355::1::::<><>::
-player.tscn::PackedScene::2267104424263308287::1702697951::0::1::::<><>::
-::res://art/::1702699285
+player.gd::GDScript::-1::1702727189::0::1::::<>Area2D<>::
+player.tscn::PackedScene::2267104424263308287::1702727189::0::1::::<><>::uid://cwu4jxwkq81q::::res://art/Sprite-0000.png<>res://player.gd<>uid://cnxkauj3es327::::res://art/Sprite-0001.png
+README.md::TextFile::-1::1702828670::0::1::::<><>::
+::res://art/::1702699293
 Sprite-0000.png::CompressedTexture2D::187060634998214568::1702699258::1702699293::1::::<><>::
 Sprite-0001.png::CompressedTexture2D::5733385258600183222::1702699238::1702699293::1::::<><>::
 ::res://fonts/::1702697724
