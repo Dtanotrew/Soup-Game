@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
+const SH_JUMP_VELOCITY = -300.0 #for implementing a short hop. Keep workshoping it.
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -14,6 +14,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle jump.
+	#in 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
@@ -22,7 +23,11 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		$AnimatedSprite2D.play()
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_h = velocity.x < 0 #flip sprite when walking left.
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$AnimatedSprite2D.stop()
 
 	move_and_slide()

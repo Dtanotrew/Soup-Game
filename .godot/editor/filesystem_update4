@@ -1,7 +1,3 @@
-res://player.tscn
-res://player.gd
-res://witch.tscn
-res://witch.gd
-res://test.tscn
-res://Testing(delete later)/player.tscn
 res://Testing(delete later)/test.tscn
+res://witch.gd
+res://witch.tscn
