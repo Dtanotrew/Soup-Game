@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://7kg44ybu52yt"]
 
-[ext_resource type="Texture2D" uid="uid://cwu4jxwkq81q" path="res://art/Sprite-0000.png" id="1_cslu8"]
-[ext_resource type="Script" path="res://player.gd" id="1_uwiye"]
-[ext_resource type="Texture2D" uid="uid://cnxkauj3es327" path="res://art/Sprite-0001.png" id="2_visle"]
+[ext_resource type="Script" path="res://Testing(delete later)/Tutorial/player.gd" id="1_eo0tc"]
+[ext_resource type="Texture2D" uid="uid://cwu4jxwkq81q" path="res://art/Sprite-0000.png" id="2_kjsq4"]
+[ext_resource type="Texture2D" uid="uid://cnxkauj3es327" path="res://art/Sprite-0001.png" id="3_bswow"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kbi3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cslu8")
+"texture": ExtResource("2_kjsq4")
 }],
 "loop": true,
 "name": &"up",
@@ -16,10 +16,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cslu8")
+"texture": ExtResource("2_kjsq4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_visle")
+"texture": ExtResource("3_bswow")
 }],
 "loop": true,
 "name": &"walk",
@@ -32,7 +32,7 @@ height = 69.915
 
 [node name="Player" type="Area2D"]
 position = Vector2(54, 82)
-script = ExtResource("1_uwiye")
+script = ExtResource("1_eo0tc")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -44,3 +44,5 @@ animation = &"walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10.4325, -8.09)
 shape = SubResource("CapsuleShape2D_ikltn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
