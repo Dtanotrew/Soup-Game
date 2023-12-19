@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://pe52xkufbvpu"]
+
+[ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://witch.tscn" id="1_0u4kx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wd25p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dopl7"]
+specular_color = Color(0, 0.372549, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gti0c"]
+size = Vector2(414, 76)
+
+[node name="Test" type="Node"]
+
+[node name="Witch" parent="." instance=ExtResource("1_0u4kx")]
+position = Vector2(597, 224)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(596, 645)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_wd25p")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, -72)
+scale = Vector2(414, 73)
+texture = SubResource("CanvasTexture_dopl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -73)
+shape = SubResource("RectangleShape2D_gti0c")

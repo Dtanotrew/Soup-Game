@@ -1,5 +1,5 @@
 extends Area2D
-signal hit
+signal hit #custom signal for collisions
 @export var speed = 400 #player speed (pixels/sec)
 var screen_size # Size of game window
 
@@ -36,3 +36,18 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 		#$AnimatedSprite2D.flip_v = velocity.y > 0
+
+
+func _on_body_entered(body):
+	hide() #make player disappear after being hit
+	hit.emit()
+	#must be deferred as we can't change physics properties on a physics callback.
+	$CollisionShape2D.set_deferred("disabled", true)
+
+#resets player when starting new game.
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+
+

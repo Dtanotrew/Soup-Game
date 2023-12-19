@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://3f0jgldafgqq"]
+
+[ext_resource type="Script" path="res://witch.gd" id="1_sjtlp"]
+[ext_resource type="Texture2D" uid="uid://cwu4jxwkq81q" path="res://art/Sprite-0000.png" id="2_vdx2k"]
+[ext_resource type="Texture2D" uid="uid://cnxkauj3es327" path="res://art/Sprite-0001.png" id="3_7w4je"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dk8k3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vdx2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7w4je")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whlwh"]
+size = Vector2(83, 130)
+
+[node name="Witch" type="CharacterBody2D"]
+script = ExtResource("1_sjtlp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dk8k3")
+animation = &"walk"
+frame = 1
+frame_progress = 0.0678236
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20.5, -13)
+shape = SubResource("RectangleShape2D_whlwh")
