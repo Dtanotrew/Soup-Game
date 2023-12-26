@@ -8,12 +8,12 @@
 specular_color = Color(0, 0.372549, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gti0c"]
-size = Vector2(414, 76)
+size = Vector2(414, 73)
 
 [node name="Test" type="Node"]
 
 [node name="Witch" parent="." instance=ExtResource("1_0u4kx")]
-position = Vector2(586, 160)
+position = Vector2(331, 139)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(596, 645)
@@ -27,7 +27,7 @@ scale = Vector2(414, 73)
 texture = SubResource("CanvasTexture_dopl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -73)
+position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_gti0c")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -57,5 +57,5 @@ scale = Vector2(414, 73)
 texture = SubResource("CanvasTexture_dopl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(0, -73)
+position = Vector2(0, -72.5)
 shape = SubResource("RectangleShape2D_gti0c")
