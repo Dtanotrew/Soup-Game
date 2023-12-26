@@ -13,12 +13,13 @@ size = Vector2(414, 76)
 [node name="Test" type="Node"]
 
 [node name="Witch" parent="." instance=ExtResource("1_0u4kx")]
-position = Vector2(597, 224)
+position = Vector2(586, 160)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(596, 645)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_wd25p")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(0, -72)
@@ -26,5 +27,35 @@ scale = Vector2(414, 73)
 texture = SubResource("CanvasTexture_dopl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -73)
+shape = SubResource("RectangleShape2D_gti0c")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(844, 473)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_wd25p")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(0, -72)
+scale = Vector2(414, 73)
+texture = SubResource("CanvasTexture_dopl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(0, -73)
+shape = SubResource("RectangleShape2D_gti0c")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(228, 538)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_wd25p")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(0, -72)
+scale = Vector2(414, 73)
+texture = SubResource("CanvasTexture_dopl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(0, -73)
 shape = SubResource("RectangleShape2D_gti0c")
