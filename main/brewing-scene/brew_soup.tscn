@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://5xfsj0s6dn46"]
+
+[ext_resource type="Script" path="res://main/brewing-scene/brew_soup.gd" id="1_qk2yp"]
+[ext_resource type="Texture2D" uid="uid://cw82duwuvyndc" path="res://resources/textures/brewing-minigame/brew-bg.png" id="2_1f5ng"]
+[ext_resource type="Shader" path="res://resources/shaders/texture-mask.gdshader" id="3_0rr6r"]
+[ext_resource type="Texture2D" uid="uid://ctbmmkc71m053" path="res://resources/textures/brewing-minigame/pot_mask.png" id="4_4rw3a"]
+[ext_resource type="Texture2D" uid="uid://c4vh7cactrxfw" path="res://resources/textures/brewing-minigame/pot.png" id="4_kve50"]
+[ext_resource type="Texture2D" uid="uid://djkfkxm1qwfh5" path="res://resources/textures/brewing-minigame/pot_mask copy.png" id="5_lm7pf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_curu3"]
+shader = ExtResource("3_0rr6r")
+shader_parameter/mask = ExtResource("4_4rw3a")
+
+[node name="BrewSoup" type="Node2D"]
+script = ExtResource("1_qk2yp")
+
+[node name="BrewBG" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1f5ng")
+
+[node name="Control" type="Control" parent="."]
+material = SubResource("ShaderMaterial_curu3")
+layout_mode = 3
+anchors_preset = 0
+offset_left = 342.0
+offset_top = 259.0
+offset_right = 528.0
+offset_bottom = 309.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+use_parent_material = true
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 50.0
+texture = ExtResource("5_lm7pf")
+
+[node name="Pot" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 307.0
+offset_top = 225.0
+offset_right = 563.0
+offset_bottom = 481.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kve50")

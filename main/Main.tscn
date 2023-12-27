@@ -2,10 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://cka8ftb6up0d5" path="res://main/menu.tscn" id="1_i2cty"]
 [ext_resource type="Script" path="res://main/Main.gd" id="1_wbyku"]
-[ext_resource type="Script" path="res://main/menu.gd" id="3_lorif"]
+[ext_resource type="PackedScene" uid="uid://5xfsj0s6dn46" path="res://main/brewing-scene/brew_soup.tscn" id="3_xsyfi"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_wbyku")
 
+[node name="BrewSoup" parent="." instance=ExtResource("3_xsyfi")]
+
 [node name="Menu" parent="." instance=ExtResource("1_i2cty")]
-script = ExtResource("3_lorif")
+
+[connection signal="start_game" from="Menu" to="." method="_on_menu_start_game"]

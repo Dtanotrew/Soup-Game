@@ -1,18 +1,10 @@
 extends Node2D
 
-signal start_game
+signal brew_complete
 
-func display():
-	$MenuBG.show()	
-	$StartButton.show()
-	$CreditsButton.show()
-	
-func _on_start_button_pressed():
-	#$MenuBG.hide()
-	#$StartButton.hide()
-	#$CreditsButton.hide()
-	start_game.emit()
-	
+func start_brew():
+	#$BrewBG.show()
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
