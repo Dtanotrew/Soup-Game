@@ -5,7 +5,7 @@
 [ext_resource type="Shader" path="res://resources/shaders/texture-mask.gdshader" id="3_0rr6r"]
 [ext_resource type="Texture2D" uid="uid://ctbmmkc71m053" path="res://resources/textures/brewing-minigame/pot_mask.png" id="4_4rw3a"]
 [ext_resource type="Texture2D" uid="uid://c4vh7cactrxfw" path="res://resources/textures/brewing-minigame/pot.png" id="4_kve50"]
-[ext_resource type="Texture2D" uid="uid://djkfkxm1qwfh5" path="res://resources/textures/brewing-minigame/pot_mask copy.png" id="5_lm7pf"]
+[ext_resource type="Texture2D" uid="uid://djkfkxm1qwfh5" path="res://resources/textures/brewing-minigame/water_texture.png" id="5_lm7pf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_curu3"]
 shader = ExtResource("3_0rr6r")
