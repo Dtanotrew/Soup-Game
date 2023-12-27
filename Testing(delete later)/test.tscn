@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://pe52xkufbvpu"]
+[gd_scene load_steps=6 format=3 uid="uid://pe52xkufbvpu"]
 
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://witch.tscn" id="1_0u4kx"]
+[ext_resource type="Texture2D" uid="uid://miccmcwe3qy3" path="res://art/fewfef.JPG" id="2_hgdsr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wd25p"]
 
@@ -8,7 +9,7 @@
 specular_color = Color(0, 0.372549, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gti0c"]
-size = Vector2(414, 73)
+size = Vector2(414, 72.25)
 
 [node name="Test" type="Node"]
 
@@ -37,12 +38,12 @@ physics_material_override = SubResource("PhysicsMaterial_wd25p")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
-position = Vector2(0, -72)
-scale = Vector2(414, 73)
-texture = SubResource("CanvasTexture_dopl7")
+position = Vector2(0.499967, -72.5)
+scale = Vector2(0.862213, 0.168981)
+texture = ExtResource("2_hgdsr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(0, -73)
+position = Vector2(0, -72.75)
 shape = SubResource("RectangleShape2D_gti0c")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -57,5 +58,5 @@ scale = Vector2(414, 73)
 texture = SubResource("CanvasTexture_dopl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(0, -72.5)
+position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_gti0c")
