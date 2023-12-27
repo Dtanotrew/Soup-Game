@@ -1,19 +1,22 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703621467
+::res://::1703637233
 icon.svg::CompressedTexture2D::9051453112438297686::1702697337::1702697355::1::::<><>::
 README.md::TextFile::-1::1702828670::0::1::::<><>::
-witch.gd::GDScript::-1::1703620886::0::1::::<>CharacterBody2D<>::
-witch.tscn::PackedScene::1977143839868971024::1703620902::0::1::::<><>::res://witch.gd<>uid://cwu4jxwkq81q::::res://art/Sprite-0000.png<>uid://cnxkauj3es327::::res://art/Sprite-0001.png
-::res://art/::1703621467
+chicken.tscn::PackedScene::1665359663812655043::1703637233::0::1::::<><>::
+witch.gd::GDScript::-1::1703637223::0::1::::<>CharacterBody2D<>::
+witch.tscn::PackedScene::1977143839868971024::1703637233::0::1::::<><>::res://witch.gd<>uid://pylxcnmbsioa::::res://art/Spriteconcept1.png<>uid://cwu4jxwkq81q::::res://art/Sprite-0000.png<>uid://cnxkauj3es327::::res://art/Sprite-0001.png<>uid://da8el0qg8a38c::::res://art/Spriteconcept2.png<>uid://bnoync11m6ljj::::res://art/Spriteconcept-Idle-Sheet.png<>uid://dg3jtrq4ciggb::::res://art/Spriteconcept-Run.png
+::res://art/::1703637623
 fewfef.JPG::CompressedTexture2D::858906785638064620::1702948873::1702948876::1::::<><>::
 Sprite-0000.png::CompressedTexture2D::187060634998214568::1702699258::1702699293::1::::<><>::
 Sprite-0001.png::CompressedTexture2D::5733385258600183222::1702699238::1702699293::1::::<><>::
 Spriteconcept1.png::CompressedTexture2D::1103086806524600412::1703621460::1703621467::1::::<><>::
 Spriteconcept2.png::CompressedTexture2D::7227650366784664868::1703621461::1703621467::1::::<><>::
+Spriteconcept-Idle-Sheet.png::CompressedTexture2D::3329257509101721311::1703637623::1703637623::1::::<><>::
+Spriteconcept-Run.png::CompressedTexture2D::7638778991974707045::1703633043::1703633044::1::::<><>::
 Spriteconcept.png::CompressedTexture2D::1807761821293596378::1703621354::1703621367::1::::<><>::
 ::res://fonts/::1702697724
-::res://Testing(delete later)/::1703620902
-test.tscn::PackedScene::1062961116205702718::1703620902::0::1::::<><>::uid://3f0jgldafgqq::::res://witch.tscn
+::res://Testing(delete later)/::1703637233
+test.tscn::PackedScene::1062961116205702718::1703637233::0::1::::<><>::uid://3f0jgldafgqq::::res://witch.tscn
 ::res://Testing(delete later)/Tutorial/::1702950074
 mob.tscn::PackedScene::8607239947375577977::1702949882::0::1::::<><>::
 player.gd::GDScript::-1::1702947905::0::1::::<>Area2D<>::
