@@ -11,19 +11,17 @@ shader_parameter/tint_color = Vector4(0, 0.5, 0.5, 1)
 
 [node name="TintableIcon" type="TextureRect"]
 texture_filter = 1
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_i4j1l")
 
 [node name="tint_layer" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_k7sxq")
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 32.0
+offset_bottom = 32.0
 texture = ExtResource("3_e1byt")
 
 [node name="solid_layer" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 32.0
+offset_bottom = 32.0
 texture = ExtResource("4_lvkk5")
