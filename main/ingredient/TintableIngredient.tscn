@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhxvhw376tya0"]
+
+[ext_resource type="Shader" path="res://resources/shaders/tintable_ingredient.gdshader" id="1_20qnw"]
+[ext_resource type="Texture2D" uid="uid://gjk46l0h7rje" path="res://resources/textures/ingredients/bottle-tint.png" id="2_mwrwl"]
+[ext_resource type="Texture2D" uid="uid://dcyx0sr56h6w4" path="res://resources/textures/ingredients/Bottle.png" id="3_xdfox"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7sxq"]
+shader = ExtResource("1_20qnw")
+shader_parameter/tint_color = Vector4(0, 0.5, 0.5, 1)
+
+[node name="TextureRect" type="TextureRect"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tint_layer" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_k7sxq")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mwrwl")
+
+[node name="solid_layer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_xdfox")
