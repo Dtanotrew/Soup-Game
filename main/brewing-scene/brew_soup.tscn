@@ -57,7 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_kve50")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="BrewPanel" type="VBoxContainer" parent="."]
 offset_left = 384.0
 offset_right = 512.0
 offset_bottom = 288.0
@@ -65,22 +65,22 @@ theme_override_constants/separation = 0
 alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="BrewPanel"]
 custom_minimum_size = Vector2(128, 48)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+[node name="ItemScroller" type="ScrollContainer" parent="BrewPanel"]
 custom_minimum_size = Vector2(128, 192)
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer"]
+[node name="Items" type="GridContainer" parent="BrewPanel/ItemScroller"]
 layout_mode = 2
 columns = 3
 
-[node name="Control2" type="Control" parent="VBoxContainer"]
+[node name="Control2" type="Control" parent="BrewPanel"]
 custom_minimum_size = Vector2(128, 48)
 layout_mode = 2
 size_flags_vertical = 8

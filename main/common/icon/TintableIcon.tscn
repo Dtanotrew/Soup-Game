@@ -9,7 +9,7 @@
 shader = ExtResource("2_km8ae")
 shader_parameter/tint_color = Vector4(0, 0.5, 0.5, 1)
 
-[node name="TextureRect" type="TextureRect"]
+[node name="TintableIcon" type="TextureRect"]
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
