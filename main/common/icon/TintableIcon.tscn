@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dcyx0sr56h6w4" path="res://resources/textures/ingredients/Bottle.png" id="4_lvkk5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7sxq"]
+resource_local_to_scene = true
 shader = ExtResource("2_km8ae")
 shader_parameter/tint_color = Vector4(0, 0.5, 0.5, 1)
 
@@ -19,9 +20,13 @@ layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 texture = ExtResource("3_e1byt")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="solid_layer" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 texture = ExtResource("4_lvkk5")
+expand_mode = 1
+stretch_mode = 5
