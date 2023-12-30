@@ -15,6 +15,7 @@ size = Vector2(414, 72.25)
 
 [node name="Witch" parent="." instance=ExtResource("1_0u4kx")]
 position = Vector2(331, 139)
+SPEED = 300.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(596, 645)
