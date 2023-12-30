@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djkfkxm1qwfh5"
-path="res://.godot/imported/water_texture.png-b4eca01945eda46fad392a6de80eb8fd.ctex"
+uid="uid://hhromi1xpfi1"
+path="res://.godot/imported/pot-tint.png-58c50c148b883f1598d25a0e093254c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/brewing-minigame/water_texture.png"
-dest_files=["res://.godot/imported/water_texture.png-b4eca01945eda46fad392a6de80eb8fd.ctex"]
+source_file="res://resources/textures/brewing-minigame/pot-tint.png"
+dest_files=["res://.godot/imported/pot-tint.png-58c50c148b883f1598d25a0e093254c6.ctex"]
 
 [params]
 

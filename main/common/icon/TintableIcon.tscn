@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhxvhw376tya0"]
+[gd_scene load_steps=4 format=3 uid="uid://bhxvhw376tya0"]
 
 [ext_resource type="Script" path="res://main/common/icon/TintableIcon.gd" id="1_i4j1l"]
 [ext_resource type="Shader" path="res://resources/shaders/tintable_ingredient.gdshader" id="2_km8ae"]
-[ext_resource type="Texture2D" uid="uid://gjk46l0h7rje" path="res://resources/textures/ingredients/bottle-tint.png" id="3_e1byt"]
-[ext_resource type="Texture2D" uid="uid://dcyx0sr56h6w4" path="res://resources/textures/ingredients/Bottle.png" id="4_lvkk5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7sxq"]
 resource_local_to_scene = true
@@ -16,17 +14,21 @@ script = ExtResource("1_i4j1l")
 
 [node name="tint_layer" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_k7sxq")
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("3_e1byt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="solid_layer" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-texture = ExtResource("4_lvkk5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5

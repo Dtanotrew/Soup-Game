@@ -21,6 +21,12 @@ func setup(ing: Ingredient):
 	child.custom_minimum_size = Vector2(32, 32)
 	self.add_child(child)
 	self.custom_minimum_size = Vector2(32, 32)
+	$CountLabel.set_text(str(item.count))
+	self.move_child($CountLabel, -1)
+	
+func update_count(new_count:int):
+	item.count = new_count
+	$CountLabel.set_text(str(new_count))
 
 func _gui_input(event):
 	if event is InputEventMouseButton:
