@@ -31,7 +31,7 @@ func on_exit():
 		playback.travel("landing") #Setting current animation to "landing". Necessary for landing state.
 	elif next_state == ground_state:
 		double_jumped = false
-		playback.travel("Move")
+		playback.travel("move")
 
 func double_jump():
 	character.velocity.y = DOUBLE_JUMP_VELOCITY

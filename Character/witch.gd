@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 #Updates the nodes in the animation tree.
 func update_animation_parameters():
-	animation_tree.set("parameters/Move/blend_position", direction)
+	animation_tree.set("parameters/move/blend_position", direction)
 
 #Flips player sprite based on direction.
 func update_facing_direction():
