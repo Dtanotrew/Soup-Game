@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djkfkxm1qwfh5"
-path="res://.godot/imported/pot_mask copy.png-a5cea25c99a1a1e9fdf4ceade8bc2f21.ctex"
+uid="uid://dc1cd70mbdy0h"
+path="res://.godot/imported/debug-tint.png-827758c4d5ed82df158d4a0b81ef3465.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/brewing-minigame/pot_mask copy.png"
-dest_files=["res://.godot/imported/pot_mask copy.png-a5cea25c99a1a1e9fdf4ceade8bc2f21.ctex"]
+source_file="res://resources/textures/debug-tint.png"
+dest_files=["res://.godot/imported/debug-tint.png-827758c4d5ed82df158d4a0b81ef3465.ctex"]
 
 [params]
 
