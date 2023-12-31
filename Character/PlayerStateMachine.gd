@@ -6,6 +6,7 @@ var states : Array[State]
 
 @export var character : CharacterBody2D 
 @export var current_state : State
+@export var animation_tree: AnimationTree
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +16,7 @@ func _ready():
 			
 			# Set the states up with what they need to function
 			child.character = character
+			child.playback = animation_tree["parameters/playback"]
 			
 		else:
 			push_warning("Child " + child.name + " is not a State for PlayerStateMachine")
