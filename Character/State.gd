@@ -4,6 +4,7 @@ class_name State
 
 @export var can_move = true
 var character : CharacterBody2D
+var playback : AnimationNodeStateMachinePlayback
 var next_state: State
 
 func state_process(delta):

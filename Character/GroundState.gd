@@ -8,7 +8,9 @@ func state_input(event : InputEvent):
 		jump()
 	if not character.is_on_floor():
 		next_state = air_state
+		#playback.travel("falling") finish tutorial
 		
 func jump():
 	character.velocity.y = JUMP_VELOCITY
 	next_state = air_state
+	playback.travel("jump_start")

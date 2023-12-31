@@ -17,8 +17,9 @@ func state_input(event : InputEvent):
 func on_exit():
 	if next_state == ground_state:
 		double_jumped = false
+		#playback.travel("landing") finish tutorial
 
 func double_jump():
 	character.velocity.y = DOUBLE_JUMP_VELOCITY
-	#sprite.play("jump_double")
+	playback.travel("double_jump")
 	double_jumped = true
