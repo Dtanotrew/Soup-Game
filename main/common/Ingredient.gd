@@ -1,7 +1,5 @@
 class_name Ingredient extends Resource
 
-
-var display_name: String = "Item"
 var taste: int = 0
 var poison: int = 0
 var count: int = 0
@@ -11,6 +9,9 @@ var icon_tint: Texture2D = preload("res://resources/textures/debug-tint.png")
 var tinted: bool = false
 var tasteflags: int = TasteFlags.NONE
 var effectflags: int = EffectFlags.NONE
+
+var display_name: String = ""
+var player_notes: String = ""
 
 enum TasteFlags {
 	NONE = 0,
