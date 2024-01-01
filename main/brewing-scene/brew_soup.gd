@@ -40,7 +40,7 @@ func debug_ingredient_from_resource(resource:String):
 	var ing = Ingredient.new()
 	ing.display_name = resource
 	ing.icon = load(texture_path)
-	ing.count = 100
+	ing.count = 99
 	ing.color = Color.from_hsv(randf_range(0,1),1,1)
 	
 	return ing

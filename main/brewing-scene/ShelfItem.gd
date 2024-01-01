@@ -1,4 +1,4 @@
-class_name ShelfItem extends TextureRect
+class_name ShelfItem extends Control
 
 const tintable_icon = preload("res://main/common/icon/TintableIcon.tscn")
 var child
@@ -8,6 +8,7 @@ signal right_click
 signal left_click
 
 func setup(ing: Ingredient): 
+	#self.custom_minimum_size = Vector2(40, 40)
 	item = ing;
 	if item.tinted:
 		child = tintable_icon.instantiate()
@@ -19,8 +20,12 @@ func setup(ing: Ingredient):
 		child.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		child.texture = item.icon
 	child.custom_minimum_size = Vector2(32, 32)
+	
+	
 	self.add_child(child)
-	self.custom_minimum_size = Vector2(32, 32)
+	child.set_anchors_preset(Control.PRESET_CENTER)
+	child.set_position(Vector2(-16,-16))
+	
 	$CountLabel.set_text(str(item.count))
 	self.move_child($CountLabel, -1)
 	
