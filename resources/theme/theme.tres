@@ -1,0 +1,93 @@
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://hbjxyvr5c2ss"]
+
+[ext_resource type="Texture2D" uid="uid://iv8bsouyfkim" path="res://resources/textures/ui/label-box.png" id="1_6u6ya"]
+[ext_resource type="StyleBox" uid="uid://ljl3d61dnwoi" path="res://resources/theme/StyleBox/ButtonBox.tres" id="1_mlpk1"]
+[ext_resource type="StyleBox" uid="uid://bajhaphfgrcxt" path="res://resources/theme/StyleBox/DialogueTextBox.tres" id="1_se5bn"]
+[ext_resource type="StyleBox" uid="uid://csuww4mmthydv" path="res://resources/theme/StyleBox/DialogueIconBox.tres" id="2_h0cbo"]
+[ext_resource type="StyleBox" uid="uid://rbc2j0qfw5i" path="res://resources/theme/StyleBox/ButtonBoxPressed.tres" id="2_oyxtc"]
+[ext_resource type="FontFile" uid="uid://ddryt44jtwl65" path="res://resources/theme/NotJamOldStyle11.ttf" id="3_oyipn"]
+[ext_resource type="StyleBox" uid="uid://cg6fpyvxiqrd5" path="res://resources/theme/StyleBox/DialogueNameBox.tres" id="4_afhi6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1kuu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0c52"]
+content_margin_left = 0.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vp42e"]
+content_margin_left = 0.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5700"]
+content_margin_left = 0.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sp731"]
+content_margin_left = 0.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o624x"]
+content_margin_left = 0.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jai3b"]
+texture = ExtResource("1_6u6ya")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8e12"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exh4q"]
+
+[resource]
+default_font = ExtResource("3_oyipn")
+default_font_size = 11
+BigButton/base_type = &"Button"
+BigButton/font_sizes/font_size = 33
+BoxContainer/constants/separation = 0
+Button/colors/font_color = Color(0.215686, 0.14902, 0.0627451, 1)
+Button/colors/font_focus_color = Color(0, 1, 0, 1)
+Button/colors/font_hover_color = Color(0, 0.258824, 0.584314, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0, 1, 1)
+Button/colors/font_pressed_color = Color(0.917647, 0.835294, 0.721569, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_a1kuu")
+Button/styles/hover = ExtResource("1_mlpk1")
+Button/styles/normal = ExtResource("1_mlpk1")
+Button/styles/pressed = ExtResource("2_oyxtc")
+DialogueEntry/base_type = &"Button"
+DialogueEntry/styles/disabled = SubResource("StyleBoxEmpty_u0c52")
+DialogueEntry/styles/focus = SubResource("StyleBoxEmpty_vp42e")
+DialogueEntry/styles/hover = SubResource("StyleBoxEmpty_b5700")
+DialogueEntry/styles/normal = SubResource("StyleBoxEmpty_sp731")
+DialogueEntry/styles/pressed = SubResource("StyleBoxEmpty_o624x")
+DialoguePanel/base_type = &"PanelContainer"
+DialoguePanel/styles/panel = ExtResource("1_se5bn")
+IconPanel/base_type = &"PanelContainer"
+IconPanel/styles/panel = ExtResource("2_h0cbo")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/styles/normal = SubResource("StyleBoxTexture_jai3b")
+NameLabel/base_type = &"Label"
+NameLabel/styles/normal = ExtResource("4_afhi6")
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_g8e12")
+RichTextLabel/colors/default_color = Color(0.215686, 0.14902, 0.0627451, 1)
+RichTextLabel/colors/font_selected_color = Color(0.917647, 0.835294, 0.721569, 1)
+RichTextLabel/colors/selection_color = Color(0.215686, 0.14902, 0.0627451, 1)
+RichTextLabel/font_sizes/normal_font_size = 11
+ShelfLabel/base_type = &"Label"
+ShelfLabel/colors/font_outline_color = Color(0.917647, 0.835294, 0.721569, 1)
+ShelfLabel/constants/outline_size = 2
+ShelfLabel/styles/normal = SubResource("StyleBoxEmpty_exh4q")
