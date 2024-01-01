@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckha0k68dyiuo"]
+
+[ext_resource type="Script" path="res://main/common/ingredient/IngredientManager.gd" id="1_hpumw"]
+
+[node name="IngredientManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hpumw")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -98.0
+offset_right = 96.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="IconBox" type="PanelContainer" parent="VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+theme_type_variation = &"IconPanel"
+metadata/_edit_lock_ = true
+
+[node name="TextDisplay" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Centering" type="CenterContainer" parent="VBoxContainer/TextDisplay"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/TextDisplay/Centering"]
+layout_mode = 2
+theme_type_variation = &"AnnouncementLabel"
+text = "NEW INGREDIENT"
+horizontal_alignment = 1
+
+[node name="PromptPanel" type="PanelContainer" parent="VBoxContainer/TextDisplay"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_type_variation = &"DialoguePanel"
+
+[node name="PromptVAlign" type="VBoxContainer" parent="VBoxContainer/TextDisplay/PromptPanel"]
+layout_mode = 2
+
+[node name="PromptText" type="RichTextLabel" parent="VBoxContainer/TextDisplay/PromptPanel/PromptVAlign"]
+layout_mode = 2
+text = "It is [FLAVOR] and [EFFECT_TEXT]"
+fit_content = true
+scroll_active = false
+
+[node name="NamePrompt" type="LineEdit" parent="VBoxContainer/TextDisplay/PromptPanel/PromptVAlign"]
+layout_mode = 2
+placeholder_text = "Give it a name..."
+max_length = 20
+caret_blink = true
+caret_force_displayed = true
+
+[node name="Centering2" type="CenterContainer" parent="VBoxContainer/TextDisplay"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/TextDisplay/Centering2"]
+layout_mode = 2
+text = "Save"
+
+[connection signal="text_submitted" from="VBoxContainer/TextDisplay/PromptPanel/PromptVAlign/NamePrompt" to="." method="_on_name_prompt_text_submitted"]
+[connection signal="pressed" from="VBoxContainer/TextDisplay/Centering2/SaveButton" to="." method="_on_save_button_pressed"]

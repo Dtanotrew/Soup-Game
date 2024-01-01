@@ -1,5 +1,6 @@
 extends Node
 
+@onready var ingMgr = $IngredientManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +11,6 @@ func _ready():
 func _on_menu_start_game():
 	$Menu.hide()
 	$BrewSoup.show()
-	$BrewSoup.start_brew()
+	$BrewSoup.start_brew(ingMgr)
 
 

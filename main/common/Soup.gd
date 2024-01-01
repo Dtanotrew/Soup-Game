@@ -4,7 +4,7 @@ var poison: float = 0
 var taste: float = 0
 var color:Color = Color.MEDIUM_BLUE
 var ing_count: int = 0
-var taste_flags: int = 0
+var type_flags: int = 0
 var effect_flags: int = 0
 var variety: float = 0.0
 var ingredients = []
@@ -15,8 +15,8 @@ func add_item(item:Ingredient):
 	taste = taste * (ing_count) / (ing_count + 1.0)  + item.poison / (ing_count+1.0)
 	ing_count += 1
 	color = item.color
-	taste_flags = taste_flags | item.tasteflags
-	effect_flags = effect_flags | item.effectflags
+	type_flags = type_flags | item.type
+	effect_flags = effect_flags | item.effect
 	
 	if ingredients.find(item) != -1:
 		variety += 1.0
