@@ -10,6 +10,5 @@ script = ExtResource("1_wbyku")
 [node name="BrewSoup" parent="." instance=ExtResource("3_xsyfi")]
 
 [node name="Menu" parent="." instance=ExtResource("1_i2cty")]
-scale = Vector2(0.5, 0.5)
 
 [connection signal="start_game" from="Menu" to="." method="_on_menu_start_game"]
