@@ -10,7 +10,7 @@ var tinted: bool = false
 var tasteflags: int = TasteFlags.NONE
 var effectflags: int = EffectFlags.NONE
 
-var display_name: String = "Item"
+var display_name: String = ""
 var player_notes: String = ""
 
 enum TasteFlags {

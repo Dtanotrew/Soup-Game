@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://jqixgjv7su2s"]
 
-[ext_resource type="Texture2D" uid="uid://bn1f2v32j6o16" path="res://resources/textures/ingredients/fungus1.png" id="1_n7b2a"]
+[ext_resource type="Script" path="res://main/player-notebook/notebook.gd" id="1_4jbdy"]
 
 [node name="Notebook" type="Control"]
 layout_mode = 3
@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4jbdy")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(320, 192)
@@ -57,13 +58,6 @@ offset_right = 278.0
 offset_bottom = 54.0
 theme_type_variation = &"IconPanel"
 
-[node name="TextureRect" type="TextureRect" parent="IconBox"]
-clip_contents = true
-layout_mode = 2
-texture = ExtResource("1_n7b2a")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="ButtonsBox" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(160, 20)
 layout_mode = 1
@@ -92,3 +86,6 @@ layout_mode = 2
 size_flags_horizontal = 10
 focus_mode = 0
 text = "Save"
+
+[connection signal="pressed" from="ButtonsBox/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="ButtonsBox/Save" to="." method="_on_save_pressed"]

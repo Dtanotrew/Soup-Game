@@ -57,7 +57,8 @@ func add_item_to_soup(item:Ingredient):
 	$Pot.set_tint(soup.color)
 	
 func _on_shelf_item_right_click(clicked:ShelfItem):
-	print(clicked)
+	$Notebook.show()
+	$Notebook.open(clicked.item)
 
 func _on_shelf_item_left_click(clicked:ShelfItem):
 	var items_left = clicked.item.count 
@@ -65,3 +66,5 @@ func _on_shelf_item_left_click(clicked:ShelfItem):
 		clicked.update_count(clicked.item.count - 1)
 		add_item_to_soup(clicked.item)
 	
+func _on_notebook_close():
+	$Notebook.hide()

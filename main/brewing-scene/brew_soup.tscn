@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://5xfsj0s6dn46"]
+[gd_scene load_steps=7 format=3 uid="uid://5xfsj0s6dn46"]
 
 [ext_resource type="Script" path="res://main/brewing-scene/brew_soup.gd" id="1_qk2yp"]
 [ext_resource type="Texture2D" uid="uid://cw82duwuvyndc" path="res://resources/textures/brewing-minigame/brew-bg.png" id="2_1f5ng"]
 [ext_resource type="Texture2D" uid="uid://c4vh7cactrxfw" path="res://resources/textures/brewing-minigame/pot.png" id="4_kve50"]
 [ext_resource type="Texture2D" uid="uid://hhromi1xpfi1" path="res://resources/textures/brewing-minigame/pot-tint.png" id="6_32wn4"]
 [ext_resource type="PackedScene" uid="uid://bhxvhw376tya0" path="res://main/common/icon/TintableIcon.tscn" id="6_t2dem"]
+[ext_resource type="PackedScene" uid="uid://jqixgjv7su2s" path="res://main/player-notebook/notebook.tscn" id="6_tmi4w"]
 
 [node name="BrewSoup" type="Node2D"]
 script = ExtResource("1_qk2yp")
@@ -56,3 +57,10 @@ columns = 3
 custom_minimum_size = Vector2(128, 48)
 layout_mode = 2
 size_flags_vertical = 8
+
+[node name="Notebook" parent="." instance=ExtResource("6_tmi4w")]
+visible = false
+offset_right = 512.0
+offset_bottom = 288.0
+
+[connection signal="close" from="Notebook" to="." method="_on_notebook_close"]
