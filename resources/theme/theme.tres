@@ -61,6 +61,9 @@ axis_stretch_vertical = 1
 [resource]
 default_font = ExtResource("3_oyipn")
 default_font_size = 11
+AnnouncementLabel/base_type = &"Label"
+AnnouncementLabel/colors/font_color = Color(1, 1, 1, 1)
+AnnouncementLabel/styles/normal = ExtResource("6_t61lw")
 BigButton/base_type = &"Button"
 BigButton/font_sizes/font_size = 33
 BoxContainer/constants/separation = 0
