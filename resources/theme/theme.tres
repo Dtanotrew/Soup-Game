@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://hbjxyvr5c2ss"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://hbjxyvr5c2ss"]
 
 [ext_resource type="Texture2D" uid="uid://iv8bsouyfkim" path="res://resources/textures/ui/label-box.png" id="1_6u6ya"]
 [ext_resource type="StyleBox" uid="uid://ljl3d61dnwoi" path="res://resources/theme/StyleBox/ButtonBox.tres" id="1_mlpk1"]
@@ -7,6 +7,9 @@
 [ext_resource type="StyleBox" uid="uid://rbc2j0qfw5i" path="res://resources/theme/StyleBox/ButtonBoxPressed.tres" id="2_oyxtc"]
 [ext_resource type="FontFile" uid="uid://ddryt44jtwl65" path="res://resources/theme/NotJamOldStyle11.ttf" id="3_oyipn"]
 [ext_resource type="StyleBox" uid="uid://cg6fpyvxiqrd5" path="res://resources/theme/StyleBox/DialogueNameBox.tres" id="4_afhi6"]
+[ext_resource type="StyleBox" uid="uid://x2frcjxvh5eg" path="res://resources/theme/StyleBox/EditableLabelBox.tres" id="6_t61lw"]
+[ext_resource type="StyleBox" uid="uid://nsbm8gqxhfxf" path="res://resources/theme/StyleBox/ScrollGrabberBox.tres" id="8_hla51"]
+[ext_resource type="StyleBox" uid="uid://cxro1n855pqo1" path="res://resources/theme/StyleBox/ScrollGrabberBoxPressed.tres" id="9_rmy47"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1kuu"]
 
@@ -49,6 +52,8 @@ texture_margin_bottom = 1.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kw15q"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8e12"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exh4q"]
@@ -56,6 +61,9 @@ axis_stretch_vertical = 1
 [resource]
 default_font = ExtResource("3_oyipn")
 default_font_size = 11
+AnnouncementLabel/base_type = &"Label"
+AnnouncementLabel/colors/font_color = Color(1, 1, 1, 1)
+AnnouncementLabel/styles/normal = ExtResource("6_t61lw")
 BigButton/base_type = &"Button"
 BigButton/font_sizes/font_size = 33
 BoxContainer/constants/separation = 0
@@ -80,6 +88,9 @@ IconPanel/base_type = &"PanelContainer"
 IconPanel/styles/panel = ExtResource("2_h0cbo")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/styles/normal = SubResource("StyleBoxTexture_jai3b")
+LibraryTitleEdit/base_type = &"LineEdit"
+LibraryTitleEdit/styles/focus = SubResource("StyleBoxEmpty_kw15q")
+LibraryTitleEdit/styles/normal = ExtResource("6_t61lw")
 NameLabel/base_type = &"Label"
 NameLabel/styles/normal = ExtResource("4_afhi6")
 ProgressBar/styles/background = SubResource("StyleBoxEmpty_g8e12")
@@ -91,3 +102,6 @@ ShelfLabel/base_type = &"Label"
 ShelfLabel/colors/font_outline_color = Color(0.917647, 0.835294, 0.721569, 1)
 ShelfLabel/constants/outline_size = 2
 ShelfLabel/styles/normal = SubResource("StyleBoxEmpty_exh4q")
+VScrollBar/styles/grabber = ExtResource("8_hla51")
+VScrollBar/styles/grabber_highlight = ExtResource("8_hla51")
+VScrollBar/styles/grabber_pressed = ExtResource("9_rmy47")
