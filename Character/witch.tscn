@@ -397,8 +397,8 @@ shape = SubResource("RectangleShape2D_whlwh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("6_541cb")
-hframes = 23
+texture = ExtResource("6_n257m")
+hframes = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
