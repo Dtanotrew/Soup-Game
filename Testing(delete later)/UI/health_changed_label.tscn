@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpwa0mkome2um"]
 
-[ext_resource type="Script" path="res://UI/health_changed_label.gd" id="1_ipgr3"]
+[ext_resource type="Script" path="res://Testing(delete later)/UI/health_changed_label.gd" id="1_yrdob"]
 
 [node name="HealthChangedLabel" type="Label"]
 anchors_preset = 15
@@ -8,7 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ipgr3")
+script = ExtResource("1_yrdob")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.555

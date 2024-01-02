@@ -1,5 +1,5 @@
 extends Node
-#keeping seperate from enemy state machines
+
 class_name CharacterStateMachine
 
 var states : Array[State]
