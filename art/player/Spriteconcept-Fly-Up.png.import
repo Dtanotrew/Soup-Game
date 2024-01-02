@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coj0lg4h2wice"
-path="res://.godot/imported/Spriteconcept-Jump.png-d905c70f3358c00d1844fb8d14e8d0d7.ctex"
+uid="uid://djwo3pe4pnb65"
+path="res://.godot/imported/Spriteconcept-Fly-Up.png-851d8a3f106426a020c24edd3fd8061d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Spriteconcept-Jump.png"
-dest_files=["res://.godot/imported/Spriteconcept-Jump.png-d905c70f3358c00d1844fb8d14e8d0d7.ctex"]
+source_file="res://art/player/Spriteconcept-Fly-Up.png"
+dest_files=["res://.godot/imported/Spriteconcept-Fly-Up.png-851d8a3f106426a020c24edd3fd8061d.ctex"]
 
 [params]
 

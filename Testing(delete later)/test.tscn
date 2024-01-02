@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://pe52xkufbvpu"]
+[gd_scene load_steps=7 format=3 uid="uid://pe52xkufbvpu"]
 
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/witch.tscn" id="1_0u4kx"]
 [ext_resource type="Texture2D" uid="uid://miccmcwe3qy3" path="res://art/fewfef.JPG" id="2_hgdsr"]
+[ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander.tscn" id="3_t74tp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wd25p"]
 
@@ -14,7 +15,7 @@ size = Vector2(414, 72.25)
 [node name="Test" type="Node"]
 
 [node name="Witch" parent="." instance=ExtResource("1_0u4kx")]
-position = Vector2(331, 139)
+position = Vector2(195, 383)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(596, 645)
@@ -60,3 +61,6 @@ texture = SubResource("CanvasTexture_dopl7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_gti0c")
+
+[node name="Salamander" parent="." instance=ExtResource("3_t74tp")]
+position = Vector2(852, 359)

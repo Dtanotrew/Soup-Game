@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnxkauj3es327"
-path="res://.godot/imported/Sprite-0001.png-fe32cb12df46aa317f147d3e0ac90305.ctex"
+uid="uid://ctiadwkoy2irl"
+path="res://.godot/imported/Spriteconcept-AttackFull.png-50637faba8ccfc0f93e1b20fb8c77a2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Sprite-0001.png"
-dest_files=["res://.godot/imported/Sprite-0001.png-fe32cb12df46aa317f147d3e0ac90305.ctex"]
+source_file="res://Testing(delete later)/Tutorial/Spriteconcept-AttackFull.png"
+dest_files=["res://.godot/imported/Spriteconcept-AttackFull.png-50637faba8ccfc0f93e1b20fb8c77a2d.ctex"]
 
 [params]
 

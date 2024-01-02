@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwu4jxwkq81q"
-path="res://.godot/imported/Sprite-0000.png-2d265693b6d228f8c1d82fe9a1120f22.ctex"
+uid="uid://bcwhjkli5fsu4"
+path="res://.godot/imported/Spriteconcept-Jumping-All.png-32a8353847c05292ce0652ecf57b7a22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Sprite-0000.png"
-dest_files=["res://.godot/imported/Sprite-0000.png-2d265693b6d228f8c1d82fe9a1120f22.ctex"]
+source_file="res://art/player/Spriteconcept-Jumping-All.png"
+dest_files=["res://.godot/imported/Spriteconcept-Jumping-All.png-32a8353847c05292ce0652ecf57b7a22.ctex"]
 
 [params]
 

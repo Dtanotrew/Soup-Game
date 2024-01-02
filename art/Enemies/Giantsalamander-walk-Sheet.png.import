@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwhjkli5fsu4"
-path="res://.godot/imported/Spriteconcept-Jumping-All.png-b64b4cdca8147415fd2469b3eca1569f.ctex"
+uid="uid://d133bae8ejjlq"
+path="res://.godot/imported/Giantsalamander-walk-Sheet.png-0aa68291dcb9b1e322239e542010c4c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Spriteconcept-Jumping-All.png"
-dest_files=["res://.godot/imported/Spriteconcept-Jumping-All.png-b64b4cdca8147415fd2469b3eca1569f.ctex"]
+source_file="res://art/Enemies/Giantsalamander-walk-Sheet.png"
+dest_files=["res://.godot/imported/Giantsalamander-walk-Sheet.png-0aa68291dcb9b1e322239e542010c4c3.ctex"]
 
 [params]
 

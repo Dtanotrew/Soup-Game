@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://00xtqqkvo1dm"
-path="res://.godot/imported/Spriteconcept.png-309091ca20960095c75d17723599559a.ctex"
+uid="uid://pylxcnmbsioa"
+path="res://.godot/imported/Spriteconcept1.png-f8a769c8493314222ce8bb42f81c7fdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Spriteconcept.png"
-dest_files=["res://.godot/imported/Spriteconcept.png-309091ca20960095c75d17723599559a.ctex"]
+source_file="res://art/player/Spriteconcept1.png"
+dest_files=["res://.godot/imported/Spriteconcept1.png-f8a769c8493314222ce8bb42f81c7fdc.ctex"]
 
 [params]
 
