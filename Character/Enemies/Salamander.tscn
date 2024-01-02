@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdu2p02exbw2q"]
+[gd_scene load_steps=14 format=3 uid="uid://bdu2p02exbw2q"]
 
 [ext_resource type="Texture2D" uid="uid://d133bae8ejjlq" path="res://art/Enemies/Giantsalamander-walk-Sheet.png" id="1_ki6tp"]
+[ext_resource type="Script" path="res://Character/Enemies/Salamander.gd" id="1_mhqxx"]
 [ext_resource type="Script" path="res://Character/Enemies/Damageable.gd" id="2_tmpbp"]
+[ext_resource type="Script" path="res://Character/CharacterStateMachine.gd" id="4_o30ac"]
+[ext_resource type="Script" path="res://Character/State.gd" id="5_55ofn"]
+[ext_resource type="Script" path="res://Character/HitState.gd" id="6_x7qti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvso"]
 size = Vector2(60, 13)
@@ -68,8 +72,21 @@ _data = {
 "walk": SubResource("Animation_rc1dd")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m1kxi"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o08wf"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_j6k3p"]
+states/Start/position = Vector2(201, 100)
+states/walk/node = SubResource("AnimationNodeAnimation_m1kxi")
+states/walk/position = Vector2(339, 100)
+transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_o08wf")]
+
 [node name="Salamander" type="CharacterBody2D"]
 position = Vector2(297, 201)
+script = ExtResource("1_mhqxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -2.5)
@@ -86,5 +103,30 @@ libraries = {
 "": SubResource("AnimationLibrary_go483")
 }
 
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_go483")
+}
+tree_root = SubResource("AnimationNodeStateMachine_j6k3p")
+anim_player = NodePath("../AnimationPlayer")
+
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("2_tmpbp")
+
+[node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("character", "current_state", "animation_tree")]
+script = ExtResource("4_o30ac")
+character = NodePath("..")
+current_state = NodePath("Walk")
+animation_tree = NodePath("../AnimationTree")
+
+[node name="Walk" type="Node" parent="CharacterStateMachine"]
+script = ExtResource("5_55ofn")
+
+[node name="Hit" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("damageable", "character_state_machine", "dead_state")]
+script = ExtResource("6_x7qti")
+damageable = NodePath("../../Damageable")
+character_state_machine = NodePath("..")
+dead_state = NodePath("../Dead")
+
+[node name="Dead" type="Node" parent="CharacterStateMachine"]
+script = ExtResource("5_55ofn")

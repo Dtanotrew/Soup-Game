@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://pe52xkufbvpu"]
+[gd_scene load_steps=8 format=3 uid="uid://pe52xkufbvpu"]
 
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/witch.tscn" id="1_0u4kx"]
 [ext_resource type="Texture2D" uid="uid://miccmcwe3qy3" path="res://art/fewfef.JPG" id="2_hgdsr"]
 [ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander.tscn" id="3_t74tp"]
+[ext_resource type="PackedScene" uid="uid://ctesixfap32i0" path="res://UI/health_changed_manager.tscn" id="4_in3lg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wd25p"]
 
@@ -64,3 +65,5 @@ shape = SubResource("RectangleShape2D_gti0c")
 
 [node name="Salamander" parent="." instance=ExtResource("3_t74tp")]
 position = Vector2(852, 359)
+
+[node name="HealthChangedManager" parent="." instance=ExtResource("4_in3lg")]

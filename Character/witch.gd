@@ -5,7 +5,7 @@ extends CharacterBody2D
 #@export var SH_JUMP_VELOCITY = -300.0 #for implementing a short hop. Keep workshoping it.
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var sprite = $Sprite2D
-@onready var state_machine : PlayerStateMachine = $PlayerStateMachine
+@onready var state_machine : CharacterStateMachine = $CharacterStateMachine
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 0
@@ -37,8 +37,9 @@ func update_animation_parameters():
 
 #Flips player sprite based on direction.
 func update_facing_direction():
-	if direction > 0:
-		sprite.flip_h = false
-	elif direction < 0:
-		sprite.flip_h = true
+	if state_machine.can_move_check():
+		if direction > 0:
+			sprite.flip_h = false
+		elif direction < 0:
+			sprite.flip_h = true
 
