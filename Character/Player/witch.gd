@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var SPEED = 300.0
 @export var spoon_hitbox : CollisionShape2D
-#@export var SH_JUMP_VELOCITY = -300.0 #for implementing a short hop. Keep workshoping it.
+
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var sprite = $Sprite2D
 
@@ -10,6 +12,8 @@ extends CharacterBody2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 0
+
+signal facing_direction_changed(facing_right : bool)
 
 func _ready():
 	animation_tree.active = true #Regadless of settings outside the game, when the game starts, 
@@ -41,8 +45,9 @@ func update_facing_direction():
 	if state_machine.can_move_check():
 		if direction > 0:
 			sprite.flip_h = false
+			
 			#spoon_hitbox.position.x = -spoon_hitbox.position.x
 		elif direction < 0:
 			sprite.flip_h = true
-			
+		emit_signal("facing_direction_changed", !sprite.flip_h)
 

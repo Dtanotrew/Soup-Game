@@ -104,13 +104,13 @@ animations = [{
 script = ExtResource("1_qk2yp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_jh4m4")
 frame_progress = 0.72661
 centered = false
 
 [node name="BrewBG" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

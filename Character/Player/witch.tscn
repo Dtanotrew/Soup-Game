@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://3f0jgldafgqq"]
+[gd_scene load_steps=56 format=3 uid="uid://3f0jgldafgqq"]
 
 [ext_resource type="Script" path="res://Character/Player/witch.gd" id="1_sjtlp"]
 [ext_resource type="Texture2D" uid="uid://pylxcnmbsioa" path="res://art/player/Spriteconcept1.png" id="2_e0tya"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Character/Player/StateDebugLabel.gd" id="12_wjfgl"]
 [ext_resource type="Script" path="res://Character/Player/AttackState.gd" id="14_kvia7"]
 [ext_resource type="Script" path="res://Character/Player/Spoon.gd" id="16_qdw6i"]
+[ext_resource type="Script" path="res://Character/Player/FacingCollisionShape2D.gd" id="17_towks"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dk8k3"]
 animations = [{
@@ -505,10 +506,10 @@ states/landing/position = Vector2(529.007, 100)
 states/move/node = SubResource("AnimationNodeBlendSpace1D_xq3im")
 states/move/position = Vector2(331, 100)
 transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_5nyrk"), "move", "jump_start", SubResource("AnimationNodeStateMachineTransition_udsiu"), "jump_start", "falling", SubResource("AnimationNodeStateMachineTransition_d6us2"), "falling", "landing", SubResource("AnimationNodeStateMachineTransition_477ju"), "landing", "move", SubResource("AnimationNodeStateMachineTransition_et0x6"), "move", "falling", SubResource("AnimationNodeStateMachineTransition_sdukt"), "jump_start", "double_jump", SubResource("AnimationNodeStateMachineTransition_b3qv6"), "double_jump", "falling", SubResource("AnimationNodeStateMachineTransition_yt5yq"), "falling", "double_jump", SubResource("AnimationNodeStateMachineTransition_1n7x3"), "falling", "move", SubResource("AnimationNodeStateMachineTransition_6fheo"), "move", "attack1", SubResource("AnimationNodeStateMachineTransition_bpynh"), "attack1", "attack2", SubResource("AnimationNodeStateMachineTransition_osidg"), "attack1", "move", SubResource("AnimationNodeStateMachineTransition_a00ca"), "attack2", "move", SubResource("AnimationNodeStateMachineTransition_g3kdg")]
-graph_offset = Vector2(58, 56)
+graph_offset = Vector2(-103, -37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1hh8"]
-size = Vector2(30, 33)
+size = Vector2(19.5, 33)
 
 [node name="Witch" type="CharacterBody2D" node_paths=PackedStringArray("spoon_hitbox")]
 collision_layer = 2
@@ -527,6 +528,8 @@ position = Vector2(1, 4.5)
 shape = SubResource("RectangleShape2D_whlwh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_top = 0
+limit_bottom = 288
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -557,6 +560,11 @@ script = ExtResource("9_pgni1")
 air_state = NodePath("../Air")
 attack_state = NodePath("../Attack")
 
+[node name="BufferTimer" type="Timer" parent="CharacterStateMachine/Ground"]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
 [node name="Air" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("landing_state", "ground_state")]
 script = ExtResource("10_h2jv0")
 landing_state = NodePath("../Landing")
@@ -586,15 +594,20 @@ text = "State : "
 script = ExtResource("12_wjfgl")
 state_machine = NodePath("../CharacterStateMachine")
 
-[node name="Spoon" type="Area2D" parent="."]
+[node name="Spoon" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape")]
 collision_layer = 0
 collision_mask = 4
 monitoring = false
 script = ExtResource("16_qdw6i")
+player = NodePath("..")
+facing_shape = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon"]
-position = Vector2(29, -0.5)
+position = Vector2(25, 0)
 shape = SubResource("RectangleShape2D_p1hh8")
+script = ExtResource("17_towks")
+facing_left_pos = Vector2(-25, 0)
+facing_right_pos = Vector2(25, 0)
 
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Landing" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Attack" method="_on_animation_tree_animation_finished"]

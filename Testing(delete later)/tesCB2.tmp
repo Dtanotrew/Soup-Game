@@ -14,26 +14,26 @@
 specular_color = Color(0, 0.372549, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gti0c"]
-size = Vector2(305.5, 32)
+size = Vector2(414, 72.25)
 
 [node name="Test" type="Node"]
 
 [node name="Witch" parent="." instance=ExtResource("1_0u4kx")]
-position = Vector2(107, 240)
+position = Vector2(258, 143)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(515, 263)
+position = Vector2(659, 405)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_wd25p")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-0.499983, -72)
-scale = Vector2(305, 32)
+position = Vector2(0, -72)
+scale = Vector2(414, 73)
 texture = SubResource("CanvasTexture_dopl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.25, -72)
+position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_gti0c")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -43,39 +43,31 @@ physics_material_override = SubResource("PhysicsMaterial_wd25p")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
-position = Vector2(7.43866e-05, -72.5)
-scale = Vector2(0.638831, 0.0717593)
+position = Vector2(0.499967, -72.5)
+scale = Vector2(0.862213, 0.168981)
 texture = ExtResource("2_hgdsr")
 
-[node name="The struggler collider" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(0, -72.75)
 shape = SubResource("RectangleShape2D_gti0c")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(207, 323)
+position = Vector2(291, 298)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_wd25p")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(-54.5, -50.75)
-scale = Vector2(305, 30.5)
+position = Vector2(0, -72)
+scale = Vector2(414, 73)
 texture = SubResource("CanvasTexture_dopl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-54.5, -50.5)
+position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_gti0c")
 
 [node name="Salamander" parent="." instance=ExtResource("3_t74tp")]
 position = Vector2(915, 119)
-
-[node name="Salamander2" parent="." node_paths=PackedStringArray("hit_state") instance=ExtResource("3_t74tp")]
-position = Vector2(611, 165)
-hit_state = NodePath("../Salamander/CharacterStateMachine/Hit")
-
-[node name="Salamander3" parent="." node_paths=PackedStringArray("hit_state") instance=ExtResource("3_t74tp")]
-position = Vector2(441, 169)
-hit_state = NodePath("../Salamander/CharacterStateMachine/Hit")
 
 [node name="HealthChangedManager" parent="." instance=ExtResource("4_in3lg")]
 offset_left = 63.0
@@ -84,9 +76,9 @@ offset_right = 103.0
 offset_bottom = -200.0
 
 [node name="NPC1" parent="." instance=ExtResource("5_3fxmn")]
-position = Vector2(43, 225)
+position = Vector2(139, 157)
 
 [node name="Parallax" parent="." instance=ExtResource("5_dkf8c")]
 
 [node name="Dee" parent="." instance=ExtResource("7_ybgb1")]
-position = Vector2(76, 243)
+position = Vector2(177, 177)

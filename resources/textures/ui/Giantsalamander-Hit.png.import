@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqlo7c4adyi4x"
-path="res://.godot/imported/Giantsalamander-Dead.png-4be5e5983c8dc24b0a31213dd99b5b61.ctex"
+uid="uid://j64bx7k32d7e"
+path="res://.godot/imported/Giantsalamander-Hit.png-a70894803353584fb077edc01524bfa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Enemies/Giantsalamander-Dead.png"
-dest_files=["res://.godot/imported/Giantsalamander-Dead.png-4be5e5983c8dc24b0a31213dd99b5b61.ctex"]
+source_file="res://resources/textures/ui/Giantsalamander-Hit.png"
+dest_files=["res://.godot/imported/Giantsalamander-Hit.png-a70894803353584fb077edc01524bfa0.ctex"]
 
 [params]
 
