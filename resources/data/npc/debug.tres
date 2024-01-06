@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Npc" load_steps=2 format=3 uid="uid://dpn6t1lb780gn"]
+
+[ext_resource type="Script" path="res://main/common/npc/npc.gd" id="1_iui76"]
+
+[resource]
+script = ExtResource("1_iui76")
+id = "dee"
+displayName = "Dee the Illustrious"
+magic = false
+special = false
