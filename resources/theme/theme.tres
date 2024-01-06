@@ -7,9 +7,9 @@
 [ext_resource type="StyleBox" uid="uid://rbc2j0qfw5i" path="res://resources/theme/StyleBox/ButtonBoxPressed.tres" id="2_oyxtc"]
 [ext_resource type="FontFile" uid="uid://ddryt44jtwl65" path="res://resources/theme/NotJamOldStyle11.ttf" id="3_oyipn"]
 [ext_resource type="StyleBox" uid="uid://cg6fpyvxiqrd5" path="res://resources/theme/StyleBox/DialogueNameBox.tres" id="4_afhi6"]
-[ext_resource type="StyleBox" uid="uid://x2frcjxvh5eg" path="res://resources/theme/StyleBox/EditableLabelBox.tres" id="6_t61lw"]
-[ext_resource type="StyleBox" uid="uid://nsbm8gqxhfxf" path="res://resources/theme/StyleBox/ScrollGrabberBox.tres" id="8_hla51"]
-[ext_resource type="StyleBox" uid="uid://cxro1n855pqo1" path="res://resources/theme/StyleBox/ScrollGrabberBoxPressed.tres" id="9_rmy47"]
+[ext_resource type="StyleBox" path="res://resources/theme/StyleBox/EditableLabelBox.tres" id="6_t61lw"]
+[ext_resource type="StyleBox" path="res://resources/theme/StyleBox/ScrollGrabberBox.tres" id="8_hla51"]
+[ext_resource type="StyleBox" path="res://resources/theme/StyleBox/ScrollGrabberBoxPressed.tres" id="9_rmy47"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1kuu"]
 
