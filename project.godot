@@ -31,6 +31,12 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Soup Game"
 
+[editor]
+
+movie_writer/layer_3="Enemy"
+movie_writer/layer_2="Player"
+movie_writer/layer_1="World"
+
 [gui]
 
 theme/custom="res://resources/theme/theme.tres"
@@ -73,6 +79,12 @@ attack={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
 
 [physics]
 

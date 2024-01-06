@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c30rcndct2vs5"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_n6frj"]
+[ext_resource type="Texture2D" uid="uid://miccmcwe3qy3" path="res://art/fewfef.JPG" id="2_077ft"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="2_n187m"]
+
+[node name="player" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_n6frj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_n187m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-35, -28)
+scale = Vector2(0.145833, 0.145833)
+texture = ExtResource("2_077ft")
+centered = false

@@ -508,10 +508,12 @@ transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(58, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1hh8"]
-size = Vector2(18, 33)
+size = Vector2(30, 33)
 
-[node name="Witch" type="CharacterBody2D"]
+[node name="Witch" type="CharacterBody2D" node_paths=PackedStringArray("spoon_hitbox")]
+collision_layer = 2
 script = ExtResource("1_sjtlp")
+spoon_hitbox = NodePath("Spoon/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -585,11 +587,13 @@ script = ExtResource("12_wjfgl")
 state_machine = NodePath("../CharacterStateMachine")
 
 [node name="Spoon" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 monitoring = false
 script = ExtResource("16_qdw6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon"]
-position = Vector2(23, -0.5)
+position = Vector2(29, -0.5)
 shape = SubResource("RectangleShape2D_p1hh8")
 
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Landing" method="_on_animation_tree_animation_finished"]
