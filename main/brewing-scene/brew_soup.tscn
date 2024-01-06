@@ -1,11 +1,198 @@
-[gd_scene load_steps=7 format=3 uid="uid://5xfsj0s6dn46"]
+[gd_scene load_steps=33 format=3 uid="uid://5xfsj0s6dn46"]
 
 [ext_resource type="Script" path="res://main/brewing-scene/brew_soup.gd" id="1_qk2yp"]
-[ext_resource type="Texture2D" uid="uid://cw82duwuvyndc" path="res://resources/textures/brewing-minigame/brew-bg.png" id="2_1f5ng"]
-[ext_resource type="Texture2D" uid="uid://c4vh7cactrxfw" path="res://resources/textures/brewing-minigame/pot.png" id="4_kve50"]
-[ext_resource type="Texture2D" uid="uid://hhromi1xpfi1" path="res://resources/textures/brewing-minigame/pot-tint.png" id="6_32wn4"]
-[ext_resource type="PackedScene" uid="uid://bhxvhw376tya0" path="res://main/common/icon/TintableIcon.tscn" id="6_t2dem"]
+[ext_resource type="Texture2D" uid="uid://ctesfv546yqru" path="res://resources/textures/brewing-minigame/brew-bg-animsheet.png" id="2_xv0jt"]
+[ext_resource type="Shader" path="res://resources/shaders/tintable_ingredient.gdshader" id="3_nsr3c"]
+[ext_resource type="Texture2D" uid="uid://l4p8ty35y654" path="res://resources/textures/brewing-minigame/brew-bg-animsheet-tint.png" id="3_pn1vg"]
 [ext_resource type="PackedScene" uid="uid://jqixgjv7su2s" path="res://main/player-notebook/notebook.tscn" id="6_tmi4w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktgta"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(0, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqido"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(512, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8gum"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(1024, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfdti"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(1536, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hph0u"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(2048, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih1ax"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(2560, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrfvj"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(3072, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iry18"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(3584, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj2f7"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(4096, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnrwg"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(4608, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upqlp"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(5120, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi738"]
+atlas = ExtResource("2_xv0jt")
+region = Rect2(5632, 0, 512, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6l82t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktgta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqido")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8gum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfdti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hph0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih1ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrfvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iry18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj2f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnrwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upqlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi738")
+}],
+"loop": true,
+"name": &"scene",
+"speed": 12.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jqu1"]
+shader = ExtResource("3_nsr3c")
+shader_parameter/tint_color = null
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4lm1"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(0, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqa8e"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(512, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb4k5"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(1024, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70mxk"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(1536, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0h0j"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(2048, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wovl1"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(2560, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qor7p"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(3072, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iitl1"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(3584, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7no5"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(4096, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llo4v"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(4608, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r026v"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(5120, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyke"]
+atlas = ExtResource("3_pn1vg")
+region = Rect2(5632, 0, 512, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t10pf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4lm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqa8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb4k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70mxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0h0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wovl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qor7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iitl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7no5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llo4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r026v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyke")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="BrewSoup" type="Node2D"]
 script = ExtResource("1_qk2yp")
@@ -18,17 +205,19 @@ offset_right = 512.0
 offset_bottom = 288.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_1f5ng")
 metadata/_edit_lock_ = true
 
-[node name="Pot" parent="." instance=ExtResource("6_t2dem")]
-custom_minimum_size = Vector2(128, 128)
-offset_left = 155.0
-offset_top = 101.0
-offset_right = 283.0
-offset_bottom = 229.0
-main_icon = ExtResource("4_kve50")
-tint_icon = ExtResource("6_32wn4")
+[node name="bg_base" type="AnimatedSprite2D" parent="BrewBG"]
+sprite_frames = SubResource("SpriteFrames_6l82t")
+animation = &"scene"
+autoplay = "scene"
+centered = false
+
+[node name="bg_tint" type="AnimatedSprite2D" parent="BrewBG"]
+material = SubResource("ShaderMaterial_0jqu1")
+sprite_frames = SubResource("SpriteFrames_t10pf")
+autoplay = "default"
+centered = false
 
 [node name="BrewPanel" type="VBoxContainer" parent="."]
 offset_left = 384.0
