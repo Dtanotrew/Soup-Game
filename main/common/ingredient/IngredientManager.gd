@@ -24,11 +24,13 @@ func create_or_add_ingredient(id: String, num: int = 1):
 	ing.count += num
 	
 func prompt_new_ing(ing:Ingredient):
+	get_tree().paused = true
 	new_ing = ing
 	self.set_visible(true)
 
 func save():
 	self.set_visible(false)
+	get_tree().paused = false
 	new_ing.display_name = promptBox.text
 	new_ing = null
 	new_ingredient_end.emit()

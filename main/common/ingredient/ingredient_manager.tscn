@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://main/common/ingredient/IngredientManager.gd" id="1_hpumw"]
 
 [node name="IngredientManager" type="Control"]
+process_mode = 2
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
