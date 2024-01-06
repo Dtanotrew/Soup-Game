@@ -6,11 +6,11 @@ const shelf_item = preload("res://main/brewing-scene/ShelfItem.tscn")
 
 var soup
 
-func start_brew(ingMgr):
+func start_brew():
 	soup = Soup.new()
-	$Pot.set_tint(soup.color)
+	$BrewBG/bg_tint.material.set_shader_parameter("tint_color", soup.color)
 	# add ingredients from library
-	for ing in ingMgr.ingredients:
+	for ing in IngredientManager.ingredients:
 		add_shelf_item(ing)
 	
 func end_brew():
@@ -25,7 +25,7 @@ func add_shelf_item(item:Ingredient):
 	
 func add_item_to_soup(item:Ingredient):
 	soup.add_item(item)
-	$Pot.set_tint(soup.color)
+	$BrewBG/bg_tint.material.set_shader_parameter("tint_color", soup.color)
 	
 func _on_shelf_item_right_click(clicked:ShelfItem):
 	$Notebook.show()

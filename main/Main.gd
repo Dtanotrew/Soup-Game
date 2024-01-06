@@ -11,6 +11,6 @@ func _ready():
 func _on_menu_start_game():
 	$Menu.hide()
 	$BrewSoup.show()
-	$BrewSoup.start_brew(ingMgr)
+	$BrewSoup.start_brew()
 
 
