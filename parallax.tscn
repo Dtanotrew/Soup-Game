@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf68u1bgxqfru"]
+[gd_scene load_steps=5 format=3 uid="uid://5pjmjycc40r0"]
 
 [ext_resource type="Texture2D" uid="uid://dwm1sl1y6kspw" path="res://art/Backgrounds/LightForestBackground2.1.png" id="1_5rvnn"]
 [ext_resource type="Texture2D" uid="uid://dvfoy7hb6mlt1" path="res://art/Backgrounds/LightForestBackgroundLayer3.png" id="3_e266j"]
 [ext_resource type="Texture2D" uid="uid://bfp6drr6ykeox" path="res://art/Backgrounds/LightForestBackground1.3.png" id="3_unsis"]
-[ext_resource type="PackedScene" uid="uid://c30rcndct2vs5" path="res://player.tscn" id="4_oub3n"]
+[ext_resource type="PackedScene" uid="uid://dkq8pmv4bs6oe" path="res://player.tscn" id="4_oub3n"]
 
 [node name="Parallax" type="Node"]
 
