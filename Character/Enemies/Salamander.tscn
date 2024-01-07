@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdu2p02exbw2q"]
+[gd_scene load_steps=26 format=3 uid="uid://bdu2p02exbw2q"]
 
 [ext_resource type="Script" path="res://Character/Enemies/Salamander.gd" id="1_mhqxx"]
 [ext_resource type="Texture2D" uid="uid://d0jkuj3mlrmkj" path="res://art/Enemies/Giantsalamander-Hit.png" id="2_4fk7y"]
+[ext_resource type="Script" path="res://Character/Enemies/SalamanderAttackHitbox.gd" id="2_p4a6w"]
 [ext_resource type="Script" path="res://Character/Enemies/Damageable.gd" id="2_tmpbp"]
 [ext_resource type="Texture2D" uid="uid://dqlo7c4adyi4x" path="res://art/Enemies/Giantsalamander-Dead.png" id="2_wdi4v"]
 [ext_resource type="Texture2D" uid="uid://cogw7oxwfkvlw" path="res://art/Enemies/Giantsalamander-Colored.png" id="3_47puc"]
@@ -9,6 +10,9 @@
 [ext_resource type="Script" path="res://Character/Enemies/WalkState.gd" id="6_h6m4j"]
 [ext_resource type="Script" path="res://Character/HitState.gd" id="6_x7qti"]
 [ext_resource type="Script" path="res://Character/Enemies/DeadState.gd" id="8_w8mfv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptjrv"]
+size = Vector2(58, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvso"]
 size = Vector2(58, 13)
@@ -68,47 +72,6 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_rc1dd"]
-resource_name = "walk"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_47puc")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
 [sub_resource type="Animation" id="Animation_71hem"]
 resource_name = "hitanim"
 length = 0.4
@@ -148,6 +111,47 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_rc1dd"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_47puc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_go483"]
@@ -192,19 +196,29 @@ collision_layer = 4
 script = ExtResource("1_mhqxx")
 hit_state = NodePath("CharacterStateMachine/Hit")
 
+[node name="AttackHitbox" type="Area2D" parent="." node_paths=PackedStringArray("enemy")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_p4a6w")
+enemy = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+position = Vector2(2, -2.5)
+shape = SubResource("RectangleShape2D_ptjrv")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2.5)
 shape = SubResource("RectangleShape2D_ddvso")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(32, -9)
+target_position = Vector2(0, 25)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3, -11)
 scale = Vector2(0.0940439, 0.09375)
 texture = ExtResource("3_47puc")
 hframes = 6
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(32, -8)
-target_position = Vector2(0, 34)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -228,9 +242,14 @@ character = NodePath("..")
 current_state = NodePath("Walk")
 animation_tree = NodePath("../AnimationTree")
 
-[node name="Walk" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("raycast")]
+[node name="Walk" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("raycast", "timer")]
 script = ExtResource("6_h6m4j")
 raycast = NodePath("../../RayCast2D")
+timer = NodePath("DirectionCooldown")
+
+[node name="DirectionCooldown" type="Timer" parent="CharacterStateMachine/Walk"]
+wait_time = 0.05
+one_shot = true
 
 [node name="Hit" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("damageable", "character_state_machine", "dead_state", "return_state")]
 script = ExtResource("6_x7qti")
@@ -252,5 +271,6 @@ one_shot = true
 script = ExtResource("8_w8mfv")
 can_move = false
 
+[connection signal="body_entered" from="AttackHitbox" to="AttackHitbox" method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationTree" to="Damageable" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="CharacterStateMachine/Hit/Timer" to="CharacterStateMachine/Hit" method="_on_timer_timeout"]
