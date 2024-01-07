@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c0kwmvghpc6lv"]
 
 [ext_resource type="Texture2D" uid="uid://b2ebdttlxuccf" path="res://art/NPCs/deebug.png" id="1_sg06m"]
-[ext_resource type="Script" path="res://npc_0.gd" id="1_x4xeh"]
+[ext_resource type="Script" path="res://Character/NPCs/npc_0.gd" id="1_x4xeh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5t45j"]
 size = Vector2(30, 25)

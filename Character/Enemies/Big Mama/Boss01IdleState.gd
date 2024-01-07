@@ -1,7 +1,5 @@
-extends Area2D
+extends State
 
-@export var enemy : Enemy
-@export var facing_shape : FacingCollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

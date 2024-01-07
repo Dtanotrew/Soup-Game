@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="1_0u4kx"]
 [ext_resource type="Texture2D" uid="uid://miccmcwe3qy3" path="res://art/fewfef.JPG" id="2_hgdsr"]
-[ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander.tscn" id="3_t74tp"]
+[ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander/Salamander.tscn" id="3_t74tp"]
 [ext_resource type="PackedScene" uid="uid://ctesixfap32i0" path="res://Testing(delete later)/UI/health_changed_manager.tscn" id="4_in3lg"]
-[ext_resource type="PackedScene" uid="uid://baa7wra4ybihc" path="res://npc_1.tscn" id="5_3fxmn"]
+[ext_resource type="PackedScene" uid="uid://baa7wra4ybihc" path="res://Character/NPCs/npc_1.tscn" id="5_3fxmn"]
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="5_dkf8c"]
-[ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://npc_0.tscn" id="7_ybgb1"]
+[ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://Character/NPCs/npc_0.tscn" id="7_ybgb1"]
 [ext_resource type="AudioStream" uid="uid://byscpc3a205r1" path="res://music/light_forest_aaa.wav" id="8_mppft"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wd25p"]

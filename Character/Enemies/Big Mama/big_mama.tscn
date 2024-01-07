@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://bemkijyyyv06"]
+
+[ext_resource type="Script" path="res://Character/Enemies/Big Mama/big_mama.gd" id="1_hbeul"]
+[ext_resource type="Script" path="res://Character/Damageable.gd" id="2_np1qk"]
+[ext_resource type="Script" path="res://Character/CharacterStateMachine.gd" id="3_8tgvv"]
+[ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01IdleState.gd" id="4_jeo30"]
+[ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01RollAttackState.gd" id="5_r35cs"]
+[ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01StunnedState.gd" id="6_6p71p"]
+[ext_resource type="Script" path="res://Character/HitState.gd" id="7_02j04"]
+[ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01DeathState.gd" id="8_yb5dd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltebl"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lqiti"]
+
+[node name="BigMama" type="CharacterBody2D"]
+script = ExtResource("1_hbeul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ltebl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_lqiti")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Damageable" type="Node" parent="."]
+script = ExtResource("2_np1qk")
+
+[node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("character", "current_state", "animation_tree")]
+script = ExtResource("3_8tgvv")
+character = NodePath("..")
+current_state = NodePath("Idle")
+animation_tree = NodePath("../AnimationTree")
+
+[node name="Idle" type="Node" parent="CharacterStateMachine"]
+script = ExtResource("4_jeo30")
+
+[node name="Timer" type="Timer" parent="CharacterStateMachine/Idle"]
+
+[node name="RollAttack" type="Node" parent="CharacterStateMachine"]
+script = ExtResource("5_r35cs")
+
+[node name="Timer" type="Timer" parent="CharacterStateMachine/RollAttack"]
+
+[node name="Stunned" type="Node" parent="CharacterStateMachine"]
+script = ExtResource("6_6p71p")
+
+[node name="Timer" type="Timer" parent="CharacterStateMachine/Stunned"]
+
+[node name="HitState" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("damageable", "character_state_machine", "dead_state", "return_state")]
+script = ExtResource("7_02j04")
+damageable = NodePath("../../Damageable")
+character_state_machine = NodePath("..")
+dead_state = NodePath("../Death")
+return_state = NodePath("../Idle")
+can_move = false
+
+[node name="Timer" type="Timer" parent="CharacterStateMachine/HitState"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Death" type="Node" parent="CharacterStateMachine"]
+script = ExtResource("8_yb5dd")
+can_move = false

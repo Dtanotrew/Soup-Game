@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://Character/CharacterStateMachine.gd" id="10_rcdiy"]
 [ext_resource type="Texture2D" uid="uid://c2j8hvfwv26ul" path="res://art/player/Spriteconcept-Hit.png" id="10_x3dxk"]
 [ext_resource type="Script" path="res://Character/Player/LandingState.gd" id="11_7ax7v"]
-[ext_resource type="Script" path="res://Character/Enemies/Damageable.gd" id="11_detpk"]
+[ext_resource type="Script" path="res://Character/Damageable.gd" id="11_detpk"]
 [ext_resource type="Script" path="res://Character/Player/StateDebugLabel.gd" id="12_wjfgl"]
 [ext_resource type="Script" path="res://Character/Player/AttackState.gd" id="14_kvia7"]
 [ext_resource type="Script" path="res://Character/Player/Spoon.gd" id="16_qdw6i"]
@@ -714,6 +714,7 @@ script = ExtResource("18_odlyw")
 can_move = false
 
 [node name="StateDebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
+visible = false
 offset_left = -40.0
 offset_top = -55.0
 offset_right = 64.0

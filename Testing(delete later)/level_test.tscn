@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://pbg0cwe3dll0" path="res://art/tiles/tiles.png" id="1_3pp1h"]
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="2_0mlkk"]
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="3_55sam"]
-[ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander.tscn" id="4_hticv"]
+[ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander/Salamander.tscn" id="4_hticv"]
 [ext_resource type="AudioStream" uid="uid://bnhxnbncc3edc" path="res://music/lightforestloop.mp3" id="4_jidnf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stjk5"]
