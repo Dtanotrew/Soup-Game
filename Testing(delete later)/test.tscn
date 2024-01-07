@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="5_dkf8c"]
 [ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://Character/NPCs/npc_0.tscn" id="7_ybgb1"]
 [ext_resource type="AudioStream" uid="uid://byscpc3a205r1" path="res://music/light_forest_aaa.wav" id="8_mppft"]
-[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/npc_2.tscn" id="9_prep5"]
+[ext_resource type="PackedScene" path="res://Character/NPCs/npc_2.tscn" id="9_prep5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wd25p"]
 

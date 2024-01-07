@@ -193,7 +193,6 @@ transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition
 [node name="Salamander" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
 position = Vector2(297, 201)
 collision_layer = 4
-collision_mask = 5
 script = ExtResource("1_mhqxx")
 hit_state = NodePath("CharacterStateMachine/Hit")
 
@@ -206,12 +205,10 @@ enemy = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
 position = Vector2(20, -2.5)
 shape = SubResource("RectangleShape2D_ptjrv")
-debug_color = Color(0.937255, 0.109804, 0.568627, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2.5)
 shape = SubResource("RectangleShape2D_ddvso")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(32, -9)
