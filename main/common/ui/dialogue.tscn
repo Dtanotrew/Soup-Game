@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://nvvx6xo8xq34" path="res://resources/textures/ui/dialogue-advance-button.png" id="3_68xkh"]
 [ext_resource type="Texture2D" uid="uid://qushpqcmi2l" path="res://resources/textures/ui/dialogue-advance-button-pressed.png" id="4_kopa2"]
 
-[node name="DialogueUnit" type="Control"]
+[node name="DialogueUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ metadata/_edit_lock_ = true
 layout_mode = 2
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="SpeechPanel/SpeechStack"]
+[node name="Text" type="RichTextLabel" parent="SpeechPanel/SpeechStack"]
 visible = false
 clip_contents = false
 layout_mode = 2
@@ -70,7 +70,7 @@ offset_right = 134.0
 offset_bottom = 200.0
 theme_type_variation = &"IconPanel"
 
-[node name="TextureRect" type="TextureRect" parent="IconPanel"]
+[node name="Icon" type="TextureRect" parent="IconPanel"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("1_xseb1")
@@ -94,3 +94,5 @@ offset_right = 467.0
 offset_bottom = 264.0
 texture_normal = ExtResource("3_68xkh")
 texture_pressed = ExtResource("4_kopa2")
+
+[connection signal="pressed" from="Advance" to="." method="_on_advance_pressed"]

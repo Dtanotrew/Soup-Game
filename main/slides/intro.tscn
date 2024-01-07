@@ -1,29 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://cplhge8sbj5dl"]
+[gd_scene load_steps=6 format=3 uid="uid://cplhge8sbj5dl"]
 
-[sub_resource type="GDScript" id="GDScript_exxhn"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[ext_resource type="Script" path="res://main/slides/slide_player.gd" id="1_inesp"]
+[ext_resource type="Texture2D" uid="uid://d3lxwcyqd514y" path="res://resources/textures/slides/intro-slide.png" id="2_6e6dm"]
+[ext_resource type="PackedScene" uid="uid://dmghwwb6u3t2g" path="res://main/common/ui/dialogue.tscn" id="3_usq3n"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="4_f4qqu"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="5_siyqh"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = SubResource("GDScript_exxhn")
+anchors_preset = 0
+script = ExtResource("1_inesp")
 
 [node name="Slide" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("2_6e6dm")
+
+[node name="DialogueUI" parent="." instance=ExtResource("3_usq3n")]
+layout_mode = 1
+
+[node name="DialogueSequence" type="Node" parent="."]
+script = ExtResource("4_f4qqu")
+
+[node name="DialogueEntry" type="Node" parent="DialogueSequence"]
+script = ExtResource("5_siyqh")
+text = "You’ve just finished your apprenticeship with the Herbalist’s Guild. You must practice your craft until you can demonstrate mastery to the Guild. "
+
+[node name="DialogueEntry2" type="Node" parent="DialogueSequence"]
+script = ExtResource("5_siyqh")
+text = "You set off into the wilderness, intent on creating a soup worthy of mastery. But first, you’ll need a lot of practice, and better ingredients… "
+
+[node name="DialogueEntry3" type="Node" parent="DialogueSequence"]
+script = ExtResource("5_siyqh")
+text = "Fortunately, there are many villages in the wilderness willing to host a traveling herbalist. In exchange, you plan to give them your many soups."
+
+[connection signal="finished" from="DialogueSequence" to="." method="_on_dialogue_sequence_finished"]

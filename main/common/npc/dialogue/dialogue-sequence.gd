@@ -1,7 +1,24 @@
 class_name DialogueSequence extends Node
 
+signal finished
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var children: Array[Node] = self.get_children()
+var child_index: int = 0
 
+func enter(ui: DialogueUI):
+	if(child_index == children.size()):
+		reset_dialogue()
+		exit(ui)
+	var next = children[child_index]
+	child_index += 1
+	next.enter(ui)
+	
+func reset_dialogue():
+	child_index = 0
+
+func exit(ui: DialogueUI):
+	var parent = self.get_parent()
+	if parent is DialogueMenu:
+		parent.exit(ui)
+	else:
+		finished.emit()
