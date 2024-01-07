@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="3_55sam"]
 [ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander/Salamander.tscn" id="4_hticv"]
 [ext_resource type="AudioStream" uid="uid://bnhxnbncc3edc" path="res://music/lightforestloop.mp3" id="4_jidnf"]
-[ext_resource type="PackedScene" path="res://Character/NPCs/npc_2.tscn" id="6_81pdg"]
+[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/npc_2.tscn" id="6_81pdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stjk5"]
 texture = ExtResource("1_3pp1h")
@@ -176,13 +176,14 @@ layer_0/tile_data = PackedInt32Array(131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_jidnf")
+volume_db = 4.886
 autoplay = true
 
 [node name="Salamander2" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(250, 153)
 
 [node name="Salamander3" parent="." instance=ExtResource("4_hticv")]
-position = Vector2(95, 216)
+position = Vector2(177, 220)
 
 [node name="Salamander4" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(296, 242)
