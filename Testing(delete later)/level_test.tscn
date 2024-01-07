@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://7rve66t3cnot"]
+[gd_scene load_steps=8 format=3 uid="uid://7rve66t3cnot"]
 
-[ext_resource type="Texture2D" uid="uid://b3b88wdtv06q3" path="res://art/tiles/tiles.png" id="1_3pp1h"]
-[ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander.tscn" id="1_tr3qe"]
+[ext_resource type="Texture2D" uid="uid://pbg0cwe3dll0" path="res://art/tiles/tiles.png" id="1_3pp1h"]
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="2_0mlkk"]
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="3_55sam"]
 [ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander/Salamander.tscn" id="4_hticv"]
@@ -159,7 +158,7 @@ sources/0 = SubResource("TileSetAtlasSource_stjk5")
 
 [node name="LevelTest" type="Node2D"]
 
-[node name="Salamander" parent="." instance=ExtResource("1_tr3qe")]
+[node name="Salamander" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(1458, 118)
 
 [node name="Witch" parent="." instance=ExtResource("3_55sam")]
@@ -178,14 +177,14 @@ layer_0/tile_data = PackedInt32Array(131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 1
 stream = ExtResource("4_jidnf")
 autoplay = true
 
-[node name="Salamander" parent="." instance=ExtResource("4_hticv")]
+[node name="Salamander2" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(109, 78)
 
-[node name="Salamander2" parent="." instance=ExtResource("4_hticv")]
+[node name="Salamander3" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(95, 216)
 
-[node name="Salamander3" parent="." instance=ExtResource("4_hticv")]
+[node name="Salamander4" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(416, 88)
 
-[node name="Salamander4" parent="." instance=ExtResource("4_hticv")]
+[node name="Salamander5" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(459, 218)

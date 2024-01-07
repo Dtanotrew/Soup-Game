@@ -701,6 +701,7 @@ damageable = NodePath("../../Damageable")
 character_state_machine = NodePath("..")
 dead_state = NodePath("../Death")
 return_state = NodePath("../Ground")
+knockback_speed = 300.0
 return_anim = "move"
 hit_anim = "hit"
 death_anim = "death"
