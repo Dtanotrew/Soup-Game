@@ -5,8 +5,8 @@ class_name HitState
 @export var damageable : Damageable
 @export var character_state_machine : CharacterStateMachine
 @export var dead_state : State
-@export var knockback_speed : float = 100.0
 @export var return_state : State
+@export var knockback_speed : float = 100.0
 @export var return_anim : String
 @export var hit_anim : String
 @export var death_anim : String
@@ -23,7 +23,6 @@ func on_enter():
 func on_damageable_hit(node : Node, damage_amount : int, knockback_direction : Vector2):
 	if damageable.health > 0:
 		character.velocity = knockback_speed * knockback_direction
-		print("Salamander Knockback Velocity: " + str(character.velocity))
 		emit_signal("interrupt_state", self)
 	else:
 		emit_signal("interrupt_state", dead_state)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pbg0cwe3dll0"
-path="res://.godot/imported/tiles.png-e6a472d3e230306ae38f0521431a443d.ctex"
+uid="uid://c2j8hvfwv26ul"
+path="res://.godot/imported/Spriteconcept-Hit.png-529aaf7c97f41173ce725e87b047e002.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/tiles/tiles.png"
-dest_files=["res://.godot/imported/tiles.png-e6a472d3e230306ae38f0521431a443d.ctex"]
+source_file="res://art/player/Spriteconcept-Hit.png"
+dest_files=["res://.godot/imported/Spriteconcept-Hit.png-529aaf7c97f41173ce725e87b047e002.ctex"]
 
 [params]
 

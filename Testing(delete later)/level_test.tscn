@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7rve66t3cnot"]
+[gd_scene load_steps=7 format=3 uid="uid://7rve66t3cnot"]
 
 [ext_resource type="Texture2D" uid="uid://b3b88wdtv06q3" path="res://art/tiles/tiles.png" id="1_3pp1h"]
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="2_0mlkk"]
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="3_55sam"]
+[ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander.tscn" id="4_hticv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stjk5"]
 texture = ExtResource("1_3pp1h")
@@ -106,3 +107,6 @@ layer_0/tile_data = PackedInt32Array(65530, 0, 0, 65531, 65536, 0, 65532, 0, 0, 
 [node name="Parallax" parent="." instance=ExtResource("2_0mlkk")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Salamander" parent="." instance=ExtResource("4_hticv")]
+position = Vector2(109, 78)
