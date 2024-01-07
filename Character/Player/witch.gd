@@ -28,7 +28,7 @@ func _physics_process(delta):
 	direction = Input.get_axis("move_left", "move_right")
 
 	if direction && state_machine.can_move_check():
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
