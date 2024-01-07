@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Character/Enemies/Salamander/DeadState.gd" id="8_w8mfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptjrv"]
-size = Vector2(58, 13)
+size = Vector2(22, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvso"]
 size = Vector2(58, 13)
@@ -203,7 +203,7 @@ script = ExtResource("2_p4a6w")
 enemy = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(2, -2.5)
+position = Vector2(20, -2.5)
 shape = SubResource("RectangleShape2D_ptjrv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
