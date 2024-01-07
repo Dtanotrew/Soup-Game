@@ -1,19 +1,20 @@
 extends State
 
 @export var raycast : RayCast2D
+@export var timer : Timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if character.direction && character.state_machine.can_move_check():
 		#if the enemy has reached a ledge or wall
-		if character.is_on_wall() or (character.is_on_floor() and !raycast.is_colliding()):
-			character.direction *= -1
+		if character.is_on_wall() or (character.is_on_floor() and !raycast.is_colliding()) and timer.is_stopped():
+			timer.start()
+			character.direction.x *= -1
 			raycast.position.x *= -1
 		character.velocity.x = character.direction.x * character.movement_speed
 			
