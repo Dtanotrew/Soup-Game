@@ -1,6 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://baa7wra4ybihc"]
+[gd_scene load_steps=10 format=3 uid="uid://baa7wra4ybihc"]
 
+[ext_resource type="Script" path="res://npc_1.gd" id="1_e65a8"]
 [ext_resource type="Texture2D" uid="uid://v2nerr6265wl" path="res://art/NPCs/Lola-Sheet.png" id="1_vqkxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2ut1"]
+size = Vector2(21, 64)
 
 [sub_resource type="Animation" id="Animation_f6gpv"]
 length = 0.001
@@ -77,7 +81,14 @@ states/idle/node = SubResource("AnimationNodeAnimation_e1fsa")
 states/idle/position = Vector2(436, 110)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fusjd")]
 
-[node name="NPC1" type="CharacterBody2D"]
+[node name="Lola" type="CharacterBody2D"]
+visibility_layer = 8
+collision_layer = 8
+script = ExtResource("1_e65a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_j2ut1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://3f0jgldafgqq"]
+[gd_scene load_steps=57 format=3 uid="uid://3f0jgldafgqq"]
 
 [ext_resource type="Script" path="res://Character/Player/witch.gd" id="1_sjtlp"]
 [ext_resource type="Texture2D" uid="uid://pylxcnmbsioa" path="res://art/player/Spriteconcept1.png" id="2_e0tya"]
@@ -16,7 +16,8 @@
 [ext_resource type="Script" path="res://Character/Player/StateDebugLabel.gd" id="12_wjfgl"]
 [ext_resource type="Script" path="res://Character/Player/AttackState.gd" id="14_kvia7"]
 [ext_resource type="Script" path="res://Character/Player/Spoon.gd" id="16_qdw6i"]
-[ext_resource type="Script" path="res://Character/Player/FacingCollisionShape2D.gd" id="17_towks"]
+[ext_resource type="Script" path="res://Character/FacingCollisionShape2D.gd" id="17_qody8"]
+[ext_resource type="AudioStream" uid="uid://blx80gd27vmtg" path="res://sounds/hit_sound.mp3" id="18_5lymt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dk8k3"]
 animations = [{
@@ -509,9 +510,11 @@ transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-103, -37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1hh8"]
-size = Vector2(19.5, 33)
+size = Vector2(24.75, 23.5)
 
 [node name="Witch" type="CharacterBody2D" node_paths=PackedStringArray("spoon_hitbox")]
+light_mask = 2
+visibility_layer = 2
 collision_layer = 2
 script = ExtResource("1_sjtlp")
 spoon_hitbox = NodePath("Spoon/CollisionShape2D")
@@ -524,12 +527,14 @@ sprite_frames = SubResource("SpriteFrames_dk8k3")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(1, 4.5)
 shape = SubResource("RectangleShape2D_whlwh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_top = 0
-limit_bottom = 288
+limit_bottom = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -557,6 +562,7 @@ animation_tree = NodePath("../AnimationTree")
 
 [node name="Ground" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("air_state", "attack_state")]
 script = ExtResource("9_pgni1")
+JUMP_VELOCITY = -500.0
 air_state = NodePath("../Air")
 attack_state = NodePath("../Attack")
 
@@ -569,7 +575,7 @@ autostart = true
 script = ExtResource("10_h2jv0")
 landing_state = NodePath("../Landing")
 ground_state = NodePath("../Ground")
-DOUBLE_JUMP_VELOCITY = -500
+DOUBLE_JUMP_VELOCITY = -400
 
 [node name="Landing" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("ground_state")]
 script = ExtResource("11_7ax7v")
@@ -586,6 +592,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="StateDebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
+visible = false
 offset_left = -40.0
 offset_top = -55.0
 offset_right = 64.0
@@ -594,20 +601,24 @@ text = "State : "
 script = ExtResource("12_wjfgl")
 state_machine = NodePath("../CharacterStateMachine")
 
-[node name="Spoon" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape")]
+[node name="Spoon" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape", "hit_sound")]
 collision_layer = 0
 collision_mask = 4
 monitoring = false
 script = ExtResource("16_qdw6i")
 player = NodePath("..")
 facing_shape = NodePath("CollisionShape2D")
+hit_sound = NodePath("AudioStreamPlayer2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon"]
-position = Vector2(25, 0)
+position = Vector2(28, 4.75)
 shape = SubResource("RectangleShape2D_p1hh8")
-script = ExtResource("17_towks")
-facing_left_pos = Vector2(-25, 0)
-facing_right_pos = Vector2(25, 0)
+script = ExtResource("17_qody8")
+facing_left_pos = Vector2(-28, 4.75)
+facing_right_pos = Vector2(28, 4.75)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spoon"]
+stream = ExtResource("18_5lymt")
 
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Landing" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Attack" method="_on_animation_tree_animation_finished"]

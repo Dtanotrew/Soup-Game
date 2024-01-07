@@ -17,9 +17,6 @@ func hit(damage : int, knockback_direction : Vector2):
 	health -= damage
 	
 	emit_signal("on_hit", get_parent(), damage, knockback_direction)
-	
-	#if health <= 0:
-		#get_parent().queue_free()
 
 
 func _on_animation_tree_animation_finished(anim_name):
