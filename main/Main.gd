@@ -1,9 +1,11 @@
 extends Node
 
 @onready var ingMgr = $IngredientManager
+@onready var npcMgr = NpcManager.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	npcMgr.load_predefined_npcs()
 	$Menu.display()
 	pass # Replace with function body.
 
