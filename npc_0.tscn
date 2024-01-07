@@ -1,6 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0kwmvghpc6lv"]
+[gd_scene load_steps=10 format=3 uid="uid://c0kwmvghpc6lv"]
 
 [ext_resource type="Texture2D" uid="uid://b2ebdttlxuccf" path="res://art/NPCs/deebug.png" id="1_sg06m"]
+[ext_resource type="Script" path="res://npc_0.gd" id="1_x4xeh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t45j"]
+size = Vector2(30, 25)
 
 [sub_resource type="Animation" id="Animation_xa5qq"]
 length = 0.001
@@ -76,6 +80,13 @@ states/idle/position = Vector2(331, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_0dyne")]
 
 [node name="Dee" type="CharacterBody2D"]
+visibility_layer = 8
+collision_layer = 8
+script = ExtResource("1_x4xeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_5t45j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
