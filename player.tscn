@@ -2,14 +2,27 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_n6frj"]
 [ext_resource type="Texture2D" uid="uid://miccmcwe3qy3" path="res://art/fewfef.JPG" id="2_077ft"]
-[ext_resource type="Script" path="res://Camera2D.gd" id="2_n187m"]
+
+[sub_resource type="GDScript" id="GDScript_nbtln"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="player" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_n6frj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("2_n187m")
+script = SubResource("GDScript_nbtln")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

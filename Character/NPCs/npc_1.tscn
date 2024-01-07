@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://baa7wra4ybihc"]
 
-[ext_resource type="Script" path="res://npc_1.gd" id="1_e65a8"]
+[ext_resource type="Script" path="res://Character/NPCs/npc_1.gd" id="1_e65a8"]
 [ext_resource type="Texture2D" uid="uid://v2nerr6265wl" path="res://art/NPCs/Lola-Sheet.png" id="1_vqkxh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2ut1"]

@@ -1,15 +1,15 @@
 [gd_scene load_steps=26 format=3 uid="uid://bdu2p02exbw2q"]
 
-[ext_resource type="Script" path="res://Character/Enemies/Salamander.gd" id="1_mhqxx"]
+[ext_resource type="Script" path="res://Character/Enemies/Salamander/Salamander.gd" id="1_mhqxx"]
 [ext_resource type="Texture2D" uid="uid://d0jkuj3mlrmkj" path="res://art/Enemies/Giantsalamander-Hit.png" id="2_4fk7y"]
-[ext_resource type="Script" path="res://Character/Enemies/SalamanderAttackHitbox.gd" id="2_p4a6w"]
-[ext_resource type="Script" path="res://Character/Enemies/Damageable.gd" id="2_tmpbp"]
+[ext_resource type="Script" path="res://Character/Enemies/Salamander/SalamanderAttackHitbox.gd" id="2_p4a6w"]
+[ext_resource type="Script" path="res://Character/Damageable.gd" id="2_tmpbp"]
 [ext_resource type="Texture2D" uid="uid://dqlo7c4adyi4x" path="res://art/Enemies/Giantsalamander-Dead.png" id="2_wdi4v"]
 [ext_resource type="Texture2D" uid="uid://cogw7oxwfkvlw" path="res://art/Enemies/Giantsalamander-Colored.png" id="3_47puc"]
 [ext_resource type="Script" path="res://Character/CharacterStateMachine.gd" id="4_o30ac"]
-[ext_resource type="Script" path="res://Character/Enemies/WalkState.gd" id="6_h6m4j"]
+[ext_resource type="Script" path="res://Character/Enemies/Salamander/WalkState.gd" id="6_h6m4j"]
 [ext_resource type="Script" path="res://Character/HitState.gd" id="6_x7qti"]
-[ext_resource type="Script" path="res://Character/Enemies/DeadState.gd" id="8_w8mfv"]
+[ext_resource type="Script" path="res://Character/Enemies/Salamander/DeadState.gd" id="8_w8mfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptjrv"]
 size = Vector2(58, 13)
