@@ -1,6 +1,6 @@
 class_name Ingredient extends Resource
 
-@export var color: Color = Color.BLACK
+@export var name: String
 @export var icon: Texture2D
 @export var icon_tint: Texture2D
 @export var tinted: bool = false
@@ -26,7 +26,8 @@ enum Effect {
 	NONE = 0,
 	HEAL = 1 << 0,
 	MAGIC = 1 << 1,
-	TRIPPY = 1 << 2
+	TRIPPY = 1 << 2,
+	SUPER = 1 << 3
 }
 
 func get_random_color():

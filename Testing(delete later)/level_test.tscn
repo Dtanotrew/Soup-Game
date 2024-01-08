@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bemkijyyyv06" path="res://Character/Enemies/Big Mama/big_mama.tscn" id="6_floi4"]
 [ext_resource type="AudioStream" uid="uid://b2pebni30i75l" path="res://music/Cozy_yo_mama_2.wav" id="7_ju2h7"]
 [ext_resource type="AudioStream" uid="uid://b5fdbruh4derv" path="res://music/bossin.mp3" id="8_px1v1"]
+[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/loris_2d.tscn" id="6_81pdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stjk5"]
 texture = ExtResource("1_3pp1h")
