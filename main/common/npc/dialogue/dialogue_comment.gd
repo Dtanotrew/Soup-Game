@@ -1,6 +1,6 @@
 class_name DialogueComment extends Node
 
-@export_multiline var format_string = "I {opinion_verb} your soup. It was {taste_adj}. The variety was {variety_adj}."
+@export_multiline var format_string = "I {opinion} your soup. It was {taste_adj}. The variety was {variety_adj}."
 @export var illness_string = "It made me feel sick."
 
 @export_category("Opinion")
@@ -34,14 +34,14 @@ func enter(ui:DialogueUI, npc: Npc = null):
 	var opinion = npc.latest_soup.variety + npc.latest_soup.taste - max(npc.latest_soup.poison - npc.max_poison,0)
 	var opinion_sign = opinion/abs(opinion) as int
 	var opinion_index: int = clamp((ceil(abs(opinion)/2) as int)*opinion_sign, -2, 2)+2
-	var opinion_verb = opinion_array[opinion_index]
+	var opinion_word = opinion_array[opinion_index]
 	
 	var variety_adj = variety_array[(npc.latest_soup.variety+1) as int]
 	
 	var taste_adj = taste_array[(npc.latest_soup.taste+1) as int]
 	
 	var text = format_string.format({
-		"opinion_verb":opinion_verb,
+		"opinion":opinion_word,
 		"taste_adj": taste_adj,
 		"variety_adj": variety_adj
 	})

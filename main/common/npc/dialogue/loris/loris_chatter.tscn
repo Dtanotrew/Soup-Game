@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdtrsvxeck83y"]
+
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="1_hm8lm"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue_random.gd" id="1_od4di"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="2_gkd8g"]
+
+[node name="LorisChatter" type="Node"]
+script = ExtResource("1_od4di")
+
+[node name="hmm" type="Node" parent="."]
+script = ExtResource("2_gkd8g")
+text = "Hmm..."
+
+[node name="blather" type="Node" parent="."]
+script = ExtResource("1_hm8lm")
+
+[node name="DialogueEntry" type="Node" parent="blather"]
+script = ExtResource("2_gkd8g")
+text = "You wouldn't have seen my...
+...
+..."
+
+[node name="DialogueEntry2" type="Node" parent="blather"]
+script = ExtResource("2_gkd8g")
+text = "... my hat? I left it around here somewhere..."
