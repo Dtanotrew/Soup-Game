@@ -9,9 +9,6 @@ const hint_text_mediocre = "A basic ingredient.\n"
 
 @onready var pickup_ui = preload("res://main/common/ui/ingredient_pickup.tscn")
 
-signal new_ingredient_start
-signal new_ingredient_end
-
 var ingredients = {}
 
 var hintable = []
@@ -102,7 +99,7 @@ func assign_bad(ing: Ingredient):
 	ing.taste = randi_range(-2,2)
 	
 func assign_both(ing: Ingredient):
-	ing.poison = randi_range(2,5)
+	ing.poison = randi_range(3,5)
 	ing.taste = randi_range(3,5)
 	
 func add_starting_ingredient(ing: Ingredient):

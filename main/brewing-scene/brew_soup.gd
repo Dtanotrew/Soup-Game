@@ -26,7 +26,7 @@ func add_shelf_item(item:Ingredient):
 func add_item_to_soup(item:Ingredient):
 	soup.add_item(item)
 	$BrewBG/bg_tint.material.set_shader_parameter("tint_color", soup.color)
-	progress = max(progress + 1, 3)
+	progress = min(progress + 1, 3)
 	$BrewPanel/ShelfBottom/VBoxContainer/ProgressBar.value = progress
 	
 func _on_shelf_item_right_click(clicked:ShelfItem):
