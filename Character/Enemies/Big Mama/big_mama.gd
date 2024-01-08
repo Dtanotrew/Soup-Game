@@ -19,6 +19,5 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	print("big mama current state is " + str(state_machine.current_state))
-	#move_and_slide()
-	
+
 
