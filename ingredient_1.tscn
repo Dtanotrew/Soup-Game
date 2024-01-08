@@ -13,6 +13,7 @@ texture = ExtResource("1_i8jqq")
 script = ExtResource("1_wmfsd")
 
 [node name="Ingredient1Hitbox" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient1Hitbox"]
 shape = SubResource("RectangleShape2D_d8e5h")

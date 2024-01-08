@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctiadwkoy2irl"
-path="res://.godot/imported/Spriteconcept-AttackFull.png-50637faba8ccfc0f93e1b20fb8c77a2d.ctex"
+path="res://.godot/imported/Spriteconcept-AttackFull.png-0e8f9dc49a0d7cd48216cb9d8f0c6071.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Testing(delete later)/Tutorial/Spriteconcept-AttackFull.png"
-dest_files=["res://.godot/imported/Spriteconcept-AttackFull.png-50637faba8ccfc0f93e1b20fb8c77a2d.ctex"]
+source_file="res://Testing/Tutorial/Spriteconcept-AttackFull.png"
+dest_files=["res://.godot/imported/Spriteconcept-AttackFull.png-0e8f9dc49a0d7cd48216cb9d8f0c6071.ctex"]
 
 [params]
 

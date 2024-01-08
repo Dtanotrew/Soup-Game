@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://7kg44ybu52yt"]
 
-[ext_resource type="Script" path="res://Testing(delete later)/Tutorial/player.gd" id="1_eo0tc"]
+[ext_resource type="Script" path="res://Testing/Tutorial/player.gd" id="1_eo0tc"]
 [ext_resource type="Texture2D" uid="uid://cwu4jxwkq81q" path="res://art/player/Sprite-0000.png" id="2_kjsq4"]
 [ext_resource type="Texture2D" uid="uid://cnxkauj3es327" path="res://art/player/Sprite-0001.png" id="3_bswow"]
 

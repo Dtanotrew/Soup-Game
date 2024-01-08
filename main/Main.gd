@@ -1,5 +1,7 @@
 extends Node
 
+@export var scenes : Node 
+var event : InputEvent
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# npcMgr.load_predefined_npcs()
@@ -9,6 +11,10 @@ func _ready():
 func _on_menu_start_game():
 	$Menu.hide()
 	$Intro.play()
+
+func _process(delta):
+	if event.is_action_pressed("scene_change"):
+		get_tree().change_scene("res://Testing/level_test.tscn")
 
 func _on_intro_complete():
 	var intro = $Intro
