@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ltt4mq5hvsc"]
+
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue_random.gd" id="1_cxywn"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="1_otsjy"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="2_8r22m"]
+
+[node name="DeeChatter" type="Node"]
+script = ExtResource("1_cxywn")
+
+[node name="MetaChatter" type="Node" parent="."]
+script = ExtResource("2_8r22m")
+text = "Hello, this is a dialogue box!
+You're probably wondering how this magical apparatus works, but really it's best that we ignore that for now..."
+
+[node name="ChickenChatter" type="Node" parent="."]
+script = ExtResource("1_otsjy")
+
+[node name="DialogueEntry1" type="Node" parent="ChickenChatter"]
+script = ExtResource("2_8r22m")
+text = "I saw a big chicken in the woods the other day. It wasn't too happy to see me..."
+
+[node name="DialogueEntry2" type="Node" parent="ChickenChatter"]
+script = ExtResource("2_8r22m")
+text = "If someone could make soup out of that chicken, I think our lives would be complete."
