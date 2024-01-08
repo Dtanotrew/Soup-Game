@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://7rve66t3cnot"]
+[gd_scene load_steps=19 format=3 uid="uid://7rve66t3cnot"]
 
 [ext_resource type="Texture2D" uid="uid://pbg0cwe3dll0" path="res://art/tiles/tiles.png" id="1_3pp1h"]
+[ext_resource type="Script" path="res://Testing(delete later)/level_test.gd" id="1_xp7ug"]
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="2_0mlkk"]
+[ext_resource type="Script" path="res://Testing(delete later)/HouseTrigger.gd" id="2_h5cr5"]
 [ext_resource type="Texture2D" uid="uid://tbdphr8soytu" path="res://art/Backgrounds/village.png" id="2_spyg4"]
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="3_55sam"]
 [ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander/Salamander.tscn" id="4_hticv"]
@@ -9,6 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://bemkijyyyv06" path="res://Character/Enemies/Big Mama/big_mama.tscn" id="6_floi4"]
 [ext_resource type="AudioStream" uid="uid://ckde8rkau2e7x" path="res://music/villageloop.mp3" id="7_hf812"]
 [ext_resource type="AudioStream" uid="uid://n4yoei7n2yv2" path="res://music/chickenboss.mp3" id="8_us82j"]
+[ext_resource type="PackedScene" uid="uid://brt3514ki3ph7" path="res://Character/NPCs/lola_2d.tscn" id="12_yfv4w"]
+[ext_resource type="PackedScene" path="res://Character/NPCs/dee_2d.tscn" id="13_vabgh"]
+[ext_resource type="PackedScene" path="res://Character/NPCs/loris_2d.tscn" id="14_q27ko"]
+[ext_resource type="PackedScene" uid="uid://cyyqybx6444om" path="res://ingredient_1.tscn" id="15_q028d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovycl"]
+size = Vector2(28, 48)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stjk5"]
 texture = ExtResource("1_3pp1h")
@@ -165,6 +174,17 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_stjk5")
 
 [node name="LevelTest" type="Node2D"]
+script = ExtResource("1_xp7ug")
+
+[node name="HouseTrigger" type="Area2D" parent="."]
+position = Vector2(-905, 224)
+collision_mask = 2
+script = ExtResource("2_h5cr5")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseTrigger"]
+position = Vector2(-9, 6)
+shape = SubResource("RectangleShape2D_ovycl")
 
 [node name="Salamander" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(1458, 118)
@@ -173,8 +193,17 @@ position = Vector2(1458, 118)
 position = Vector2(-160, 145)
 texture = ExtResource("2_spyg4")
 
+[node name="Lola" parent="." instance=ExtResource("12_yfv4w")]
+position = Vector2(-199, 223)
+
+[node name="Dee" parent="." instance=ExtResource("13_vabgh")]
+position = Vector2(-541, 240)
+
+[node name="SlowLoris" parent="." instance=ExtResource("14_q27ko")]
+position = Vector2(502, 234)
+
 [node name="Witch" parent="." instance=ExtResource("3_55sam")]
-position = Vector2(6547, 192)
+position = Vector2(-662, 238)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(288, 224)
@@ -241,3 +270,6 @@ attenuation = 0.42
 
 [node name="BigMama" parent="." instance=ExtResource("6_floi4")]
 position = Vector2(6772, 197)
+
+[node name="Ingredient 1" parent="." instance=ExtResource("15_q028d")]
+position = Vector2(2447, 210)

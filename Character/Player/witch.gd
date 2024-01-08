@@ -4,7 +4,8 @@ class_name Player
 
 @export var SPEED = 300.0
 @export var spoon_hitbox : CollisionShape2D
-
+@export var damageable : Damageable
+@export var healthbar : AnimatedSprite2D
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var sprite = $Sprite2D
 @onready var state_machine : CharacterStateMachine = $CharacterStateMachine
@@ -31,6 +32,10 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	healthbar.frame = int(4 - floor(damageable.health / 5))
+	if damageable.health <= 0: healthbar.hide()
+	
 	
 	update_animation_parameters()
 	update_facing_direction()

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo7ktdd1om6tr"]
+[gd_scene load_steps=7 format=3 uid="uid://bo7ktdd1om6tr"]
 
 [ext_resource type="PackedScene" uid="uid://cka8ftb6up0d5" path="res://main/menu.tscn" id="1_i2cty"]
 [ext_resource type="Script" path="res://main/Main.gd" id="1_wbyku"]
 [ext_resource type="PackedScene" uid="uid://cplhge8sbj5dl" path="res://main/slides/intro.tscn" id="3_gmqg3"]
-[ext_resource type="PackedScene" uid="uid://bij85bxaoi8c8" path="res://main/brewing-scene/brew_tutorial.tscn" id="3_t5lwk"]
+[ext_resource type="PackedScene" path="res://main/brewing-scene/brew_tutorial.tscn" id="3_t5lwk"]
 [ext_resource type="PackedScene" uid="uid://5xfsj0s6dn46" path="res://main/brewing-scene/brew_soup.tscn" id="3_xsyfi"]
+[ext_resource type="PackedScene" uid="uid://7rve66t3cnot" path="res://Testing(delete later)/level_test.tscn" id="6_exfm7"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_wbyku")
@@ -19,6 +20,8 @@ visible = false
 visible = false
 
 [node name="Menu" parent="." instance=ExtResource("1_i2cty")]
+
+[node name="LevelTest" parent="." instance=ExtResource("6_exfm7")]
 
 [connection signal="complete" from="BrewTutorial" to="." method="_on_brew_tutorial_complete"]
 [connection signal="complete" from="Intro" to="." method="_on_intro_complete"]

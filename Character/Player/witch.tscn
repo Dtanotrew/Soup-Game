@@ -1,7 +1,8 @@
-[gd_scene load_steps=70 format=3 uid="uid://3f0jgldafgqq"]
+[gd_scene load_steps=76 format=3 uid="uid://3f0jgldafgqq"]
 
 [ext_resource type="Script" path="res://Character/Player/witch.gd" id="1_sjtlp"]
 [ext_resource type="Texture2D" uid="uid://pylxcnmbsioa" path="res://art/player/Spriteconcept1.png" id="2_e0tya"]
+[ext_resource type="Texture2D" uid="uid://bxtfrxqf8ai84" path="res://art/player/Health_Sprites.png" id="2_fyqbs"]
 [ext_resource type="Texture2D" uid="uid://da8el0qg8a38c" path="res://art/player/Spriteconcept2.png" id="3_exw4f"]
 [ext_resource type="Texture2D" uid="uid://cwu4jxwkq81q" path="res://art/player/Sprite-0000.png" id="4_mdqpy"]
 [ext_resource type="Texture2D" uid="uid://cnxkauj3es327" path="res://art/player/Sprite-0001.png" id="5_rt5qu"]
@@ -613,15 +614,53 @@ states/move/position = Vector2(331, 100)
 transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_5nyrk"), "move", "jump_start", SubResource("AnimationNodeStateMachineTransition_udsiu"), "jump_start", "falling", SubResource("AnimationNodeStateMachineTransition_d6us2"), "falling", "landing", SubResource("AnimationNodeStateMachineTransition_477ju"), "landing", "move", SubResource("AnimationNodeStateMachineTransition_et0x6"), "move", "falling", SubResource("AnimationNodeStateMachineTransition_sdukt"), "jump_start", "double_jump", SubResource("AnimationNodeStateMachineTransition_b3qv6"), "double_jump", "falling", SubResource("AnimationNodeStateMachineTransition_yt5yq"), "falling", "double_jump", SubResource("AnimationNodeStateMachineTransition_1n7x3"), "falling", "move", SubResource("AnimationNodeStateMachineTransition_6fheo"), "move", "attack1", SubResource("AnimationNodeStateMachineTransition_bpynh"), "attack1", "attack2", SubResource("AnimationNodeStateMachineTransition_osidg"), "attack1", "move", SubResource("AnimationNodeStateMachineTransition_a00ca"), "attack2", "move", SubResource("AnimationNodeStateMachineTransition_g3kdg"), "hit", "death", SubResource("AnimationNodeStateMachineTransition_xsin8"), "hit", "move", SubResource("AnimationNodeStateMachineTransition_sa4t8"), "move", "hit", SubResource("AnimationNodeStateMachineTransition_mibvf")]
 graph_offset = Vector2(110, 38)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sijyi"]
+atlas = ExtResource("2_fyqbs")
+region = Rect2(0, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l641x"]
+atlas = ExtResource("2_fyqbs")
+region = Rect2(64, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp738"]
+atlas = ExtResource("2_fyqbs")
+region = Rect2(128, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqb7e"]
+atlas = ExtResource("2_fyqbs")
+region = Rect2(192, 0, 64, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gd2oc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sijyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l641x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp738")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqb7e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1hh8"]
 size = Vector2(24.75, 32.5)
 
-[node name="Witch" type="CharacterBody2D" node_paths=PackedStringArray("spoon_hitbox")]
+[node name="Witch" type="CharacterBody2D" node_paths=PackedStringArray("spoon_hitbox", "damageable", "healthbar")]
 light_mask = 2
 visibility_layer = 2
 collision_layer = 2
 script = ExtResource("1_sjtlp")
 spoon_hitbox = NodePath("Spoon/CollisionShape2D")
+damageable = NodePath("Damageable")
+healthbar = NodePath("Health")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -717,6 +756,7 @@ one_shot = true
 
 [node name="hitsound" type="AudioStreamPlayer2D" parent="CharacterStateMachine/HitState"]
 stream = ExtResource("18_lpc05")
+volume_db = 10.47
 
 [node name="Death" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("18_odlyw")
@@ -731,6 +771,10 @@ offset_bottom = -32.0
 text = "State : "
 script = ExtResource("12_wjfgl")
 state_machine = NodePath("../CharacterStateMachine")
+
+[node name="Health" type="AnimatedSprite2D" parent="."]
+position = Vector2(-40, -55)
+sprite_frames = SubResource("SpriteFrames_gd2oc")
 
 [node name="Spoon" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape", "hit_sound", "woosh_sound")]
 collision_layer = 0
