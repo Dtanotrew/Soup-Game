@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://7rve66t3cnot"]
+[gd_scene load_steps=20 format=3 uid="uid://7rve66t3cnot"]
 
 [ext_resource type="Texture2D" uid="uid://pbg0cwe3dll0" path="res://art/tiles/tiles.png" id="1_3pp1h"]
-[ext_resource type="Script" path="res://Testing(delete later)/level_test.gd" id="1_xp7ug"]
+[ext_resource type="Script" path="res://Testing/level_test.gd" id="1_xp7ug"]
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="2_0mlkk"]
-[ext_resource type="Script" path="res://Testing(delete later)/HouseTrigger.gd" id="2_h5cr5"]
+[ext_resource type="Script" path="res://Testing/HouseTrigger.gd" id="2_h5cr5"]
 [ext_resource type="Texture2D" uid="uid://tbdphr8soytu" path="res://art/Backgrounds/village.png" id="2_spyg4"]
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="3_55sam"]
 [ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander/Salamander.tscn" id="4_hticv"]
@@ -11,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bemkijyyyv06" path="res://Character/Enemies/Big Mama/big_mama.tscn" id="6_floi4"]
 [ext_resource type="AudioStream" uid="uid://ckde8rkau2e7x" path="res://music/villageloop.mp3" id="7_hf812"]
 [ext_resource type="AudioStream" uid="uid://n4yoei7n2yv2" path="res://music/chickenboss.mp3" id="8_us82j"]
+[ext_resource type="PackedScene" uid="uid://brt3514ki3ph7" path="res://Character/NPCs/lola_2d.tscn" id="12_yfv4w"]
+[ext_resource type="PackedScene" path="res://Character/NPCs/dee_2d.tscn" id="13_vabgh"]
+[ext_resource type="PackedScene" path="res://Character/NPCs/loris_2d.tscn" id="14_q27ko"]
+[ext_resource type="PackedScene" uid="uid://bq3o4qi5mcbfd" path="res://ingredient_2.tscn" id="15_m1tc1"]
+[ext_resource type="PackedScene" uid="uid://cyyqybx6444om" path="res://ingredient_1.tscn" id="15_q028d"]
 [ext_resource type="PackedScene" uid="uid://baa7wra4ybihc" path="res://Character/NPCs/lola_2d.tscn" id="12_yfv4w"]
 [ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://Character/NPCs/dee_2d.tscn" id="13_vabgh"]
 [ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/loris_2d.tscn" id="14_q27ko"]
@@ -271,6 +276,22 @@ attenuation = 0.42
 [node name="BigMama" parent="." instance=ExtResource("6_floi4")]
 position = Vector2(6772, 197)
 
+[node name="Ingredient2" parent="." instance=ExtResource("15_m1tc1")]
+position = Vector2(3933, 307)
+scale = Vector2(0.0819334, 0.0819334)
+
+[node name="Ingredient 1" parent="." instance=ExtResource("15_q028d")]
+position = Vector2(2447, 210)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -905.0
+offset_top = 15.0
+offset_right = -798.0
+offset_bottom = 34.0
+text = "Change Scene
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [node name="Ingredient2D" parent="." instance=ExtResource("15_2u661")]
 position = Vector2(1614, 43)
 

@@ -46,3 +46,7 @@ func _on_brew_button_pressed():
 	if not progress == 3:
 		return
 	complete.emit(soup)
+
+
+func _on_button_pressed():
+	Global.goto_scene("res://Testing/level_test.tscn")

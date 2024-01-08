@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpwa0mkome2um"]
 
-[ext_resource type="Script" path="res://Testing(delete later)/UI/health_changed_label.gd" id="1_yrdob"]
+[ext_resource type="Script" path="res://Testing/UI/health_changed_label.gd" id="1_yrdob"]
 
 [node name="HealthChangedLabel" type="Label"]
 anchors_preset = 15

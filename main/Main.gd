@@ -1,5 +1,7 @@
 extends Node
 
+@export var scenes : Node 
+var event : InputEvent
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# npcMgr.load_predefined_npcs()
