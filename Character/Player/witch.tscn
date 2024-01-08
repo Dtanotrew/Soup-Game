@@ -634,6 +634,7 @@ position = Vector2(1, 4.5)
 shape = SubResource("RectangleShape2D_whlwh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -928
 limit_top = 0
 limit_bottom = 0
 
