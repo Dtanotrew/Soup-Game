@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b75rolqdc43nm"]
+[gd_scene load_steps=15 format=3 uid="uid://b75rolqdc43nm"]
 
 [ext_resource type="Script" path="res://main/common/npc/npc_manager.gd" id="1_pwtd2"]
 [ext_resource type="Script" path="res://main/common/npc/npc.gd" id="2_sg0am"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/loris_2d.tscn" id="6_ef22e"]
 [ext_resource type="PackedScene" uid="uid://baa7wra4ybihc" path="res://Character/NPCs/lola_2d.tscn" id="7_40mql"]
 [ext_resource type="PackedScene" uid="uid://cdk4tiknrlp" path="res://main/common/npc/dialogue/dee/dee_soup.tscn" id="7_tedmt"]
+[ext_resource type="PackedScene" uid="uid://bdtrsvxeck83y" path="res://main/common/npc/dialogue/loris/loris_chatter.tscn" id="10_0bmn3"]
+[ext_resource type="PackedScene" uid="uid://qh14cd8acncd" path="res://main/common/npc/dialogue/loris/LorisSoupReview.tscn" id="11_bjgup"]
+[ext_resource type="PackedScene" uid="uid://cfs1q0u15fbob" path="res://main/common/npc/dialogue/lola/LolaChatter.tscn" id="13_ypbac"]
+[ext_resource type="PackedScene" uid="uid://b1i0ww73iv1j2" path="res://main/common/npc/dialogue/lola/lola_soup.tscn" id="14_2cww3"]
 
 [node name="NpcManager" type="Node"]
 script = ExtResource("1_pwtd2")
@@ -32,10 +36,14 @@ soup_dialogue = ExtResource("7_tedmt")
 [node name="Loris" type="Node" parent="."]
 script = ExtResource("2_sg0am")
 NPC_2D = ExtResource("6_ef22e")
+chatter_dialogue = ExtResource("10_0bmn3")
+soup_dialogue = ExtResource("11_bjgup")
 
 [node name="Lola" type="Node" parent="."]
 script = ExtResource("2_sg0am")
 NPC_2D = ExtResource("7_40mql")
+chatter_dialogue = ExtResource("13_ypbac")
+soup_dialogue = ExtResource("14_2cww3")
 
 [connection signal="exit_dialogue" from="Dee" to="." method="_on_exit_dialogue"]
 [connection signal="exit_dialogue" from="Loris" to="." method="_on_exit_dialogue"]
