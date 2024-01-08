@@ -220,7 +220,7 @@ autoplay = "default"
 centered = false
 
 [node name="BrewPanel" type="VBoxContainer" parent="."]
-offset_left = 384.0
+offset_left = 325.0
 offset_right = 512.0
 offset_bottom = 288.0
 theme_override_constants/separation = 0
@@ -240,16 +240,34 @@ horizontal_scroll_mode = 0
 
 [node name="Items" type="GridContainer" parent="BrewPanel/ItemScroller"]
 layout_mode = 2
-columns = 3
+columns = 4
 
-[node name="ShelfBottom" type="Control" parent="BrewPanel"]
+[node name="ShelfBottom" type="CenterContainer" parent="BrewPanel"]
 custom_minimum_size = Vector2(128, 48)
 layout_mode = 2
 size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BrewPanel/ShelfBottom"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="BrewPanel/ShelfBottom/VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+max_value = 3.0
+show_percentage = false
+
+[node name="BrewButton" type="Button" parent="BrewPanel/ShelfBottom/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"BigButton"
+theme_override_font_sizes/font_size = 22
+text = "BREW"
 
 [node name="Notebook" parent="." instance=ExtResource("6_tmi4w")]
 visible = false
 offset_right = 512.0
 offset_bottom = 288.0
 
+[connection signal="pressed" from="BrewPanel/ShelfBottom/VBoxContainer/BrewButton" to="." method="_on_brew_button_pressed"]
 [connection signal="close" from="Notebook" to="." method="_on_notebook_close"]

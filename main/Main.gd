@@ -1,6 +1,5 @@
 extends Node
 
-@onready var ingMgr = $IngredientManager
 @onready var npcMgr = NpcManager.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -19,3 +18,9 @@ func _on_intro_complete():
 	intro.queue_free()
 	$BrewSoup.show()
 	$BrewSoup.start_brew()
+	$BrewTutorial.play()
+
+func _on_brew_tutorial_complete():
+	var tutorial = $BrewTutorial
+	self.remove_child(tutorial)
+	tutorial.queue_free()

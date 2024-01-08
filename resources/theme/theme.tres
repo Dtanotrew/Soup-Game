@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=21 format=3 uid="uid://hbjxyvr5c2ss"]
+[gd_resource type="Theme" load_steps=24 format=3 uid="uid://hbjxyvr5c2ss"]
 
 [ext_resource type="Texture2D" uid="uid://iv8bsouyfkim" path="res://resources/textures/ui/label-box.png" id="1_6u6ya"]
 [ext_resource type="StyleBox" uid="uid://ljl3d61dnwoi" path="res://resources/theme/StyleBox/ButtonBox.tres" id="1_mlpk1"]
@@ -9,6 +9,8 @@
 [ext_resource type="StyleBox" uid="uid://cg6fpyvxiqrd5" path="res://resources/theme/StyleBox/DialogueNameBox.tres" id="4_afhi6"]
 [ext_resource type="StyleBox" uid="uid://x2frcjxvh5eg" path="res://resources/theme/StyleBox/EditableLabelBox.tres" id="6_t61lw"]
 [ext_resource type="StyleBox" uid="uid://nsbm8gqxhfxf" path="res://resources/theme/StyleBox/ScrollGrabberBox.tres" id="8_hla51"]
+[ext_resource type="Texture2D" uid="uid://dqnpdwwkabeto" path="res://resources/textures/ui/progress-bg-box.png" id="8_mxkk1"]
+[ext_resource type="Texture2D" uid="uid://cs7fu80vg5e8x" path="res://resources/textures/ui/progress-box.png" id="9_45xce"]
 [ext_resource type="StyleBox" uid="uid://cxro1n855pqo1" path="res://resources/theme/StyleBox/ScrollGrabberBoxPressed.tres" id="9_rmy47"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1kuu"]
@@ -54,7 +56,27 @@ axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kw15q"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8e12"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1rql"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+texture = ExtResource("8_mxkk1")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ipe5k"]
+texture = ExtResource("9_45xce")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exh4q"]
 
@@ -93,7 +115,8 @@ LibraryTitleEdit/styles/focus = SubResource("StyleBoxEmpty_kw15q")
 LibraryTitleEdit/styles/normal = ExtResource("6_t61lw")
 NameLabel/base_type = &"Label"
 NameLabel/styles/normal = ExtResource("4_afhi6")
-ProgressBar/styles/background = SubResource("StyleBoxEmpty_g8e12")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_q1rql")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_ipe5k")
 RichTextLabel/colors/default_color = Color(0.215686, 0.14902, 0.0627451, 1)
 RichTextLabel/colors/font_selected_color = Color(0.917647, 0.835294, 0.721569, 1)
 RichTextLabel/colors/selection_color = Color(0.215686, 0.14902, 0.0627451, 1)

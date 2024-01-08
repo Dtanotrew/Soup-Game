@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blhflgbo5bpnf"
-path="res://.godot/imported/yomamabrew.png-ac859e402016523a41ba6a7decfa8d47.ctex"
+uid="uid://cs7fu80vg5e8x"
+path="res://.godot/imported/progress-box.png-f00b26ddf9f987cd21eebe82c1426457.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/brewing-scene/yomamabrew.png"
-dest_files=["res://.godot/imported/yomamabrew.png-ac859e402016523a41ba6a7decfa8d47.ctex"]
+source_file="res://resources/textures/ui/progress-box.png"
+dest_files=["res://.godot/imported/progress-box.png-f00b26ddf9f987cd21eebe82c1426457.ctex"]
 
 [params]
 
