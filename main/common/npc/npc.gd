@@ -5,7 +5,8 @@ signal exit_dialogue
 @export var id: String
 @export var displayName: String
 @export var icon: Texture2D
-@export var quality_threshold: int = 0
+@export var poison_mult: int = 1
+@export var max_poison: int = 2
 @export var taste_threshold: int = 1
 @export var variety_threshold: int = 2
 
@@ -24,10 +25,9 @@ signal exit_dialogue
 
 var latest_soup = {
 	"soup": null,
-	"taste": 0,
-	"quality": 0,
-	"variety": 0,
-	"opinion": 0
+	"taste": 0, # -2 to +2
+	"poison": 0, # 0 to 5
+	"variety": 0, # -1 to 1
 }
 
 func _ready():
@@ -39,7 +39,7 @@ func _ready():
 		chatter_scene.finished.connect(_on_dialogue_finished)
 	if soup_scene:
 		self.add_child(soup_scene)
-		chatter_scene.finished.connect(_on_dialogue_finished)
+		soup_scene.finished.connect(_on_dialogue_finished)
 
 func score_soup(soup: Soup):
 	var score: float = 0
@@ -60,7 +60,7 @@ func score_soup(soup: Soup):
 	if adjusted_taste <= -2 - taste_threshold:
 		latest_soup.taste -= 1
 		
-	var adjusted_quality = soup.poison
+	latest_soup.poison = clampf(soup.poison * poison_mult, 0, 5)
 	
 
 func enter_dialogue(ui: DialogueUI):

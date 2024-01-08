@@ -1,49 +1,53 @@
 class_name DialogueComment extends Node
 
-@export var format_string = "I {opinion_verb} your soup. It was {trait1} {joiner} {trait2}."
+@export_multiline var format_string = "I {opinion_verb} your soup. It was {taste_adj}. The variety was {variety_adj}."
+@export var illness_string = "It made me feel sick."
 
-@export_category("Opinion Verb")
+@export_category("Opinion")
 @export var strong_like: String = "loved"
 @export var like: String = "liked"
+@export var neutral: String = "liked"
 @export var dislike: String = "didn't like"
 @export var strong_dislike: String = "hated"
 
-@export_category("Positive Traits")
+@export_category("Variety")
+@export var good_variety = "interesting"
+@export var mid_variety = "bland"
+@export var bad_variety = "boring"
+
+@export_category("Taste")
 @export var great_taste = "very tasty"
 @export var good_taste = "tasty"
-@export var great_quality = "wholesome"
-@export var good_quality = "satisfying"
+@export var mid_taste = "okay"
+@export var bad_taste = "bad"
+@export var awful_taste = "inedible"
 
-@export_category("Negative Traits")
-@export var bad_taste = "bland"
-@export var awful_taste = "boring"
-@export var bad_quality = "made me sick"
-@export var awful_quality = "inedible"
-
-@onready var opinion_array = [strong_dislike, dislike, like, strong_like]
-@onready var quality_array = [awful_quality, bad_quality, good_quality, great_quality]
-@onready var taste_array = [awful_taste, bad_taste, good_taste, great_taste]
+@onready var opinion_array = [strong_dislike, dislike, neutral, like, strong_like]
+@onready var variety_array = [bad_variety, mid_variety, good_variety]
+@onready var taste_array = [awful_taste, bad_taste, mid_taste, good_taste, great_taste]
 
 var disp_npc: Npc
 
 func enter(ui:DialogueUI, npc: Npc = null):
-	var qual_index = clampi(npc.latest_soup.variety-npc.variety_threshold+2, 0, 2)
-	var vary_index = clampi(npc.latest_soup.quality-npc.quality_threshold+2, 0, 2)
-	var opinion_index
-	if qual_index == 0 || (vary_index < 2 && qual_index == 1):
-		opinion_index = 0
-	elif vary_index == 3 && qual_index == 3:
-		opinion_index = 3
-	elif max(qual_index, vary_index) == 3:
-		opinion_index = 2
-	
-	
-	
 	disp_npc = npc
+	
+	var opinion = npc.latest_soup.variety + npc.latest_soup.taste - max(npc.latest_soup.poison - npc.max_poison,0)
+	var opinion_sign = opinion/abs(opinion) as int
+	var opinion_index: int = clamp((ceil(abs(opinion)/2) as int)*opinion_sign, -2, 2)+2
+	var opinion_verb = opinion_array[opinion_index]
+	
+	var variety_adj = variety_array[(npc.latest_soup.variety+1) as int]
+	
+	var taste_adj = taste_array[(npc.latest_soup.taste+1) as int]
+	
 	var text = format_string.format({
-		
+		"opinion_verb":opinion_verb,
+		"taste_adj": taste_adj,
+		"variety_adj": variety_adj
 	})
-	# ui.display_text(text, npc)
+	if npc.latest_soup.poison > npc.max_poison:
+		text += " " + illness_string
+	ui.display_text(text, npc)
 	ui.advance.connect(exit)
 
 func exit(ui:DialogueUI, npc: Npc = null):
