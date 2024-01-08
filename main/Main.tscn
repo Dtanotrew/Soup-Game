@@ -22,4 +22,5 @@ visible = false
 
 [connection signal="complete" from="BrewTutorial" to="." method="_on_brew_tutorial_complete"]
 [connection signal="complete" from="Intro" to="." method="_on_intro_complete"]
+[connection signal="exit_game" from="Menu" to="." method="_on_menu_exit_game"]
 [connection signal="start_game" from="Menu" to="." method="_on_menu_start_game"]

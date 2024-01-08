@@ -24,3 +24,7 @@ func _on_brew_tutorial_complete():
 	var tutorial = $BrewTutorial
 	self.remove_child(tutorial)
 	tutorial.queue_free()
+
+
+func _on_menu_exit_game():
+	get_tree().quit()
