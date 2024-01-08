@@ -2,9 +2,10 @@ extends Area2D
 
 @export var damage : int = 5
 @export var enemy : CharacterBody2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	monitoring = false
 
 func _on_body_entered(body):
 	for child in body.get_children():

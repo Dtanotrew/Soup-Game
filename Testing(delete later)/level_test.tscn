@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="3_55sam"]
 [ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander/Salamander.tscn" id="4_hticv"]
 [ext_resource type="AudioStream" uid="uid://bnhxnbncc3edc" path="res://music/lightforestloop.mp3" id="4_jidnf"]
-[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/npc_2.tscn" id="6_81pdg"]
+[ext_resource type="PackedScene" uid="uid://bemkijyyyv06" path="res://Character/Enemies/Big Mama/big_mama.tscn" id="6_floi4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stjk5"]
 texture = ExtResource("1_3pp1h")
@@ -163,7 +163,7 @@ sources/0 = SubResource("TileSetAtlasSource_stjk5")
 position = Vector2(1458, 118)
 
 [node name="Witch" parent="." instance=ExtResource("3_55sam")]
-position = Vector2(25, 213)
+position = Vector2(6547, 192)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(288, 224)
@@ -191,5 +191,5 @@ position = Vector2(296, 242)
 [node name="Salamander5" parent="." instance=ExtResource("4_hticv")]
 position = Vector2(459, 218)
 
-[node name="SlowLoris" parent="." instance=ExtResource("6_81pdg")]
-position = Vector2(6707, 236)
+[node name="BigMama" parent="." instance=ExtResource("6_floi4")]
+position = Vector2(6766, 187)
