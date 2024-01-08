@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://m6clnc0gcc5o"]
+
+[ext_resource type="Script" path="res://main/level/Ingredient2D.gd" id="1_w1yqn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlinm"]
+
+[node name="Ingredient2D" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_w1yqn")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hlinm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

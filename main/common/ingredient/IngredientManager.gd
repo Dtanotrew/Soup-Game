@@ -10,6 +10,7 @@ const hint_text_mediocre = "A basic ingredient.\n"
 @onready var pickup_ui = preload("res://main/common/ui/ingredient_pickup.tscn")
 
 var ingredients = {}
+var index = 0
 
 var hintable = []
 
@@ -52,7 +53,7 @@ func _ready():
 				assign_both(ing)
 				both.append(ing)
 			else:
-				if bad.size() > 3 && both.size > 1:
+				if bad.size() > 3 && both.size() > 1:
 					assign_good(ing)
 					good.append(ing)
 				elif bad.size() > 3:
@@ -136,4 +137,10 @@ func add_ingredient_to_player(id: String, num: int = 1) -> bool:
 	print("Error: Attempted to add invalid ingredient to player: " + id)
 	return false
 	
-
+func get_next_spawn() -> Ingredient:
+	var next = ingredients.values()[index] as Ingredient
+	if next.effect == next.Effect.SUPER:
+		index = (index + 1) % 14
+		next = ingredients.values()[index] as Ingredient
+	index = (index + 1) % 14
+	return next

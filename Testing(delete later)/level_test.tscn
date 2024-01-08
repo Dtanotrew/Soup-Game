@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bemkijyyyv06" path="res://Character/Enemies/Big Mama/big_mama.tscn" id="6_floi4"]
 [ext_resource type="AudioStream" uid="uid://ckde8rkau2e7x" path="res://music/villageloop.mp3" id="7_hf812"]
 [ext_resource type="AudioStream" uid="uid://n4yoei7n2yv2" path="res://music/chickenboss.mp3" id="8_us82j"]
-[ext_resource type="PackedScene" uid="uid://brt3514ki3ph7" path="res://Character/NPCs/lola_2d.tscn" id="12_yfv4w"]
-[ext_resource type="PackedScene" path="res://Character/NPCs/dee_2d.tscn" id="13_vabgh"]
-[ext_resource type="PackedScene" path="res://Character/NPCs/loris_2d.tscn" id="14_q27ko"]
-[ext_resource type="PackedScene" uid="uid://cyyqybx6444om" path="res://ingredient_1.tscn" id="15_q028d"]
+[ext_resource type="PackedScene" uid="uid://baa7wra4ybihc" path="res://Character/NPCs/lola_2d.tscn" id="12_yfv4w"]
+[ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://Character/NPCs/dee_2d.tscn" id="13_vabgh"]
+[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/loris_2d.tscn" id="14_q27ko"]
+[ext_resource type="PackedScene" uid="uid://m6clnc0gcc5o" path="res://main/level/ingredient_2d.tscn" id="15_2u661"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovycl"]
 size = Vector2(28, 48)
@@ -271,5 +271,7 @@ attenuation = 0.42
 [node name="BigMama" parent="." instance=ExtResource("6_floi4")]
 position = Vector2(6772, 197)
 
-[node name="Ingredient 1" parent="." instance=ExtResource("15_q028d")]
-position = Vector2(2447, 210)
+[node name="Ingredient2D" parent="." instance=ExtResource("15_2u661")]
+position = Vector2(1614, 43)
+
+[connection signal="new_pickup" from="Ingredient2D" to="Witch" method="pickup_new"]
