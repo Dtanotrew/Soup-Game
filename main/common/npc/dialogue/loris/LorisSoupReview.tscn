@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://qh14cd8acncd"]
+
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="1_wgl0c"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="2_14r6y"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue_comment.gd" id="3_ip83q"]
+
+[node name="LorisSoupReview" type="Node"]
+script = ExtResource("1_wgl0c")
+
+[node name="DialogueEntry" type="Node" parent="."]
+script = ExtResource("2_14r6y")
+text = "...soup? Oh, yes, your soup."
+
+[node name="DialogueComment" type="Node" parent="."]
+script = ExtResource("3_ip83q")
+format_string = "... The soup was {opinion}. {taste_adj} meal..."
+strong_like = "incredible"
+like = "great"
+neutral = "ok"
+dislike = "bad"
+strong_dislike = "awful"
+great_taste = "An outstanding"
+good_taste = "A great"
+mid_taste = "A fine"
+bad_taste = "A sad"
+awful_taste = "A terrible"
+
+[node name="DialogueEntry2" type="Node" parent="."]
+script = ExtResource("2_14r6y")
+text = "Anyways, have you seen my hat?"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfs1q0u15fbob"]
+
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue_random.gd" id="1_m24yj"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="2_5ysan"]
+
+[node name="LolaChatter" type="Node"]
+script = ExtResource("1_m24yj")
+
+[node name="DialogueEntry" type="Node" parent="."]
+script = ExtResource("2_5ysan")
+text = "How are you doing, dear?"
+
+[node name="DialogueEntry2" type="Node" parent="."]
+script = ExtResource("2_5ysan")
+text = "He hasn't had his hat in twenty years, you know."
+
+[node name="DialogueEntry3" type="Node" parent="."]
+script = ExtResource("2_5ysan")
+text = "Where'd you find such an oversized spoon?"

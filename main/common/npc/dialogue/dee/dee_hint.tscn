@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1q2w8gvx6cn7"]
+[gd_scene load_steps=4 format=3 uid="uid://d1q2w8gvx6cn7"]
 
 [ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="1_glxev"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="2_ebb63"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue_hint.gd" id="3_rnokh"]
 
 [node name="DeeHint" type="Node"]
 script = ExtResource("1_glxev")
+
+[node name="DialogueEntry" type="Node" parent="."]
+script = ExtResource("2_ebb63")
+text = "Oh? Bringing back new ingredients? Let me have a look!"
+
+[node name="DialogueHint" type="Node" parent="."]
+script = ExtResource("3_rnokh")
+
+[node name="DialogueEntry2" type="Node" parent="."]
+script = ExtResource("2_ebb63")
+text = "Hope that's helpful!"
