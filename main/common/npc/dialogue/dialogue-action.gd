@@ -1,11 +1,11 @@
 class_name DialogueAction extends DialogueEntry
 
-func enter(ui:DialogueUI):
-	self.exit(ui)
+func enter(ui:DialogueUI, npc:Npc  = null):
+	self.exit(ui, npc)
 
-func exit(ui:DialogueUI):
+func exit(ui:DialogueUI, npc: Npc = null):
 	var parent = self.get_parent()
 	if parent is DialogueMenu:
-		parent.exit(ui)
+		parent.exit(ui, npc)
 	else:
-		self.get_parent().enter(ui)
+		self.get_parent().enter(ui, npc)

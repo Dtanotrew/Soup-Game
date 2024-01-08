@@ -7,18 +7,20 @@ class_name DialogueMenu extends Node
 @onready var count: int = min(self.get_child_count(), 3)
 @onready var entries= ([option_1, option_2, option_3].slice(0,count))
 
-func enter(ui:DialogueUI):
-	ui.set_show_character(false)
-	ui.display_menu(entries)
+var disp_npc: Npc
+
+func enter(ui:DialogueUI, npc: Npc = null):
+	disp_npc = npc
+	ui.display_menu(entries, npc)
 	ui.choice.connect(_on_dialogue_ui_choice)
 
-func exit(ui:DialogueUI):
+func exit(ui:DialogueUI, npc: Npc = null):
 	var parent = self.get_parent()
 	if parent is DialogueMenu:
-		parent.exit(ui)
+		parent.exit(ui, npc)
 	else:
-		self.get_parent().enter(ui)
+		self.get_parent().enter(ui, npc)
 
 func _on_dialogue_ui_choice(ui:DialogueUI, index: int):
 	ui.choice.disconnect(_on_dialogue_ui_choice)
-	self.get_children()[index].enter(ui)
+	self.get_children()[index].enter(ui, disp_npc)

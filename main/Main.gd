@@ -1,10 +1,8 @@
 extends Node
 
-@onready var npcMgr = NpcManager.new()
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	npcMgr.load_predefined_npcs()
+	# npcMgr.load_predefined_npcs()
 	$Menu.display()
 	pass # Replace with function body.
 
@@ -24,6 +22,7 @@ func _on_brew_tutorial_complete():
 	var tutorial = $BrewTutorial
 	self.remove_child(tutorial)
 	tutorial.queue_free()
+	NpcManager.debug_dia()
 
 
 func _on_menu_exit_game():

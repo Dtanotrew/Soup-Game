@@ -8,6 +8,7 @@ signal new_ingredient_start
 signal new_ingredient_end
 
 var ingredients = {}
+var hintable = []
 
 var new_ing: Ingredient
 
