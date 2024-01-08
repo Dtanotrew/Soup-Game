@@ -686,8 +686,8 @@ sprite_frames = SubResource("SpriteFrames_gd2oc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("10_x3dxk")
-hframes = 5
+texture = ExtResource("6_lll4q")
+hframes = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

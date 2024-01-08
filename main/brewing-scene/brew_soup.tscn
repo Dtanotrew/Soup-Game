@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://5xfsj0s6dn46"]
+[gd_scene load_steps=34 format=3 uid="uid://5xfsj0s6dn46"]
 
 [ext_resource type="Script" path="res://main/brewing-scene/brew_soup.gd" id="1_qk2yp"]
 [ext_resource type="Texture2D" uid="uid://ctesfv546yqru" path="res://resources/textures/brewing-minigame/brew-bg-animsheet.png" id="2_xv0jt"]
 [ext_resource type="Shader" path="res://resources/shaders/tintable_ingredient.gdshader" id="3_nsr3c"]
 [ext_resource type="Texture2D" uid="uid://l4p8ty35y654" path="res://resources/textures/brewing-minigame/brew-bg-animsheet-tint.png" id="3_pn1vg"]
+[ext_resource type="AudioStream" uid="uid://ckde8rkau2e7x" path="res://music/villageloop.mp3" id="6_bhfy0"]
 [ext_resource type="PackedScene" uid="uid://jqixgjv7su2s" path="res://main/player-notebook/notebook.tscn" id="6_tmi4w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktgta"]
@@ -269,5 +270,17 @@ visible = false
 offset_right = 512.0
 offset_bottom = 288.0
 
+[node name="BrewTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bhfy0")
+autoplay = true
+
+[node name="SceneButton" type="Button" parent="."]
+offset_top = 3.0
+offset_right = 107.0
+offset_bottom = 22.0
+text = "Change Scene
+"
+
 [connection signal="pressed" from="BrewPanel/ShelfBottom/VBoxContainer/BrewButton" to="." method="_on_brew_button_pressed"]
 [connection signal="close" from="Notebook" to="." method="_on_notebook_close"]
+[connection signal="pressed" from="SceneButton" to="." method="_on_button_pressed"]

@@ -278,3 +278,13 @@ scale = Vector2(0.0819334, 0.0819334)
 
 [node name="Ingredient 1" parent="." instance=ExtResource("15_q028d")]
 position = Vector2(2447, 210)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -905.0
+offset_top = 15.0
+offset_right = -798.0
+offset_bottom = 34.0
+text = "Change Scene
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

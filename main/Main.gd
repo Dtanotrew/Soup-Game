@@ -12,10 +12,6 @@ func _on_menu_start_game():
 	$Menu.hide()
 	$Intro.play()
 
-func _process(delta):
-	if event.is_action_pressed("scene_change"):
-		get_tree().change_scene("res://Testing/level_test.tscn")
-
 func _on_intro_complete():
 	var intro = $Intro
 	self.remove_child(intro)
