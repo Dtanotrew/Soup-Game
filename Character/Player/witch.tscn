@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://3f0jgldafgqq"]
+[gd_scene load_steps=70 format=3 uid="uid://3f0jgldafgqq"]
 
 [ext_resource type="Script" path="res://Character/Player/witch.gd" id="1_sjtlp"]
 [ext_resource type="Texture2D" uid="uid://pylxcnmbsioa" path="res://art/player/Spriteconcept1.png" id="2_e0tya"]
@@ -21,8 +21,9 @@
 [ext_resource type="Script" path="res://Character/HitState.gd" id="17_3mfb4"]
 [ext_resource type="Script" path="res://Character/FacingCollisionShape2D.gd" id="17_qody8"]
 [ext_resource type="AudioStream" uid="uid://blx80gd27vmtg" path="res://sounds/hit_sound.mp3" id="18_5lymt"]
+[ext_resource type="AudioStream" uid="uid://dt7iirch5nmh8" path="res://sounds/Player_Hit_1.wav" id="18_lpc05"]
 [ext_resource type="Script" path="res://Character/State.gd" id="18_odlyw"]
-[ext_resource type="AudioStream" uid="uid://c0iiiitsubk5l" path="res://music/woosh_1.wav" id="22_hghsx"]
+[ext_resource type="AudioStream" uid="uid://c0iiiitsubk5l" path="res://sounds/woosh_1.wav" id="23_mlkwv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dk8k3"]
 animations = [{
@@ -295,6 +296,7 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_nrnib"]
 resource_name = "hit"
 length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -641,8 +643,8 @@ limit_bottom = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("6_lll4q")
-hframes = 10
+texture = ExtResource("10_x3dxk")
+hframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -697,7 +699,7 @@ can_move = false
 wait_time = 0.3
 one_shot = true
 
-[node name="HitState" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("damageable", "character_state_machine", "dead_state", "return_state")]
+[node name="HitState" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("damageable", "character_state_machine", "dead_state", "return_state", "hit_sound")]
 script = ExtResource("17_3mfb4")
 damageable = NodePath("../../Damageable")
 character_state_machine = NodePath("..")
@@ -706,11 +708,15 @@ return_state = NodePath("../Ground")
 knockback_speed = 300.0
 return_anim = "move"
 hit_anim = "hit"
+hit_sound = NodePath("hitsound")
 death_anim = "death"
 
 [node name="Timer" type="Timer" parent="CharacterStateMachine/HitState"]
 wait_time = 0.2
 one_shot = true
+
+[node name="hitsound" type="AudioStreamPlayer2D" parent="CharacterStateMachine/HitState"]
+stream = ExtResource("18_lpc05")
 
 [node name="Death" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("18_odlyw")
@@ -729,7 +735,6 @@ state_machine = NodePath("../CharacterStateMachine")
 [node name="Spoon" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape", "hit_sound", "woosh_sound")]
 collision_layer = 0
 collision_mask = 4
-monitoring = false
 script = ExtResource("16_qdw6i")
 player = NodePath("..")
 facing_shape = NodePath("CollisionShape2D")
@@ -744,7 +749,7 @@ facing_left_pos = Vector2(-28, 0)
 facing_right_pos = Vector2(28, 0)
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Spoon"]
-stream = ExtResource("22_hghsx")
+stream = ExtResource("23_mlkwv")
 volume_db = 6.55
 
 [node name="SpoonHit" type="AudioStreamPlayer2D" parent="Spoon"]

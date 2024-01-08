@@ -9,6 +9,7 @@ class_name HitState
 @export var knockback_speed : float = 100.0
 @export var return_anim : String
 @export var hit_anim : String
+@export var hit_sound : AudioStreamPlayer2D
 @export var death_anim : String
 @onready var timer : Timer = $Timer
 
@@ -18,6 +19,8 @@ func _ready():
 
 func on_enter():
 	playback.travel(hit_anim)
+	if hit_sound != null:
+		hit_sound.play()
 	timer.start()
 
 func on_damageable_hit(node : Node, damage_amount : int, knockback_direction : Vector2):

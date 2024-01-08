@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bemkijyyyv06"]
+[gd_scene load_steps=32 format=3 uid="uid://bemkijyyyv06"]
 
 [ext_resource type="Script" path="res://Character/Enemies/Big Mama/big_mama.gd" id="1_hbeul"]
 [ext_resource type="Texture2D" uid="uid://cjpe2q8tm8fbw" path="res://art/Enemies/CHICKEN.png" id="2_5asfr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01StunnedState.gd" id="6_6p71p"]
 [ext_resource type="Script" path="res://Character/HitState.gd" id="7_02j04"]
 [ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01DeathState.gd" id="8_yb5dd"]
+[ext_resource type="AudioStream" uid="uid://da0cy3lukp3q5" path="res://music/Big_Mama_Cluck_1.wav" id="10_c6pxa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ovn4r"]
 radius = 46.0109
@@ -228,6 +229,9 @@ _data = {
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_swx87"]
 animation = &"attack"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f1a74"]
+animation = &"dead"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6ndpc"]
 animation = &"hit"
 
@@ -245,16 +249,22 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ynj4t"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b70jj"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vcprn"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lqiti"]
 states/End/position = Vector2(898, 100)
 states/attack/node = SubResource("AnimationNodeAnimation_swx87")
 states/attack/position = Vector2(510, 100)
+states/dead/node = SubResource("AnimationNodeAnimation_f1a74")
+states/dead/position = Vector2(342, 177)
 states/hit/node = SubResource("AnimationNodeAnimation_6ndpc")
 states/hit/position = Vector2(342, 2)
 states/idle/node = SubResource("AnimationNodeAnimation_hm3am")
 states/idle/position = Vector2(342, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5i6d5"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_674wc"), "idle", "hit", SubResource("AnimationNodeStateMachineTransition_hdfj4"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_q271c"), "hit", "idle", SubResource("AnimationNodeStateMachineTransition_ynj4t")]
-graph_offset = Vector2(-173, -40)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5i6d5"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_674wc"), "idle", "hit", SubResource("AnimationNodeStateMachineTransition_hdfj4"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_q271c"), "hit", "idle", SubResource("AnimationNodeStateMachineTransition_ynj4t"), "idle", "dead", SubResource("AnimationNodeStateMachineTransition_b70jj"), "attack", "dead", SubResource("AnimationNodeStateMachineTransition_vcprn")]
+graph_offset = Vector2(-198, 34)
 
 [node name="BigMama" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
 collision_layer = 4
@@ -294,7 +304,7 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("2_np1qk")
-health = 60.0
+health = 80.0
 
 [node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("character", "current_state", "animation_tree")]
 script = ExtResource("3_8tgvv")
@@ -309,7 +319,7 @@ attack_state = NodePath("../RollAttack")
 can_move = false
 
 [node name="IdleTimer" type="Timer" parent="CharacterStateMachine/Idle"]
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
 
 [node name="RollAttack" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("idle_state", "attack_timer")]
@@ -327,7 +337,7 @@ can_move = false
 
 [node name="Timer" type="Timer" parent="CharacterStateMachine/Stunned"]
 
-[node name="HitState" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("damageable", "character_state_machine", "dead_state", "return_state")]
+[node name="HitState" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("damageable", "character_state_machine", "dead_state", "return_state", "hit_sound")]
 script = ExtResource("7_02j04")
 damageable = NodePath("../../Damageable")
 character_state_machine = NodePath("..")
@@ -336,12 +346,16 @@ return_state = NodePath("../Idle")
 knockback_speed = 0.0
 return_anim = "idle"
 hit_anim = "hit"
+hit_sound = NodePath("HitSound")
 death_anim = "dead"
 can_move = false
 
 [node name="Timer" type="Timer" parent="CharacterStateMachine/HitState"]
-wait_time = 0.439
+wait_time = 0.2
 one_shot = true
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="CharacterStateMachine/HitState"]
+stream = ExtResource("10_c6pxa")
 
 [node name="Death" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("8_yb5dd")
