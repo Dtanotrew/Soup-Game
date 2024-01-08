@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://3f0jgldafgqq"]
+[gd_scene load_steps=77 format=3 uid="uid://3f0jgldafgqq"]
 
 [ext_resource type="Script" path="res://Character/Player/witch.gd" id="1_sjtlp"]
 [ext_resource type="Texture2D" uid="uid://pylxcnmbsioa" path="res://art/player/Spriteconcept1.png" id="2_e0tya"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://da8el0qg8a38c" path="res://art/player/Spriteconcept2.png" id="3_exw4f"]
 [ext_resource type="Texture2D" uid="uid://cwu4jxwkq81q" path="res://art/player/Sprite-0000.png" id="4_mdqpy"]
 [ext_resource type="Texture2D" uid="uid://cnxkauj3es327" path="res://art/player/Sprite-0001.png" id="5_rt5qu"]
+[ext_resource type="PackedScene" uid="uid://cxaml1p81i40a" path="res://main/common/ui/ingredient_pickup.tscn" id="6_l68xg"]
 [ext_resource type="Texture2D" uid="uid://bnoync11m6ljj" path="res://art/player/Spriteconcept-Idle-Sheet.png" id="6_lll4q"]
 [ext_resource type="Texture2D" uid="uid://bcwhjkli5fsu4" path="res://art/player/Spriteconcept-Jumping-All.png" id="7_nvgrm"]
 [ext_resource type="Texture2D" uid="uid://dg3jtrq4ciggb" path="res://art/player/Spriteconcept-Run.png" id="8_c3wb6"]
@@ -680,10 +681,17 @@ limit_left = -928
 limit_top = 0
 limit_bottom = 0
 
+[node name="IngredientPickupUI" parent="Camera2D" instance=ExtResource("6_l68xg")]
+visible = false
+visibility_layer = 524288
+z_index = 100
+offset_top = 144.0
+offset_bottom = 144.0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("10_x3dxk")
-hframes = 5
+texture = ExtResource("6_lll4q")
+hframes = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
