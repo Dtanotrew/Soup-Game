@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1i0ww73iv1j2"]
+
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="1_0t5ft"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="2_jpkee"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue_comment.gd" id="3_uvqqr"]
+
+[node name="LolaSoup" type="Node"]
+script = ExtResource("1_0t5ft")
+
+[node name="DialogueEntry" type="Node" parent="."]
+script = ExtResource("2_jpkee")
+text = "Your soup? Oh, yes."
+
+[node name="DialogueComment" type="Node" parent="."]
+script = ExtResource("3_uvqqr")
+format_string = "I {opinion} your soup. {taste_adj}. An {variety_adj} mix of flavors."
+great_taste = "Very tasty"
+good_taste = "Quite tasty"
+mid_taste = "Room for improvement, though"
+bad_taste = "You could use some practice"
+awful_taste = "It was inedible"
