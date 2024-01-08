@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://pe52xkufbvpu"]
+[gd_scene load_steps=13 format=3 uid="uid://pe52xkufbvpu"]
 
 [ext_resource type="PackedScene" uid="uid://3f0jgldafgqq" path="res://Character/Player/witch.tscn" id="1_0u4kx"]
 [ext_resource type="Texture2D" uid="uid://miccmcwe3qy3" path="res://art/fewfef.JPG" id="2_hgdsr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="5_dkf8c"]
 [ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://Character/NPCs/npc_0.tscn" id="7_ybgb1"]
 [ext_resource type="AudioStream" uid="uid://byscpc3a205r1" path="res://music/light_forest_aaa.wav" id="8_mppft"]
+[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/npc_2.tscn" id="9_prep5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wd25p"]
 
@@ -20,7 +21,7 @@ size = Vector2(305.5, 31.25)
 [node name="Test" type="Node"]
 
 [node name="Witch" parent="." instance=ExtResource("1_0u4kx")]
-position = Vector2(107, 240)
+position = Vector2(162, 237)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(515, 263)
@@ -95,3 +96,6 @@ position = Vector2(76, 243)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_mppft")
 autoplay = true
+
+[node name="SlowLoris" parent="." instance=ExtResource("9_prep5")]
+position = Vector2(119, 237)

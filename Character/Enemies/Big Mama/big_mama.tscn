@@ -13,8 +13,9 @@
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lqiti"]
 
-[node name="BigMama" type="CharacterBody2D"]
+[node name="BigMama" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
 script = ExtResource("1_hbeul")
+hit_state = NodePath("CharacterStateMachine/HitState")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ltebl")
