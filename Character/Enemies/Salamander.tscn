@@ -1,18 +1,18 @@
-[gd_scene load_steps=26 format=3 uid="uid://bdu2p02exbw2q"]
+[gd_scene load_steps=26 format=3 uid="uid://c41xahpkeehb5"]
 
-[ext_resource type="Script" path="res://Character/Enemies/Salamander/Salamander.gd" id="1_mhqxx"]
+[ext_resource type="Script" path="res://Character/Enemies/Salamander.gd" id="1_mhqxx"]
 [ext_resource type="Texture2D" uid="uid://d0jkuj3mlrmkj" path="res://art/Enemies/Giantsalamander-Hit.png" id="2_4fk7y"]
-[ext_resource type="Script" path="res://Character/Enemies/Salamander/SalamanderAttackHitbox.gd" id="2_p4a6w"]
-[ext_resource type="Script" path="res://Character/Damageable.gd" id="2_tmpbp"]
+[ext_resource type="Script" path="res://Character/Enemies/SalamanderAttackHitbox.gd" id="2_p4a6w"]
+[ext_resource type="Script" path="res://Character/Enemies/Damageable.gd" id="2_tmpbp"]
 [ext_resource type="Texture2D" uid="uid://dqlo7c4adyi4x" path="res://art/Enemies/Giantsalamander-Dead.png" id="2_wdi4v"]
 [ext_resource type="Texture2D" uid="uid://cogw7oxwfkvlw" path="res://art/Enemies/Giantsalamander-Colored.png" id="3_47puc"]
 [ext_resource type="Script" path="res://Character/CharacterStateMachine.gd" id="4_o30ac"]
-[ext_resource type="Script" path="res://Character/Enemies/Salamander/WalkState.gd" id="6_h6m4j"]
+[ext_resource type="Script" path="res://Character/Enemies/WalkState.gd" id="6_h6m4j"]
 [ext_resource type="Script" path="res://Character/HitState.gd" id="6_x7qti"]
-[ext_resource type="Script" path="res://Character/Enemies/Salamander/DeadState.gd" id="8_w8mfv"]
+[ext_resource type="Script" path="res://Character/Enemies/DeadState.gd" id="8_w8mfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptjrv"]
-size = Vector2(22, 13)
+size = Vector2(58, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvso"]
 size = Vector2(58, 13)
@@ -193,7 +193,6 @@ transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition
 [node name="Salamander" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
 position = Vector2(297, 201)
 collision_layer = 4
-collision_mask = 5
 script = ExtResource("1_mhqxx")
 hit_state = NodePath("CharacterStateMachine/Hit")
 
@@ -204,9 +203,8 @@ script = ExtResource("2_p4a6w")
 enemy = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(20, -2.5)
+position = Vector2(2, -2.5)
 shape = SubResource("RectangleShape2D_ptjrv")
-debug_color = Color(0.952941, 0, 0.552941, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2.5)
@@ -244,10 +242,9 @@ character = NodePath("..")
 current_state = NodePath("Walk")
 animation_tree = NodePath("../AnimationTree")
 
-[node name="Walk" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("raycast", "timer")]
+[node name="Walk" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("raycast")]
 script = ExtResource("6_h6m4j")
 raycast = NodePath("../../RayCast2D")
-timer = NodePath("DirectionCooldown")
 
 [node name="DirectionCooldown" type="Timer" parent="CharacterStateMachine/Walk"]
 wait_time = 0.05

@@ -612,7 +612,7 @@ transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(110, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1hh8"]
-size = Vector2(24.75, 23.5)
+size = Vector2(24.75, 32.5)
 
 [node name="Witch" type="CharacterBody2D" node_paths=PackedStringArray("spoon_hitbox")]
 light_mask = 2
@@ -635,6 +635,7 @@ position = Vector2(1, 4.5)
 shape = SubResource("RectangleShape2D_whlwh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -928
 limit_top = 0
 limit_bottom = 0
 
@@ -736,15 +737,15 @@ hit_sound = NodePath("SpoonHit")
 woosh_sound = NodePath("Whoosh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon"]
-position = Vector2(28, 4.75)
+position = Vector2(28, 0)
 shape = SubResource("RectangleShape2D_p1hh8")
 script = ExtResource("17_qody8")
-facing_left_pos = Vector2(-28, 4.75)
-facing_right_pos = Vector2(28, 4.75)
+facing_left_pos = Vector2(-28, 0)
+facing_right_pos = Vector2(28, 0)
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Spoon"]
 stream = ExtResource("22_hghsx")
-volume_db = 10.738
+volume_db = 6.55
 
 [node name="SpoonHit" type="AudioStreamPlayer2D" parent="Spoon"]
 stream = ExtResource("18_5lymt")
