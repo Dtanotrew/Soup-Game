@@ -55,3 +55,5 @@ func update_facing_direction():
 			sprite.flip_h = true
 		emit_signal("facing_direction_changed", !sprite.flip_h)
 
+func pickup_new(ing: Ingredient):
+	$Camera2D/IngredientPickupUI.prompt_new_ing(ing)

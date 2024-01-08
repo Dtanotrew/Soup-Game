@@ -57,6 +57,7 @@ theme_type_variation = &"DialoguePanel"
 layout_mode = 2
 
 [node name="PromptText" type="RichTextLabel" parent="VBoxContainer/TextDisplay/PromptPanel/PromptVAlign"]
+visible = false
 layout_mode = 2
 text = "It is [FLAVOR] and [EFFECT_TEXT]"
 fit_content = true
