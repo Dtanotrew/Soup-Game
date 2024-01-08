@@ -13,7 +13,7 @@ func start_brew():
 	$BrewPanel/ShelfBottom/VBoxContainer/ProgressBar.value = progress
 	$BrewBG/bg_tint.material.set_shader_parameter("tint_color", soup.color)
 	# add ingredients from library
-	for ing in IngredientManager.ingredients:
+	for ing in IngredientManager.player_ingredients.values():
 		add_shelf_item(ing)
 
 func add_shelf_item(item:Ingredient):

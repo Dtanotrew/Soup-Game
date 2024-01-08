@@ -12,6 +12,7 @@ var player_notes: String = ""
 var taste: int = 0
 var poison: int = 0
 var count: int = 0
+var color: Color = Color.BLACK
 
 enum Type {
 	STOCK = 1,
@@ -30,7 +31,7 @@ enum Effect {
 	SUPER = 1 << 3
 }
 
-func get_random_color():
+static func get_random_color():
 	var hue = randf();
 	# chosen to have a good brown color
 	var sat = 0.91
