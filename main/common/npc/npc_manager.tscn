@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b75rolqdc43nm"]
+[gd_scene load_steps=11 format=3 uid="uid://b75rolqdc43nm"]
 
 [ext_resource type="Script" path="res://main/common/npc/npc_manager.gd" id="1_pwtd2"]
 [ext_resource type="Script" path="res://main/common/npc/npc.gd" id="2_sg0am"]
 [ext_resource type="PackedScene" uid="uid://dmghwwb6u3t2g" path="res://main/common/ui/dialogue-ui.tscn" id="2_x6fpw"]
 [ext_resource type="PackedScene" uid="uid://8ltt4mq5hvsc" path="res://main/common/npc/dialogue/dee/dee_chatter.tscn" id="4_1a0gm"]
+[ext_resource type="Texture2D" uid="uid://b2ebdttlxuccf" path="res://art/NPCs/deebug.png" id="4_ec11x"]
+[ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://Character/NPCs/dee_2d.tscn" id="4_txjqd"]
+[ext_resource type="PackedScene" uid="uid://d1q2w8gvx6cn7" path="res://main/common/npc/dialogue/dee/dee_hint.tscn" id="5_wbuw1"]
+[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/loris_2d.tscn" id="6_ef22e"]
+[ext_resource type="PackedScene" uid="uid://baa7wra4ybihc" path="res://Character/NPCs/lola_2d.tscn" id="7_40mql"]
+[ext_resource type="PackedScene" uid="uid://cdk4tiknrlp" path="res://main/common/npc/dialogue/dee/dee_soup.tscn" id="7_tedmt"]
 
 [node name="NpcManager" type="Node"]
 script = ExtResource("1_pwtd2")
@@ -13,6 +19,24 @@ visible = false
 
 [node name="Dee" type="Node" parent="."]
 script = ExtResource("2_sg0am")
+id = "dee"
+displayName = "Dee Bug"
+icon = ExtResource("4_ec11x")
+taste_threshold = 0
+variety_threshold = 4
+NPC_2D = ExtResource("4_txjqd")
+hint_dialogue = ExtResource("5_wbuw1")
 chatter_dialogue = ExtResource("4_1a0gm")
+soup_dialogue = ExtResource("7_tedmt")
+
+[node name="Loris" type="Node" parent="."]
+script = ExtResource("2_sg0am")
+NPC_2D = ExtResource("6_ef22e")
+
+[node name="Lola" type="Node" parent="."]
+script = ExtResource("2_sg0am")
+NPC_2D = ExtResource("7_40mql")
 
 [connection signal="exit_dialogue" from="Dee" to="." method="_on_exit_dialogue"]
+[connection signal="exit_dialogue" from="Loris" to="." method="_on_exit_dialogue"]
+[connection signal="exit_dialogue" from="Lola" to="." method="_on_exit_dialogue"]

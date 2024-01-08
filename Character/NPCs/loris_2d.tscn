@@ -1,10 +1,25 @@
 [gd_scene load_steps=10 format=3 uid="uid://57dgigu1dqjb"]
 
-[ext_resource type="Script" path="res://Character/NPCs/npc_2.gd" id="1_4fw5n"]
-[ext_resource type="Texture2D" uid="uid://djb12nlat5cq7" path="res://art/NPCs/SlowLorisHand.png" id="1_y0ldt"]
+[ext_resource type="Script" path="res://Character/NPCs/loris_2d.gd" id="1_5e2hn"]
+[ext_resource type="Texture2D" uid="uid://djb12nlat5cq7" path="res://art/NPCs/SlowLorisHand.png" id="2_856be"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv4it"]
 size = Vector2(25, 35)
+
+[sub_resource type="Animation" id="Animation_544aw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_qypqc"]
 resource_name = "idle"
@@ -20,7 +35,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_y0ldt")]
+"values": [ExtResource("2_856be")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -47,21 +62,6 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
-[sub_resource type="Animation" id="Animation_544aw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3j78t"]
 _data = {
 "RESET": SubResource("Animation_544aw"),
@@ -81,12 +81,12 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="SlowLoris" type="CharacterBody2D"]
 collision_layer = 8
-script = ExtResource("1_4fw5n")
+script = ExtResource("1_5e2hn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 scale = Vector2(0.096875, 0.096875)
-texture = ExtResource("1_y0ldt")
+texture = ExtResource("2_856be")
 hframes = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
