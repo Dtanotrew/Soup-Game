@@ -350,12 +350,12 @@ hit_sound = NodePath("HitSound")
 death_anim = "dead"
 can_move = false
 
+[node name="HitSound" type="AudioStreamPlayer2D" parent="CharacterStateMachine/HitState"]
+stream = ExtResource("10_c6pxa")
+
 [node name="Timer" type="Timer" parent="CharacterStateMachine/HitState"]
 wait_time = 0.2
 one_shot = true
-
-[node name="HitSound" type="AudioStreamPlayer2D" parent="CharacterStateMachine/HitState"]
-stream = ExtResource("10_c6pxa")
 
 [node name="Death" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("8_yb5dd")
