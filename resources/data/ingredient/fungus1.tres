@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://dx67kq86f8w1u"]
+
+[ext_resource type="Script" path="res://main/common/ingredient/Ingredient.gd" id="1_21ioo"]
+[ext_resource type="Texture2D" uid="uid://bn1f2v32j6o16" path="res://resources/textures/ingredients/fungus1.png" id="1_eisui"]
+
+[resource]
+script = ExtResource("1_21ioo")
+name = "fungus1"
+icon = ExtResource("1_eisui")
+tinted = false
+type = 4
+effect = 0

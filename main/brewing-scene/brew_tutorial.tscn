@@ -31,18 +31,22 @@ option_2 = "[Skip tutorial]"
 [node name="TutorialSeq" type="Node" parent="DialogueSequence/DialogueMenu"]
 script = ExtResource("2_bsn0n")
 
-[node name="Entry1" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
+[node name="AddingItems" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
 script = ExtResource("5_6ut0q")
 text = "Add items to the pot with [Left Click].
 The color of the soup will change when the item is added, and an item will be consumed."
 
-[node name="Entry2" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
+[node name="Brew" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
 script = ExtResource("5_6ut0q")
 text = "The progress bar above the BREW button tells you how many ingredients you've added to your soup. To finish your soup, you need at least three."
 
-[node name="Entry3" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
+[node name="Notebook" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
 script = ExtResource("5_6ut0q")
 text = "[Right Click] an ingredient to open its notebook entry. A record of everything you've learned about it is here, as well as any notes you've chosen to add."
+
+[node name="BeCareful" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
+script = ExtResource("5_6ut0q")
+text = "Be sure to check the notes on the items you've brought with you. Some items may require caution with their use."
 
 [node name="DialogueAction" type="Node" parent="DialogueSequence/DialogueMenu"]
 script = ExtResource("5_c18mj")
