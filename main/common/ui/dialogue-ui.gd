@@ -3,17 +3,25 @@ class_name DialogueUI extends Control
 signal advance(ui: DialogueUI)
 signal choice(ui: DialogueUI, index: int)
 
-func set_show_character(vis: bool ):
-	$IconPanel.visible = vis
-	$Nametag.visible = vis
+func set_character(npc: Npc):
+	if not npc:
+		$IconPanel.visible = false
+		$Nametag.visible = false
+	else:
+		$IconPanel.visible = true
+		$Nametag.visible = true
+		$IconPanel/Icon.texture = npc.icon
+		$Nametag.text = npc.displayName
 
-func display_text(lines: String):
+func display_text(lines: String, npc: Npc = null):
+	set_character(npc)
 	set_menu_visible(0)
 	$SpeechPanel/SpeechStack/Text.visible = true
 	$Advance.visible = true
 	$SpeechPanel/SpeechStack/Text.text = lines
 	
-func display_menu(entries: Array):
+func display_menu(entries: Array, npc: Npc = null):
+	set_character(npc)
 	var count = min(entries.size(),3)
 	set_menu_visible(count)
 	$SpeechPanel/SpeechStack/Text.visible = false

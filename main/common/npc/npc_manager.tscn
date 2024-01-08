@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://b75rolqdc43nm"]
+
+[ext_resource type="Script" path="res://main/common/npc/npc_manager.gd" id="1_pwtd2"]
+[ext_resource type="Script" path="res://main/common/npc/npc.gd" id="2_sg0am"]
+[ext_resource type="PackedScene" uid="uid://dmghwwb6u3t2g" path="res://main/common/ui/dialogue-ui.tscn" id="2_x6fpw"]
+[ext_resource type="PackedScene" uid="uid://8ltt4mq5hvsc" path="res://main/common/npc/dialogue/dee/dee_chatter.tscn" id="4_1a0gm"]
+
+[node name="NpcManager" type="Node"]
+script = ExtResource("1_pwtd2")
+
+[node name="DialogueUI" parent="." instance=ExtResource("2_x6fpw")]
+visible = false
+
+[node name="Dee" type="Node" parent="."]
+script = ExtResource("2_sg0am")
+chatter_dialogue = ExtResource("4_1a0gm")
+
+[connection signal="exit_dialogue" from="Dee" to="." method="_on_exit_dialogue"]
