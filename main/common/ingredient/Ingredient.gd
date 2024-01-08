@@ -28,3 +28,10 @@ enum Effect {
 	MAGIC = 1 << 1,
 	TRIPPY = 1 << 2
 }
+
+func get_random_color():
+	var hue = randf();
+	# chosen to have a good brown color
+	var sat = 0.91
+	var lum = 0.54
+	return Color.from_ok_hsl(hue, sat, lum)

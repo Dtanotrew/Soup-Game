@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blhflgbo5bpnf"
-path="res://.godot/imported/yomamabrew.png-ac859e402016523a41ba6a7decfa8d47.ctex"
+uid="uid://ddmcxgmtb5us7"
+path="res://.godot/imported/close-button.png-f58ff6ebd7ae8d280784f8e83ac9ce8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/brewing-scene/yomamabrew.png"
-dest_files=["res://.godot/imported/yomamabrew.png-ac859e402016523a41ba6a7decfa8d47.ctex"]
+source_file="res://resources/textures/ui/close-button.png"
+dest_files=["res://.godot/imported/close-button.png-f58ff6ebd7ae8d280784f8e83ac9ce8a.ctex"]
 
 [params]
 
