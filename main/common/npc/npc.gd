@@ -66,7 +66,7 @@ func score_soup(soup: Soup):
 func enter_dialogue(ui: DialogueUI):
 	if hint_scene && IngredientManager.hintable.size() > 0:
 		hint_scene.enter(ui, self)
-	elif NpcManager.latest_soup != self.latest_soup["soup"] :
+	elif NpcManager.latest_soup != self.latest_soup["soup"]:
 		latest_soup = NpcManager.latest_soup
 		soup_scene.enter(ui, self)
 	elif chatter_scene:
