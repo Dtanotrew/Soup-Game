@@ -6,7 +6,7 @@ var event : InputEvent
 func _ready():
 	# npcMgr.load_predefined_npcs()
 	$Menu.display()
-	pass # Replace with function body.
+	#pass # Replace with function body.
 
 func _on_menu_start_game():
 	$Menu.hide()

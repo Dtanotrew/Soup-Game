@@ -12,16 +12,13 @@ script = ExtResource("1_wbyku")
 
 [node name="BrewSoup" parent="." instance=ExtResource("3_xsyfi")]
 
+[node name="LevelTest" parent="." instance=ExtResource("6_exfm7")]
+
 [node name="BrewTutorial" parent="." instance=ExtResource("3_t5lwk")]
-visible = false
 
 [node name="Intro" parent="." instance=ExtResource("3_gmqg3")]
-visible = false
 
 [node name="Menu" parent="." instance=ExtResource("1_i2cty")]
-visible = false
-
-[node name="LevelTest" parent="." instance=ExtResource("6_exfm7")]
 
 [connection signal="complete" from="BrewTutorial" to="." method="_on_brew_tutorial_complete"]
 [connection signal="complete" from="Intro" to="." method="_on_intro_complete"]

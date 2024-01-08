@@ -263,6 +263,7 @@ layout_mode = 2
 focus_mode = 0
 theme_type_variation = &"BigButton"
 theme_override_font_sizes/font_size = 22
+disabled = true
 text = "BREW"
 
 [node name="Notebook" parent="." instance=ExtResource("6_tmi4w")]

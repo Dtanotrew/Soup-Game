@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 SignalBus="*res://signal_bus.gd"
 IngredientManager="*res://main/common/ingredient/ingredient_manager.tscn"
 NpcManager="*res://main/common/npc/npc_manager.tscn"
-Global="*res://global.gd"
+Global="res://global.gd"
 
 [display]
 

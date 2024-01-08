@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://7rve66t3cnot"]
+[gd_scene load_steps=21 format=3 uid="uid://7rve66t3cnot"]
 
 [ext_resource type="Texture2D" uid="uid://pbg0cwe3dll0" path="res://art/tiles/tiles.png" id="1_3pp1h"]
 [ext_resource type="Script" path="res://Testing/level_test.gd" id="1_xp7ug"]
@@ -14,12 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://brt3514ki3ph7" path="res://Character/NPCs/lola_2d.tscn" id="12_yfv4w"]
 [ext_resource type="PackedScene" path="res://Character/NPCs/dee_2d.tscn" id="13_vabgh"]
 [ext_resource type="PackedScene" path="res://Character/NPCs/loris_2d.tscn" id="14_q27ko"]
+[ext_resource type="PackedScene" uid="uid://m6clnc0gcc5o" path="res://main/level/ingredient_2d.tscn" id="15_2u661"]
 [ext_resource type="PackedScene" uid="uid://bq3o4qi5mcbfd" path="res://ingredient_2.tscn" id="15_m1tc1"]
 [ext_resource type="PackedScene" uid="uid://cyyqybx6444om" path="res://ingredient_1.tscn" id="15_q028d"]
-[ext_resource type="PackedScene" uid="uid://baa7wra4ybihc" path="res://Character/NPCs/lola_2d.tscn" id="12_yfv4w"]
-[ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://Character/NPCs/dee_2d.tscn" id="13_vabgh"]
-[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/loris_2d.tscn" id="14_q27ko"]
-[ext_resource type="PackedScene" uid="uid://m6clnc0gcc5o" path="res://main/level/ingredient_2d.tscn" id="15_2u661"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovycl"]
 size = Vector2(28, 48)
@@ -288,11 +285,12 @@ offset_left = -905.0
 offset_top = 15.0
 offset_right = -798.0
 offset_bottom = 34.0
+disabled = true
 text = "Change Scene
 "
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [node name="Ingredient2D" parent="." instance=ExtResource("15_2u661")]
 position = Vector2(1614, 43)
 
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="new_pickup" from="Ingredient2D" to="Witch" method="pickup_new"]
