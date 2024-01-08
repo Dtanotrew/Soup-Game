@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1q2w8gvx6cn7"]
-
-[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="1_ndwbx"]
-
-[node name="IngredientHint" type="Node"]
-script = ExtResource("1_ndwbx")
