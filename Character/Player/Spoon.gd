@@ -4,6 +4,7 @@ extends Area2D
 @export var player : Player
 @export var facing_shape : FacingCollisionShape2D
 @export var hit_sound : AudioStreamPlayer2D
+@export var woosh_sound : AudioStreamPlayer2D
 func _ready():
 	monitoring = false
 	player.connect("facing_direction_changed", _on_player_facing_direction_changed)
@@ -15,6 +16,7 @@ func _on_body_entered(body):
 			#get direction from spoon to the body
 			var direction_to_damageable = (body.global_position - get_parent().global_position)
 			var direction_sign = sign(direction_to_damageable.x)
+			woosh_sound.play()
 			hit_sound.play()
 			if direction_sign > 0:
 				child.hit(damage, Vector2.RIGHT)
