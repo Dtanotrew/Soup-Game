@@ -6,7 +6,7 @@ signal finished
 var child_index: int = 0
 
 func enter(ui: DialogueUI):
-	if(child_index == children.size()):
+	if(not children || child_index == children.size()):
 		reset_dialogue()
 		exit(ui)
 	var next = children[child_index]

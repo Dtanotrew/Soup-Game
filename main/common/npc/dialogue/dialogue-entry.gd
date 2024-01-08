@@ -1,6 +1,6 @@
 class_name DialogueEntry extends Node
 
-@export var text: String
+@export_multiline var text: String
 
 func enter(ui:DialogueUI):
 	ui.set_show_character(false)
@@ -9,4 +9,8 @@ func enter(ui:DialogueUI):
 
 func exit(ui:DialogueUI):
 	ui.advance.disconnect(exit)
-	self.get_parent().enter(ui)
+	var parent = self.get_parent()
+	if parent is DialogueMenu:
+		parent.exit(ui)
+	else:
+		self.get_parent().enter(ui)

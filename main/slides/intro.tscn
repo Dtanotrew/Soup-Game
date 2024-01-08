@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main/slides/slide_player.gd" id="1_inesp"]
 [ext_resource type="Texture2D" uid="uid://d3lxwcyqd514y" path="res://resources/textures/slides/intro-slide.png" id="2_6e6dm"]
-[ext_resource type="PackedScene" uid="uid://dmghwwb6u3t2g" path="res://main/common/ui/dialogue.tscn" id="3_usq3n"]
+[ext_resource type="PackedScene" uid="uid://dmghwwb6u3t2g" path="res://main/common/ui/dialogue-ui.tscn" id="3_33jl5"]
 [ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="4_f4qqu"]
 [ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="5_siyqh"]
 
@@ -17,7 +17,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_6e6dm")
 
-[node name="DialogueUI" parent="." instance=ExtResource("3_usq3n")]
+[node name="DialogueUI" parent="." instance=ExtResource("3_33jl5")]
 layout_mode = 1
 
 [node name="DialogueSequence" type="Node" parent="."]

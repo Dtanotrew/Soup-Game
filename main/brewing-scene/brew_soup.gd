@@ -1,20 +1,20 @@
 extends Node2D
 
-signal brew_complete(soup)
+signal complete(soup)
 
 const shelf_item = preload("res://main/brewing-scene/ShelfItem.tscn")
 
 var soup
+var progress: int
 
 func start_brew():
 	soup = Soup.new()
+	progress = 0
+	$BrewPanel/ShelfBottom/VBoxContainer/ProgressBar.value = progress
 	$BrewBG/bg_tint.material.set_shader_parameter("tint_color", soup.color)
 	# add ingredients from library
 	for ing in IngredientManager.ingredients:
 		add_shelf_item(ing)
-	
-func end_brew():
-	brew_complete.emit(soup)
 
 func add_shelf_item(item:Ingredient):
 	var shelf_entry = shelf_item.instantiate()
@@ -26,6 +26,8 @@ func add_shelf_item(item:Ingredient):
 func add_item_to_soup(item:Ingredient):
 	soup.add_item(item)
 	$BrewBG/bg_tint.material.set_shader_parameter("tint_color", soup.color)
+	progress = max(progress + 1, 3)
+	$BrewPanel/ShelfBottom/VBoxContainer/ProgressBar.value = progress
 	
 func _on_shelf_item_right_click(clicked:ShelfItem):
 	$Notebook.show()
@@ -39,3 +41,8 @@ func _on_shelf_item_left_click(clicked:ShelfItem):
 	
 func _on_notebook_close():
 	$Notebook.hide()
+
+func _on_brew_button_pressed():
+	if not progress == 3:
+		return
+	complete.emit(soup)

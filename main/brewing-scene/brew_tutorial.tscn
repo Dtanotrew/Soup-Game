@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bij85bxaoi8c8"]
+
+[ext_resource type="Script" path="res://main/slides/slide_player.gd" id="1_d3fib"]
+[ext_resource type="PackedScene" uid="uid://dmghwwb6u3t2g" path="res://main/common/ui/dialogue-ui.tscn" id="1_ms7ur"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-sequence.gd" id="2_bsn0n"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-menu.gd" id="4_x7158"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-entry.gd" id="5_6ut0q"]
+[ext_resource type="Script" path="res://main/common/npc/dialogue/dialogue-action.gd" id="5_c18mj"]
+
+[node name="BrewTutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3fib")
+
+[node name="DialogueUI" parent="." instance=ExtResource("1_ms7ur")]
+layout_mode = 1
+
+[node name="DialogueSequence" type="Node" parent="."]
+process_mode = 4
+script = ExtResource("2_bsn0n")
+
+[node name="DialogueMenu" type="Node" parent="DialogueSequence"]
+script = ExtResource("4_x7158")
+option_1 = "[I don't remember how to make soup]"
+option_2 = "[Skip tutorial]"
+
+[node name="TutorialSeq" type="Node" parent="DialogueSequence/DialogueMenu"]
+script = ExtResource("2_bsn0n")
+
+[node name="Entry1" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
+script = ExtResource("5_6ut0q")
+text = "Add items to the pot with [Left Click].
+The color of the soup will change when the item is added, and an item will be consumed."
+
+[node name="Entry2" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
+script = ExtResource("5_6ut0q")
+text = "The progress bar above the BREW button tells you how many ingredients you've added to your soup. To finish your soup, you need at least three."
+
+[node name="Entry3" type="Node" parent="DialogueSequence/DialogueMenu/TutorialSeq"]
+script = ExtResource("5_6ut0q")
+text = "[Right Click] an ingredient to open its notebook entry. A record of everything you've learned about it is here, as well as any notes you've chosen to add."
+
+[node name="DialogueAction" type="Node" parent="DialogueSequence/DialogueMenu"]
+script = ExtResource("5_c18mj")
+
+[connection signal="finished" from="DialogueSequence" to="." method="_on_dialogue_sequence_finished"]
