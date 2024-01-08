@@ -1,35 +1,300 @@
-[gd_scene load_steps=11 format=3 uid="uid://bemkijyyyv06"]
+[gd_scene load_steps=28 format=3 uid="uid://bemkijyyyv06"]
 
 [ext_resource type="Script" path="res://Character/Enemies/Big Mama/big_mama.gd" id="1_hbeul"]
+[ext_resource type="Texture2D" uid="uid://cjpe2q8tm8fbw" path="res://art/Enemies/CHICKEN.png" id="2_5asfr"]
 [ext_resource type="Script" path="res://Character/Damageable.gd" id="2_np1qk"]
 [ext_resource type="Script" path="res://Character/CharacterStateMachine.gd" id="3_8tgvv"]
+[ext_resource type="Script" path="res://Character/Enemies/Big Mama/BigMamaAttackHitbox.gd" id="3_wk5oa"]
 [ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01IdleState.gd" id="4_jeo30"]
 [ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01RollAttackState.gd" id="5_r35cs"]
 [ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01StunnedState.gd" id="6_6p71p"]
 [ext_resource type="Script" path="res://Character/HitState.gd" id="7_02j04"]
 [ext_resource type="Script" path="res://Character/Enemies/Big Mama/Boss01DeathState.gd" id="8_yb5dd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltebl"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovn4r"]
+radius = 46.0109
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4agf"]
+radius = 47.6681
+
+[sub_resource type="Animation" id="Animation_hwmx6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_etc6k"]
+resource_name = "attack"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5asfr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [50]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackHitbox:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_mr3fd"]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5asfr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [50]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [45, 46, 47, 48, 49, 46, 47, 48]
+}
+
+[sub_resource type="Animation" id="Animation_sbcjv"]
+resource_name = "hit"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5asfr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [50]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [45, 46, 47, 48, 49]
+}
+
+[sub_resource type="Animation" id="Animation_0kslx"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5asfr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [50]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackHitbox:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxfy0"]
+_data = {
+"RESET": SubResource("Animation_hwmx6"),
+"attack": SubResource("Animation_etc6k"),
+"dead": SubResource("Animation_mr3fd"),
+"hit": SubResource("Animation_sbcjv"),
+"idle": SubResource("Animation_0kslx")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_swx87"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6ndpc"]
+animation = &"hit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hm3am"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5i6d5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_674wc"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hdfj4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q271c"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ynj4t"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lqiti"]
+states/End/position = Vector2(898, 100)
+states/attack/node = SubResource("AnimationNodeAnimation_swx87")
+states/attack/position = Vector2(510, 100)
+states/hit/node = SubResource("AnimationNodeAnimation_6ndpc")
+states/hit/position = Vector2(342, 2)
+states/idle/node = SubResource("AnimationNodeAnimation_hm3am")
+states/idle/position = Vector2(342, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5i6d5"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_674wc"), "idle", "hit", SubResource("AnimationNodeStateMachineTransition_hdfj4"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_q271c"), "hit", "idle", SubResource("AnimationNodeStateMachineTransition_ynj4t")]
+graph_offset = Vector2(-173, -40)
 
 [node name="BigMama" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
+collision_layer = 4
 script = ExtResource("1_hbeul")
 hit_state = NodePath("CharacterStateMachine/HitState")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ltebl")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5asfr")
+hframes = 50
+
+[node name="AttackHitbox" type="Area2D" parent="." node_paths=PackedStringArray("enemy")]
+collision_mask = 2
+monitoring = false
+script = ExtResource("3_wk5oa")
+enemy = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_ovn4r")
+debug_color = Color(1, 0, 0.592157, 0.419608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0)
+shape = SubResource("CircleShape2D_f4agf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fxfy0")
+}
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fxfy0")
+}
 tree_root = SubResource("AnimationNodeStateMachine_lqiti")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("2_np1qk")
+health = 60.0
 
 [node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("character", "current_state", "animation_tree")]
 script = ExtResource("3_8tgvv")
@@ -37,18 +302,28 @@ character = NodePath("..")
 current_state = NodePath("Idle")
 animation_tree = NodePath("../AnimationTree")
 
-[node name="Idle" type="Node" parent="CharacterStateMachine"]
+[node name="Idle" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("timer", "attack_state")]
 script = ExtResource("4_jeo30")
+timer = NodePath("IdleTimer")
+attack_state = NodePath("../RollAttack")
+can_move = false
 
-[node name="Timer" type="Timer" parent="CharacterStateMachine/Idle"]
+[node name="IdleTimer" type="Timer" parent="CharacterStateMachine/Idle"]
+wait_time = 2.0
+one_shot = true
 
-[node name="RollAttack" type="Node" parent="CharacterStateMachine"]
+[node name="RollAttack" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("idle_state", "attack_timer")]
 script = ExtResource("5_r35cs")
+idle_state = NodePath("../Idle")
+attack_timer = NodePath("Timer")
+attack_anim = "attack"
 
 [node name="Timer" type="Timer" parent="CharacterStateMachine/RollAttack"]
+one_shot = true
 
 [node name="Stunned" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("6_6p71p")
+can_move = false
 
 [node name="Timer" type="Timer" parent="CharacterStateMachine/Stunned"]
 
@@ -58,12 +333,23 @@ damageable = NodePath("../../Damageable")
 character_state_machine = NodePath("..")
 dead_state = NodePath("../Death")
 return_state = NodePath("../Idle")
+knockback_speed = 0.0
+return_anim = "idle"
+hit_anim = "hit"
+death_anim = "dead"
 can_move = false
 
 [node name="Timer" type="Timer" parent="CharacterStateMachine/HitState"]
-wait_time = 0.2
+wait_time = 0.439
 one_shot = true
 
 [node name="Death" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("8_yb5dd")
 can_move = false
+
+[connection signal="body_entered" from="AttackHitbox" to="AttackHitbox" method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/RollAttack" method="_on_animation_tree_animation_finished"]
+[connection signal="timeout" from="CharacterStateMachine/Idle/IdleTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CharacterStateMachine/Idle/IdleTimer" to="CharacterStateMachine/Idle" method="_on_timer_timeout"]
+[connection signal="timeout" from="CharacterStateMachine/HitState/Timer" to="CharacterStateMachine/HitState" method="_on_timer_timeout"]
+[connection signal="timeout" from="CharacterStateMachine/HitState/Timer" to="CharacterStateMachine/HitState" method="_on_hit_timer_timeout"]

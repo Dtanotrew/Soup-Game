@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://miccmcwe3qy3" path="res://art/fewfef.JPG" id="2_hgdsr"]
 [ext_resource type="PackedScene" uid="uid://bdu2p02exbw2q" path="res://Character/Enemies/Salamander/Salamander.tscn" id="3_t74tp"]
 [ext_resource type="PackedScene" uid="uid://ctesixfap32i0" path="res://Testing(delete later)/UI/health_changed_manager.tscn" id="4_in3lg"]
-[ext_resource type="PackedScene" uid="uid://baa7wra4ybihc" path="res://Character/NPCs/lola_2d.tscn" id="5_3fxmn"]
+[ext_resource type="PackedScene" path="res://Character/NPCs/dee_2d.tscn" id="5_3fxmn"]
 [ext_resource type="PackedScene" uid="uid://5pjmjycc40r0" path="res://parallax.tscn" id="5_dkf8c"]
-[ext_resource type="PackedScene" uid="uid://c0kwmvghpc6lv" path="res://Character/NPCs/dee_2d.tscn" id="7_ybgb1"]
+[ext_resource type="PackedScene" path="res://Character/NPCs/lola_2d.tscn" id="7_ybgb1"]
 [ext_resource type="AudioStream" uid="uid://byscpc3a205r1" path="res://music/light_forest_aaa.wav" id="8_mppft"]
-[ext_resource type="PackedScene" uid="uid://57dgigu1dqjb" path="res://Character/NPCs/loris_2d.tscn" id="9_prep5"]
+[ext_resource type="PackedScene" path="res://Character/NPCs/loris_2d.tscn" id="9_prep5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wd25p"]
 
@@ -86,12 +86,12 @@ offset_right = 103.0
 offset_bottom = -200.0
 
 [node name="NPC1" parent="." instance=ExtResource("5_3fxmn")]
-position = Vector2(44, 224)
+position = Vector2(33, 242)
 
 [node name="Parallax" parent="." instance=ExtResource("5_dkf8c")]
 
 [node name="Dee" parent="." instance=ExtResource("7_ybgb1")]
-position = Vector2(76, 243)
+position = Vector2(76, 221)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_mppft")

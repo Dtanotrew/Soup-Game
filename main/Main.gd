@@ -22,7 +22,7 @@ func _on_brew_tutorial_complete():
 	var tutorial = $BrewTutorial
 	self.remove_child(tutorial)
 	tutorial.queue_free()
-	NpcManager.debug_dia()
+	#NpcManager.debug_dia()
 
 
 func _on_menu_exit_game():
