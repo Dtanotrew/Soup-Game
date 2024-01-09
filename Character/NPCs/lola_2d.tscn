@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brt3514ki3ph7"]
+[gd_scene load_steps=10 format=3 uid="uid://baa7wra4ybihc"]
 
 [ext_resource type="Script" path="res://Character/NPCs/lola_2d.gd" id="1_6sho2"]
 [ext_resource type="Texture2D" uid="uid://v2nerr6265wl" path="res://art/NPCs/Lola-Sheet.png" id="2_oatrr"]

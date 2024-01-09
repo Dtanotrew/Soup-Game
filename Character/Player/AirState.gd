@@ -12,7 +12,7 @@ func state_process(delta):
 		playback.travel("falling")
 		
 	if character.velocity.y >= 0 and not character.is_on_floor():
-		print("character velocity before impact = " + str(character.velocity.y) + ".")
+		# print("character velocity before impact = " + str(character.velocity.y) + ".")
 		pre_collision_velo = character.velocity.y
 		
 	if character.is_on_floor():

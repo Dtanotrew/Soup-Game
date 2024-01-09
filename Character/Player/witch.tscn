@@ -684,6 +684,7 @@ limit_bottom = 0
 [node name="Health" type="AnimatedSprite2D" parent="Camera2D"]
 position = Vector2(-212, -187)
 sprite_frames = SubResource("SpriteFrames_gd2oc")
+
 [node name="IngredientPickupUI" parent="Camera2D" instance=ExtResource("6_l68xg")]
 visible = false
 visibility_layer = 524288

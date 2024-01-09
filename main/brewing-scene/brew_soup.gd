@@ -45,8 +45,18 @@ func _on_notebook_close():
 func _on_brew_button_pressed():
 	if not progress == 3:
 		return
+	for child in $BrewPanel/ItemScroller/Items.get_children():
+		$BrewPanel/ItemScroller/Items.remove_child(child)
+		child.queue_free()
 	complete.emit(soup)
 
 
 func _on_button_pressed():
 	Global.goto_scene("res://Testing/level_test.tscn")
+
+
+func _on_visibility_changed():
+	if self.visible:
+		$BrewTheme.play()
+	else:
+		$BrewTheme.stop()

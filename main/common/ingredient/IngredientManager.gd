@@ -83,7 +83,7 @@ func _ready():
 	var both_ing = randi_range(0,1)
 	add_starting_ingredient(good[good_ing_1])
 	add_starting_ingredient(good[good_ing_2])
-	add_starting_ingredient(good[both_ing])
+	add_starting_ingredient(both[both_ing])
 
 func assign_super(ing: Ingredient):
 	@warning_ignore("integer_division")

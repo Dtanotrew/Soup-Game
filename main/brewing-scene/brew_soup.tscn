@@ -275,12 +275,14 @@ stream = ExtResource("6_bhfy0")
 autoplay = true
 
 [node name="SceneButton" type="Button" parent="."]
+visible = false
 offset_top = 3.0
 offset_right = 107.0
 offset_bottom = 22.0
 text = "Change Scene
 "
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="BrewPanel/ShelfBottom/VBoxContainer/BrewButton" to="." method="_on_brew_button_pressed"]
 [connection signal="close" from="Notebook" to="." method="_on_notebook_close"]
 [connection signal="pressed" from="SceneButton" to="." method="_on_button_pressed"]
