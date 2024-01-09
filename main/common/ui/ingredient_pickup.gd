@@ -12,6 +12,7 @@ func prompt_new_ing(ing:Ingredient):
 	new_ing = ing
 	icon_box.add_child(create_icon(ing))
 	self.set_visible(true)
+	prompt_box.grab_focus()
 
 func save():
 	self.set_visible(false)
