@@ -42,7 +42,6 @@ func _ready():
 		soup_scene.finished.connect(_on_dialogue_finished)
 
 func score_soup(soup: Soup):
-	var score: float = 0
 	if soup.variety > variety_threshold:
 		latest_soup.variety = 1
 	elif soup.variety < variety_threshold - 1:

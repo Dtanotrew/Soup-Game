@@ -1,8 +1,7 @@
 extends Node
 
-@export var scenes : Node 
-var event : InputEvent
-# Called when the node enters the scene tree for the first time.
+var platformer = preload("res://Testing/level_test.tscn")
+
 func _ready():
 	# npcMgr.load_predefined_npcs()
 	$Menu.display()
@@ -29,3 +28,18 @@ func _on_brew_tutorial_complete():
 
 func _on_menu_exit_game():
 	get_tree().quit()
+
+func _on_brew_soup_complete(soup):
+	NpcManager.latest_soup = soup
+	$BrewSoup.visible = false
+	var level = platformer.instantiate()
+	self.add_child(level)
+	level.complete.connect(_on_level_test_complete)
+
+func _on_level_test_complete():
+	var level = self.get_child(self.get_child_count()-1)
+	level.visible = false
+	$BrewSoup.show()
+	$BrewSoup.start_brew()
+	self.remove_child(level)
+	level.queue_free()

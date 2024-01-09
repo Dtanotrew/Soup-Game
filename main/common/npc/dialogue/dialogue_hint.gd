@@ -44,21 +44,21 @@ func enter(ui:DialogueUI, npc: Npc = null):
 	if poison_msg:
 		ing.player_notes += '\n' + notebook_line.format({"npc_name":npc.displayName, "message":poison_msg})
 	
-	var text = format_string.format({"ing-name":ing.display_name})
+	var disp_text = format_string.format({"ing-name":ing.display_name})
 	
 	if msg_count == 0:
-		text = text.format({"lead_in":"", "message":no_hint})
+		disp_text = disp_text.format({"lead_in":"", "message":no_hint})
 	else:
-		text = text.format({"lead_in":lead_in})
+		disp_text = disp_text.format({"lead_in":lead_in})
 		if msg_count == 1:
 			if taste_msg:
-				text = text.format({"message":taste_msg})
+				disp_text = disp_text.format({"message":taste_msg})
 			else:
-				text = text.format({"message":poison_msg})
+				disp_text = disp_text.format({"message":poison_msg})
 		else:
-			text = text.format({"message":taste_msg}) + multi_hint.format({"message":poison_msg})
+			disp_text = disp_text.format({"message":taste_msg}) + multi_hint.format({"message":poison_msg})
 	
-	ui.display_text(text, npc)
+	ui.display_text(disp_text, npc)
 	ui.advance.connect(exit)
 
 func exit(ui:DialogueUI, npc: Npc = null):
